@@ -6,6 +6,17 @@
 
 // f1(3);
 
+function f1(n) {
+  if (n == 0) {
+    console.log("first");
+  } else {
+    console.log(n);
+    f1(n - 1);
+  }
+}
+
+f1(3);
+
 // function fun(n) {
 //   if (n == 0) {
 //     return;
@@ -16,25 +27,25 @@
 // }
 // fun(3);
 
-function fun(n) {
-  if (n == 1) {
-    return 0;
-  }
-  return 1 + fun(Math.floor(n / 2));
-}
+// function fun(n) {
+//   if (n == 1) {
+//     return 0;
+//   }
+//   return 1 + fun(Math.floor(n / 2));
+// }
 
 // console.log(fun(11));
 
 // usig recursion
-function printN1(n) {
-  if (n == 0) {
-    return;
-  }
-  printN1(n - 1);
-  console.log(n);
-}
+// function printN1(n) {
+//   if (n == 0) {
+//     return;
+//   }
+//   printN1(n - 1);
+//   console.log(n);
+// }
 
-printN1(4);
+// printN1(4);
 
 // itrative
 
