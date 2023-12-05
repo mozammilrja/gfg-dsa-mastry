@@ -11,6 +11,6 @@ function removeDuplicate(arr) {
 
 console.log(removeDuplicate([10, 20, 20, 30, 30, 30]));
 
-const arr = ["a", "b", "c"];
-const newArr = arr.slice(1, 2);
-console.log(newArr);
+// const arr = ["a", "b", "c"];
+// const newArr = arr.slice(1, 2);
+// console.log(newArr);

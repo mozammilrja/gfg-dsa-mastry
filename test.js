@@ -1,13 +1,5 @@
-function primeNumbers(n) {
-  if (n < 2) {
-    return false;
-  }
-  for (let i = 2; i <= n; i++) {
-    if (n % i === 0) {
-      return false;
-    }
-  }
-  return true;
+function duplicatesElement(arr) {
+    
 }
 
-console.log(primeNumbers(9));
+console.log(duplicatesElement([10, -20, 0, -0, -0, -90, -0]));

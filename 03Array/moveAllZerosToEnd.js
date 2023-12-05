@@ -30,3 +30,4 @@ function moveAllZeros(arr) {
 }
 
 console.log(moveAllZeros([10, 0, 0, 7, 8, 0]));
+console.log(moveAllZeros([10, -20, 0, -0, -0, -90, -0]));

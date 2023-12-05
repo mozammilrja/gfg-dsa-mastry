@@ -6,6 +6,8 @@
 
 // effiient method
 
+// two pointers
+
 function reverceArr(arr) {
   let low = 0;
   let high = arr.length - 1;
