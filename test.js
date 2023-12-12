@@ -1,5 +1,9 @@
-function duplicatesElement(arr) {
-    
+function divisible(n) {
+  for (let i = 0; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log(i);
+    }
+  }
 }
 
-console.log(duplicatesElement([10, -20, 0, -0, -0, -90, -0]));
+divisible(50);
