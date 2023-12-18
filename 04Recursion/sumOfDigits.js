@@ -1,4 +1,4 @@
-// remove the last digitso  numbers and add the last numbers
+// remove the last digit  numbers and add the last numbers
 function Digits(n) {
   if (n == 0) {
     return 0;

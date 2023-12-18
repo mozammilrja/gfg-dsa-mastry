@@ -8,7 +8,6 @@ function isArmstrongNumber(number) {
   for (let i = 0; i < numDigits; i++) {
     sum += Math.pow(Number(numStr[i]), numDigits);
   }
-
   // Check if the sum is equal to the original number
   return sum === number;
 }

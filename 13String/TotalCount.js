@@ -5,7 +5,6 @@ function TotalCount(str) {
   for (let i = 0; i <= str.length; i++) {
     // Get the current character
     let result = str[i];
-
     // Check if the character is already a key in the count object
     if (count[result]) {
       // If yes, increment the count
