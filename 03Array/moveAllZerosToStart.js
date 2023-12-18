@@ -11,5 +11,5 @@ function moveAllZeros(arr) {
   return arr;
 }
 
-console.log(moveAllZeros([10, 0, 0, 7, 8, 0,1,1,3,1,5]));
+console.log(moveAllZeros([10, 0, 0, 7, 8, 0, 1, 1, 3, 1, 5]));
 console.log(moveAllZeros([10, -20, 0, -0, -0, -90, -0]));
