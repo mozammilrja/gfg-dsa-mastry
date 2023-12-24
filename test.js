@@ -1,12 +1,6 @@
-function sumOfdigit(n) {
-  let sum = 0;
-  let str = n.toString();
-  for (let i = 0; i < str.length; i++) {
-    const count = parseInt(str[i], 10);
-    sum += count;
-  }
-  return sum;
+function lastWordLength(str) {
+  let words = str.split(" ");
+  return words[words.length - 1].length;
 }
 
-console.log(sumOfdigit(55));
-// Output: 10
+console.log(lastWordLength("my name mozammil"));
