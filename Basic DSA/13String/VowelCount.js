@@ -7,5 +7,5 @@ function vowelCheck(str) {
   }
   return count;
 }
-console.log(vowelCheck("geeks"));
+console.log(vowelCheck("mozammil"));
 
