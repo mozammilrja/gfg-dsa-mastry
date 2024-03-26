@@ -16,6 +16,8 @@ function binarySearch(arr, x) {
 
 console.log(binarySearch([-1, 0, 3, 5, 9, 12], 9)); //output 4
 
+
+// linearSearch 
 // function search(arr, N, X) {
 //   for (let i = 0; i < N; i++) {
 //     if (arr[i] === X) {
