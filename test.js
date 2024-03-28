@@ -91,32 +91,45 @@
 
 // console.log(isPalindrome(1221));
 
-function LongestCommanPrefix(strs) {
-  let result = strs[0];
-  let lastIndex = strs.length - 1;
+// function LongestCommanPrefix(strs) {
+//   let result = strs[0];
+//   let lastIndex = strs.length - 1;
 
-  if (strs.length === 0) {
-    return "";
-  }
+//   if (strs.length === 0) {
+//     return "";
+//   }
 
-  for (let i = 1; i < strs.length; i++) {
-    while (strs[i].indexOf(result) !== 0) {
-      result = result.substring(0, lastIndex);
-      if (result === 0) {
-        return "";
-      }
+//   for (let i = 1; i < strs.length; i++) {
+//     while (strs[i].indexOf(result) !== 0) {
+//       result = result.substring(0, lastIndex);
+//       if (result === 0) {
+//         return "";
+//       }
+//     }
+//     return result;
+//   }
+// }
+
+// let longest = ["flower", "flow", "flight"];
+
+// console.log(LongestCommanPrefix(longest));
+
+// function duplicates(nums) {
+//   let result = new Set(nums);
+//   return result;
+// }
+// let nums = [1, 1, 2];
+// console.log(duplicates(nums));
+
+function containsDuplicates(arr) {
+  let res = 1;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[res - 1] === arr[i]) {
+      //   arr[res] = arr[i];
+      return true;
     }
-    return result;
   }
+  return false;
 }
-
-let longest = ["flower", "flow", "flight"];
-
-console.log(LongestCommanPrefix(longest));
-
-function duplicates(nums) {
-  let result = new Set(nums);
-  return result;
-}
-let nums = [1, 1, 2];
-console.log(duplicates(nums));
+let arr = [2, 14, 18, 22, 22];
+console.log(containsDuplicates(arr));
