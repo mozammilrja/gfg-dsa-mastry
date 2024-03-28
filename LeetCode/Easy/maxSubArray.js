@@ -6,7 +6,6 @@ function maxSubArray(nums) {
 
   for (let i = 0; i < nums.length; i++) {
     cur += nums[i];
-
     if (cur > max) max = cur;
     if (cur < 0) cur = 0;
   }
