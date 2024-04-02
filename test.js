@@ -121,15 +121,86 @@
 // let nums = [1, 1, 2];
 // console.log(duplicates(nums));
 
-function containsDuplicates(arr) {
-  let res = 1;
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[res - 1] === arr[i]) {
-      //   arr[res] = arr[i];
-      return true;
-    }
-  }
-  return false;
-}
-let arr = [2, 14, 18, 22, 22];
-console.log(containsDuplicates(arr));
+// function containsDuplicates(arr) {
+//   let res = 1;
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[res - 1] === arr[i]) {
+//       //   arr[res] = arr[i];
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// let arr = [2, 14, 18, 22, 22];
+// console.log(containsDuplicates(arr));
+
+// const person = {
+//   firstName: "John",
+//   lastName: "Smith",
+//   fullNmae: function (state, country) {
+//     return this.firstName + " " + this.lastName + " " + state + " " + country;
+//   },
+// };
+
+// const person2 = {
+//   firstName: "Jane",
+//   lastName: "Smith",
+// };
+
+// // call method
+// console.log(person.fullNmae.call(person, "delhi", "india")); // o/p -> Jane Smith delhi
+// console.log(person.fullNmae.apply(person2, ["delhi", "india"])); // o/p -> Jane Smith delhi
+
+// const result = person.fullNmae.bind(person2, "delhi", "india");
+// console.log(result()); // o/p -> Jane Smith delhi
+// console.log("Before promise start");
+// const myPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     const data = false;
+//     if (data) {
+//       resolve("promise resolve");
+//     } else {
+//       reject("promise reject");
+//     }
+//   }, 0);
+// });
+// console.log("After promise start");
+
+// myPromise
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+// console.log("After promise end");
+
+// const fetchData = async () => {
+//   try {
+//     const res1 = await api1();
+//     const res2 = await api2();
+//     const res3 = await api3();
+//     const res4 = await api4();
+//     const res5 = await api5();
+//     // Process the results if needed
+//     console.log(res1, res2, res3, res4, res5);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// // Call the fetchData function
+// fetchData();
+
+// const promise = async () => {
+//   console.log("start");
+//   const api = await console.log("first request");
+//   console.log(api);
+// };
+// promise();
+
+const a = { x: 1, y: 2, z: { name: "John" } };
+
+const b = a.map((item) => {
+  console.log(item);
+});
