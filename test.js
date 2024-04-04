@@ -199,8 +199,18 @@
 // };
 // promise();
 
-const a = { x: 1, y: 2, z: { name: "John" } };
+// const a = { x: 1, y: 2, z: { name: "John" } };
 
-const b = a.map((item) => {
-  console.log(item);
-});
+// const b = a.map((item) => {
+//   console.log(item);
+// });
+
+
+let arr = [{a:3},{b:5},{c:"raja"}]
+let result = arr.map((item)=>{
+    if(item.hasOwnProperty("c")){
+        item.c = "mozammil"
+    }
+    return item
+})
+console.log(result)
