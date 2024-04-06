@@ -205,12 +205,36 @@
 //   console.log(item);
 // });
 
+// let arr = [{a:3},{b:5},{c:"raja"}]
 
-let arr = [{a:3},{b:5},{c:"raja"}]
-let result = arr.map((item)=>{
-    if(item.hasOwnProperty("c")){
-        item.c = "mozammil"
-    }
-    return item
-})
-console.log(result)
+//     if(arr.hasOwnProperty("c")){
+//      let rr=   arr.c = "mozammil"
+//      console.log(rr)
+//     }
+
+//     function sumOf(num) {
+//       let sum = 0;
+//       for (let i = 1; i < num.length; i++) {
+//         console.log(i);
+//         sum = +num[i];
+//       }
+//     }
+//     let res = [2, 4, 5, 6];
+//     console.log(sumOf(res));
+
+// this keywords
+
+let myObj = {
+  name: "mozammil",
+  age: 30,
+  myFun: function () {
+    console.log(this.name);
+  },
+};
+
+myObj.myFun();
+
+"use strict";
+
+a = 10
+console.log(a)
