@@ -1,7 +1,7 @@
 function leftRotateDplace(arr, d) {
   for (let i = 0; i < d; i++) {
     let temp = arr[0];
-    for (let j = 1; j < arr.length; j++) {
+    for (let j = i; j < arr.length; j++) {
       arr[j - 1] = arr[j];
     }
     arr[arr.length - 1] = temp;
