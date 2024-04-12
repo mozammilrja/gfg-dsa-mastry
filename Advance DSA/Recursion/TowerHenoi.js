@@ -1,3 +1,4 @@
+// Time complexity: O(2N)
 function towerOfHanoi(n, source, auxiliary, destination) {
   if (n === 1) {
     console.log(`Move disk 1 from ${source} to ${destination}`);
@@ -9,7 +10,7 @@ function towerOfHanoi(n, source, auxiliary, destination) {
 }
 
 // Example usage:
-const n = 3; // Number of disks
+const n = 2; // Number of disks
 const source = "A";
 const auxiliary = "B";
 const destination = "C";
