@@ -1,10 +1,10 @@
-function Josephus(n, k) {
-  if (n === 1) {
-    return 0;
-  }
-  return (Josephus(n - 1, k) + k) % n;
-}
-console.log(Josephus(5, 3)); // Output: 3
+// function Josephus(n, k) {
+//   if (n === 1) {
+//     return 0;
+//   }
+//   return (Josephus(n - 1, k) + k) % n;
+// }
+// console.log(Josephus(3, 2)); // Output: 3
 
 // 1 to n
 
