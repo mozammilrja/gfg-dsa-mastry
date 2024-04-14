@@ -224,17 +224,89 @@
 
 // this keywords
 
-let myObj = {
-  name: "mozammil",
-  age: 30,
-  myFun: function () {
-    console.log(this.name);
-  },
-};
+// let myObj = {
+//   name: "mozammil",
+//   age: 30,
+//   myFun: function () {
+//     console.log(this.name);
+//   },
+// };
 
-myObj.myFun();
+// myObj.myFun();
 
-"use strict";
+// "use strict";
 
-a = 10
-console.log(a)
+// a = 10
+// console.log(a)
+
+// console.log(1 + "2" + "2");
+// console.log(1 + +"2" + "2");
+// console.log(1 + -"1" + "2");
+// console.log(+"1" + "1" + "2");
+// console.log("A" - "B" + "2");
+// console.log("A" - "B" + 2);
+
+// Interview question
+
+// age = 100;
+// console.log(age);
+// let age = 30;
+
+// myFun()
+
+// var myFun = function () {
+//     console.log("first")
+// }
+// myFun()
+
+// function myFun() {
+//     console.log("Second")
+// }
+// myFun()
+
+// var variable = 10;
+
+// (() => {
+//     foo = 100
+//     console.log("I am an Immediately Invoked Function Expression", variable);
+//     var foo = 100
+//   variable = 20;
+//   console.log(variable);
+// })();
+
+// console.log(foo);
+// var variable = 30;
+
+// for (var i = 0; i < 10; i++) {
+//   setTimeout(() => console.log(i), 0);
+// }
+// for (let i = 0; i < 10; i++) {
+//   setTimeout(() => console.log(i), 0);
+// }
+
+// console.log(3+)
+
+// function sum(...args) {
+//   return function (b) {
+//     return function (c) {
+//       return b + c;
+//     };
+//   };
+// }
+
+// console.log(sum(2)(6)(1));
+
+// function sendAutoEmail(to) {
+//   return function (subject) {
+//     return function (body) {
+//       console.log(`Sending email to ${to} with ${subject}`);
+//     };
+//   };
+// }
+// let sendTo = sendAutoEmail("abcd@gmail.com");
+// let sendWithSubject = sendTo("Hello");
+// sendWithSubject("This is the body of the email.");
+
+(function add(a, b) {
+  console.log(a + b);
+})(3, 4);
