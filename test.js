@@ -307,6 +307,13 @@
 // let sendWithSubject = sendTo("Hello");
 // sendWithSubject("This is the body of the email.");
 
-(function add(a, b) {
-  console.log(a + b);
-})(3, 4);
+// (function add(a, b) {
+//   console.log(a + b);
+// })(3, 4);
+
+function sortBinaryArray(arr) {
+  arr.sort((a, b) => a - b);
+  return arr;
+}
+
+console.log(sortBinaryArray([1, 0, 1, 1, 1, 1, 1, 0, 0, 0]));
