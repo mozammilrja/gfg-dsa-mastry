@@ -311,9 +311,41 @@
 //   console.log(a + b);
 // })(3, 4);
 
-function sortBinaryArray(arr) {
-  arr.sort((a, b) => a - b);
-  return arr;
+// function sortBinaryArray(arr) {
+//   arr.sort((a, b) => a - b);
+//   return arr;
+// }
+
+// console.log(sortBinaryArray([1, 0, 1, 1, 1, 1, 1, 0, 0, 0]));
+
+// function findAll(arr) {
+//   // const frequency = new Map();
+//   let count = 0;
+//   let arr1 = [1, 2, 3];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr1.includes(arr[i])) {
+//       count++;
+//     } else {
+//       return -1;
+//     }
+//   }
+//   return arr1;
+// }
+
+// let arr = [1, 2, 3, 4];
+// console.log(findAll(arr));
+function findAll(arr) {
+  let count = 0;
+  let arr1 = [1, 2, 3];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr1.includes(arr[i])) {
+      count++;
+    } else {
+      return -1;
+    }
+  }
+  return arr1;
 }
 
-console.log(sortBinaryArray([1, 0, 1, 1, 1, 1, 1, 0, 0, 0]));
+let arr = [1, 2, 3, 4];
+console.log(findAll(arr)); // Output: [1, 2, 3]
