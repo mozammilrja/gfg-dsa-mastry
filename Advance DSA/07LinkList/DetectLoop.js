@@ -1,3 +1,5 @@
+// Detect loop using floyd cycle detection in JS
+
 class Node {
   constructor(data) {
     this.data = data;
