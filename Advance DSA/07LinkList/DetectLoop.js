@@ -20,22 +20,14 @@ function isLoop(head) {
 }
 
 let head = new Node(10);
-let temp1 = new Node(20);
-let temp2 = new Node(30);
-let temp3 = new Node(40);
-let temp4 = new Node(40);
-let temp5 = new Node(50);
-let temp6 = new Node(60);
-let temp7 = new Node(70);
+let temp1 = new Node(15);
+let temp2 = new Node(12);
+let temp3 = new Node(20);
+
 
 head.next = temp1;
 temp1.next = temp2;
-temp2.next = temp3;
-temp3.next = temp4;
-temp4.next = temp5;
-temp5.next = temp6;
-temp6.next = temp7;
-temp7.next = temp3; // Creating a loop
+temp2.next = temp1;
 
 if (isLoop(head)) {
   console.log("Loop");
