@@ -334,18 +334,26 @@
 
 // let arr = [1, 2, 3, 4];
 // console.log(findAll(arr));
-function findAll(arr) {
-  let count = 0;
-  let arr1 = [1, 2, 3];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr1.includes(arr[i])) {
-      count++;
-    } else {
-      return -1;
-    }
-  }
-  return arr1;
+// function findAll(arr) {
+//   let count = 0;
+//   let arr1 = [1, 2, 3];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr1.includes(arr[i])) {
+//       count++;
+//     } else {
+//       return -1;
+//     }
+//   }
+//   return arr1;
+// }
+
+// let arr = [1, 2, 3, 4];
+// console.log(findAll(arr)); // Output: [1, 2, 3]
+
+
+function create2DArray(m, n) {
+  return [...Array(m)].map(() => Array(n).fill(0));
 }
 
-let arr = [1, 2, 3, 4];
-console.log(findAll(arr)); // Output: [1, 2, 3]
+
+console.log(create2DArray(2,5));
