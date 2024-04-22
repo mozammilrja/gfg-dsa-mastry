@@ -10,3 +10,14 @@ function sumOfdigit(n) {
 
 console.log(sumOfdigit(55));
 // Output: 10
+
+function sumOfDigits(n) {
+  let sum = 0;
+  while (n > 0) {
+    sum += n % 10; // Add the last digit to sum
+    n = Math.floor(n / 10); // Remove the last digit
+  }
+  return sum;
+}
+
+console.log(sumOfDigits(55)); // Output: 10
