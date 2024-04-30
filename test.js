@@ -350,10 +350,24 @@
 // let arr = [1, 2, 3, 4];
 // console.log(findAll(arr)); // Output: [1, 2, 3]
 
+// function create2DArray(m, n) {
+//   return [...Array(m)].map(() => Array(n).fill(0));
+// }
 
-function create2DArray(m, n) {
-  return [...Array(m)].map(() => Array(n).fill(0));
-}
+// console.log(create2DArray(2,5));
 
+// Custom map polyfill
 
-console.log(create2DArray(2,5));
+Array.prototype.myMap = function (cb) {
+  const temp = [];
+  for (let i = 0; i < this.length; i++) {
+    temp.push(cb(this[i], i));
+  }
+  return temp;
+};
+
+let arr = [2, 5];
+let result = arr.myMap((num) => {
+  return num * num;
+});
+console.log(result);
