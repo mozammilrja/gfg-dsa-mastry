@@ -358,16 +358,23 @@
 
 // Custom map polyfill
 
-Array.prototype.myMap = function (cb) {
-  const temp = [];
-  for (let i = 0; i < this.length; i++) {
-    temp.push(cb(this[i], i));
-  }
-  return temp;
-};
+// Array.prototype.myMap = function (cb) {
+//   const temp = [];
+//   for (let i = 0; i < this.length; i++) {
+//     temp.push(cb(this[i], i));
+//   }
+//   return temp;
+// };
 
-let arr = [2, 5];
-let result = arr.myMap((num) => {
-  return num * num;
-});
-console.log(result);
+// let arr = [2, 5];
+// let result = arr.myMap((num) => {
+//   return num * num;
+// });
+// console.log(result);
+
+function* genrtate() {
+  console.log("first");
+  console.log("second");
+}
+let gen = genrtate();
+console.log(gen.next());
