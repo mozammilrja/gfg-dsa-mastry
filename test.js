@@ -372,9 +372,53 @@
 // });
 // console.log(result);
 
-function* genrtate() {
-  console.log("first");
-  console.log("second");
+// function* genrtate() {
+//   console.log("first");
+//   console.log("second");
+// }
+// let gen = genrtate();
+// console.log(gen.next());
+
+// Map polyfill
+// Array.prototype.myMap = function (cb) {
+//   let temp = [];
+//   for (let i = 0; i < this.length; i++) {
+//     temp.push(cb(this[i], i, this[i]));
+//   }
+//   return temp;
+// };
+// let nums = [1, 2, 3, 4];
+// let res = nums.myMap((item) => {
+//   return item * 2;
+// });
+
+// console.log(res);
+
+// input => computeAmount().lacs(15).crore(5).crore(2).crore(20).thosound(6).crore(7).value();
+//output 143545000
+
+// var obj = {
+//   helloWorld: function () {
+//     return "hello world" + this.name;
+//   },
+//   name: "Hello",
+// };
+
+// var obj2 = {
+//   helloWorld: obj.helloWorld(),
+//   name: "Bye",
+// };
+
+// console.log(obj2.helloWorld());
+// //output hello world bye
+
+function sumOfNumbers(str) {
+  let sum = 0;
+  let num = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    if (!isNaN(parseInt(str[i]))) {
+      num = num * 10 + parents(str[i]);
+    }
+  }
 }
-let gen = genrtate();
-console.log(gen.next());
