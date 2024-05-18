@@ -412,13 +412,57 @@
 // console.log(obj2.helloWorld());
 // //output hello world bye
 
-function sumOfNumbers(str) {
-  let sum = 0;
-  let num = 0;
+// function sumOfNumbers(str) {
+//   let sum = 0;
+//   let num = 0;
 
-  for (let i = 0; i < str.length; i++) {
-    if (!isNaN(parseInt(str[i]))) {
-      num = num * 10 + parents(str[i]);
-    }
-  }
-}
+//   for (let i = 0; i < str.length; i++) {
+//     if (!isNaN(parseInt(str[i]))) {
+//       num = num * 10 + parents(str[i]);
+//     }
+//   }
+// }
+
+// function LCS(s1, s2, m, n) {
+//   if (m === 0 || n === 0) return 0;
+
+//   if (s1[m - 1] === s2[n - 1]) {
+//     return 1 + LCS(s1, s2, m - 1, n - 1);
+//   } else {
+//     return Math.max(LCS(s1, s2, m - 1, n), LCS(s1, s2, m, n - 1));
+//   }
+// }
+// const s1 = "ABCBDAB";
+// const s2 = "BDCAB";
+// const m = s1.length;
+// const n = s2.length;
+// console.log(LCS(s1, s2, m, n)); // Output: 4 (LCS is "BCAB")
+
+// Create a promise
+// const fetchData = (isSuccess) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (isSuccess) {
+//         resolve("data is fetch successfuly");
+//       } else {
+//         reject("Error unable to fetch data");
+//       }
+//     });
+//   });
+// };
+
+// fetchData(false)
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// function Table(num, multiplier) {
+//   for (let i = 1; i <= num; i++) {
+//     console.log(`${i} * ${multiplier} = ${i * multiplier} `);
+//   }
+// }
+// Table(10,2);
+
