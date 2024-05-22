@@ -29,7 +29,7 @@ function twoSum(nums, target) {
 }
 
 // Example usage:
-const nums1 = [2, 7, 11, 15];
-const target1 = 9;
+const nums1 = [2, 5, 5, 11];
+const target1 = 10;
 console.log(twoSum(nums1, target1)); // Output: [0, 1]
 
