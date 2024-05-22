@@ -466,3 +466,15 @@
 // }
 // Table(10,2);
 
+// function duplicate(nums) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i - 1] === nums[i]) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// console.log(duplicate([1, 2, 3, 1, 2, 3]));
+
+ 
+}
