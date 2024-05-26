@@ -476,5 +476,33 @@
 // }
 // console.log(duplicate([1, 2, 3, 1, 2, 3]));
 
- 
+// function maxProfit(prices) {
+//   let left = 0;
+//   let right = 1;
+//   let maxProfit = 0;
+//   while (right < prices.length) {
+//     if (prices[left] < prices[right]) {
+//       let profit = prices[right] - prices[left];
+//       maxProfit = Math.max(maxProfit, profit);
+//     } else {
+//       left = right;
+//     }
+//     right++;
+//   }
+//   return maxProfit;
+// }
+// let prices = [10, 1, 5, 6, 7, 1];
+// console.log(maxProfit(prices));
+
+function maxSubArray(arr) {
+  let maxSum = arr[0];
+  let currentSum = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    for (let j = 0; j < i + 3; j++) {
+
+        maxSum = 
+    }
+  }
+  return maxSum;
 }
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
