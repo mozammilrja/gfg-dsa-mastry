@@ -20,11 +20,9 @@ console.log(maxProfit([7, 6, 4, 3, 1])); // Output: 0
 //using sliding window
 
 function maxProfit(prices) {
-  // Initialize variables
   let minPrice = Infinity;
   let maxProfit = 0;
 
-  // Iterate through the prices array
   for (const price of prices) {
     // Update minimum price
     minPrice = Math.min(minPrice, price);
@@ -33,7 +31,6 @@ function maxProfit(prices) {
     maxProfit = Math.max(maxProfit, price - minPrice);
   }
 
-  // Return the maximum profit
   return maxProfit;
 }
 
