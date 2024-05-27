@@ -494,15 +494,45 @@
 // let prices = [10, 1, 5, 6, 7, 1];
 // console.log(maxProfit(prices));
 
-function maxSubArray(arr) {
-  let maxSum = arr[0];
-  let currentSum = arr[0];
-  for (let i = 1; i < arr.length; i++) {
-    for (let j = 0; j < i + 3; j++) {
+// function maxSubArray(arr) {
+//   let maxSum = arr[0];
+//   let currentSum = arr[0];
+//   for (let i = 1; i < arr.length; i++) {
+//     for (let j = 0; j < i + 3; j++) {
 
-        maxSum = 
+//         maxSum =
+//     }
+//   }
+//   return maxSum;
+// }
+// console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+function isValid(s) {
+  if (s.length % 2 === 1) {
+    return false;
+  }
+  let stack = [];
+  const bracketsMap = new Map([
+    ["(", ")"],
+    ["[", "]"],
+    ["{", "}"],
+  ]);
+  for (const char of s) {
+    if (bracketsMap.has(char)) {
+      stack.push(char);
+    } else {
+      const lastBracket = stack.pop();
+      if (bracketsMap.get(lastBracket) !== char) {
+        return false;
+      }
     }
   }
-  return maxSum;
+  return stack.length === 0;
 }
-console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+// Example usage:
+const expression1 = "{[()]}";
+console.log(`${expression1} is balanced: ${isValid(expression1)}`); // Output: true
+
+const expression2 = "{[(])}";
+console.log(`${expression2} is balanced: ${isValid(expression2)}`); // Output: false
