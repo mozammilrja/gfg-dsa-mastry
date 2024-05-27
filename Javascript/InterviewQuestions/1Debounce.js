@@ -1,3 +1,5 @@
+//Easy
+
 function debounce(callback, delay, immediate = false) {
   let timer;
   return function (...args) {
