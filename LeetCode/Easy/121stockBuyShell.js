@@ -19,23 +19,23 @@ console.log(maxProfit([7, 6, 4, 3, 1])); // Output: 0
 
 //Using two pointers
 
-function maxProfit(prices) {
-  let left = 0;
-  let right = 1;
-  let maxProfit = 0;
-  while (right < prices.length) {
-    if (prices[left] < prices[right]) {
-      let profit = prices[right] - prices[left];
-      maxProfit = Math.max(maxProfit, profit);
-    } else {
-      left = right;
-    }
-    right++;
-  }
-  return maxProfit;
-}
-let prices = [10, 1, 5, 6, 7, 1];
-console.log(maxProfit(prices));
+// function maxProfit(prices) {
+//   let left = 0;
+//   let right = 1;
+//   let maxProfit = 0;
+//   while (right < prices.length) {
+//     if (prices[left] < prices[right]) {
+//       let profit = prices[right] - prices[left];
+//       maxProfit = Math.max(maxProfit, profit);
+//     } else {
+//       left = right;
+//     }
+//     right++;
+//   }
+//   return maxProfit;
+// }
+// let prices = [10, 1, 5, 6, 7, 1];
+// console.log(maxProfit(prices));
 
 //using sliding window
 

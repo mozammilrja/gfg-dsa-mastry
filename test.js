@@ -507,32 +507,42 @@
 // }
 // console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
-function isValid(s) {
-  if (s.length % 2 === 1) {
-    return false;
-  }
-  let stack = [];
-  const bracketsMap = new Map([
-    ["(", ")"],
-    ["[", "]"],
-    ["{", "}"],
-  ]);
-  for (const char of s) {
-    if (bracketsMap.has(char)) {
-      stack.push(char);
-    } else {
-      const lastBracket = stack.pop();
-      if (bracketsMap.get(lastBracket) !== char) {
-        return false;
-      }
-    }
-  }
-  return stack.length === 0;
+// function isValid(s) {
+//   if (s.length % 2 === 1) {
+//     return false;
+//   }
+//   let stack = [];
+//   const bracketsMap = new Map([
+//     ["(", ")"],
+//     ["[", "]"],
+//     ["{", "}"],
+//   ]);
+//   for (const char of s) {
+//     if (bracketsMap.has(char)) {
+//       stack.push(char);
+//     } else {
+//       const lastBracket = stack.pop();
+//       if (bracketsMap.get(lastBracket) !== char) {
+//         return false;
+//       }
+//     }
+//   }
+//   return stack.length === 0;
+// }
+
+// // Example usage:
+// const expression1 = "{[()]}";
+// console.log(`${expression1} is balanced: ${isValid(expression1)}`); // Output: true
+
+// const expression2 = "{[(])}";
+// console.log(`${expression2} is balanced: ${isValid(expression2)}`); // Output: false
+
+function merge(s1, s2) {
+  const res = [...s1, ...s2];
+  return res.sort((a, b) => a - b);
 }
 
-// Example usage:
-const expression1 = "{[()]}";
-console.log(`${expression1} is balanced: ${isValid(expression1)}`); // Output: true
+let s1 = [1, 2, 3, 4, 5];
+let s2 = [1, 2, 3, 4, 5, 4, 5];
 
-const expression2 = "{[(])}";
-console.log(`${expression2} is balanced: ${isValid(expression2)}`); // Output: false
+console.log(merge(s1, s2));
