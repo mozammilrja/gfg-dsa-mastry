@@ -12,3 +12,26 @@ function palindromeNumber(n) {
 console.log(palindromeNumber(12321));
 
 
+function isPalindromeNumber(num) {
+  // Convert the number to a string
+  const str = num.toString();
+  
+  // Use two pointers to compare characters
+  let left = 0;
+  let right = str.length - 1;
+  
+  while (left < right) {
+    if (str[left] !== str[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+  
+  return true;
+}
+
+// Example usage
+console.log(isPalindromeNumber(121));  // Output: true
+console.log(isPalindromeNumber(-121)); // Output: false
+console.log(isPalindromeNumber(10));   // Output: false

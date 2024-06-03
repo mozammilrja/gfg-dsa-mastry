@@ -11,3 +11,14 @@ function trailingZerosFactorial(n) {
 }
 
 console.log(trailingZerosFactorial(100));
+
+// recursive
+function trailingZeroesInFactorial(n) {
+  if (n < 5) return 0;
+  return Math.floor(n / 5) + trailingZeroesInFactorial(Math.floor(n / 5));
+}
+
+// Example usage:
+console.log(trailingZeroesInFactorial(5));    // Output: 1 (5! = 120)
+console.log(trailingZeroesInFactorial(10));   // Output: 2 (10! = 3628800)
+console.log(trailingZeroesInFactorial(25));   // Output: 6 (25! = 15511210043330985984000000)

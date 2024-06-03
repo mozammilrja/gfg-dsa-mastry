@@ -537,12 +537,186 @@
 // const expression2 = "{[(])}";
 // console.log(`${expression2} is balanced: ${isValid(expression2)}`); // Output: false
 
-function merge(s1, s2) {
-  const res = [...s1, ...s2];
-  return res.sort((a, b) => a - b);
+// function merge(s1, s2) {
+//   const res = [...s1, ...s2];
+//   return res.sort((a, b) => a - b);
+// }
+
+// let s1 = [1, 2, 3, 4, 5];
+// let s2 = [1, 2, 3, 4, 5, 4, 5];
+
+// console.log(merge(s1, s2));
+
+// class Node{
+//   constructor(data) {
+//     this.data = data;
+//     this.left = null
+//     this.right = null
+//    }
+// }
+
+// function Inorder(head, left) {
+
+// }
+
+// let head = new Node(10)
+// head.left = new Node(20)
+// head.right = new Node(30)
+// head.left.left = new Node(40)
+// head.right.right = new Node(50)
+
+// console.log(head)
+// itrative methods
+
+// function isprime(n) {
+//   if (n === 1) {
+//     return false;
+//   }
+
+//   for (let i = 2; i < n; i++) {
+//     if (n % i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(isprime(29));
+
+// function search(nums, target) {
+//   let low = 0;
+//   let high = nums.length;
+
+//   while (low <= high) {
+//     let mid = Math.floor(low + high) / 2;
+
+//     if (nums[mid] === target) {
+//       return mid;
+//     } else if (nums[mid] < target) {
+//       low = mid + 1;
+//     } else {
+//       high = mid - 1;
+//     }
+//   }
+//   return -1;
+// }
+// let num = [-1, 0, 3, 5, 9, 12];
+// let targets = 9;
+
+// console.log(search(num, targets));
+
+// function duplicate(nums) {
+//   let set = new Set();
+//   for (let i = 0; i < nums.length; i++) {
+//     if (set.has(nums[i])) {
+//       return true;
+//     }
+//     set.add(nums[i]);
+//   }
+//   return false;
+// }
+// console.log(duplicate([2, 3, 5,5]));
+
+// function search(nums, target) {
+//   let low = 0;
+//   let high = nums.length - 1;
+//   while (low <= high) {
+//     let mid = Math.floor((low + high) / 2);
+//     if (nums[mid] === target) {
+//       console.log("mid", mid);
+//       return mid;
+//     } else if (nums[mid] < target) {
+//       low = mid + 1;
+//     } else {
+//       high = mid - 1;
+//     }
+//   }
+//   return -1;
+// }
+// let num = [-1, 0, 3, 5, 9, 12];
+// let targets = 9;
+
+// console.log(search(num, targets));
+
+// const fetchdata = (isSuccess) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (isSuccess) {
+//         resolve("Data Fetch");
+//       } else {
+//         reject("Data not fetch");
+//       }
+//     }, 1000);
+//   });
+// };
+
+// const dataFetch = async(isSuccess) => {
+//   const data = await fetchdata(isSuccess);
+//   console.log(data)
+// }
+
+// dataFetch(true);
+
+// const fetchData = (isSuccess) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (isSuccess) {
+//         resolve("Data is fetch successfuly");
+//       } else {
+//         reject("Error unable to fetch data");
+//       }
+//     });
+//   });
+// };
+
+// fetchData(false)
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// function twoSum(nums, target) {
+//   let res = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] + nums[j] === target) {
+//         res.push(i,j);
+//       }
+//     }
+//   }
+//   return res;
+// }
+
+// console.log(twoSum([3, 4, 5, 6],10));
+
+// function stock(prices) {
+//   let price = prices;
+//   let maxProfit = 0;
+//   for (let i = 0; i < price.length; i++) {
+//     for (let j = i + 1; j < price.length; j++) {
+//       let profit = price[j] - price[i];
+//       if (profit > maxProfit) {
+//         maxProfit = profit;
+//       }
+//     }
+//   }
+//   return maxProfit;
+// }
+
+// console.log(stock([10, 1, 5, 6, 7, 1]));
+
+function stock(prices) {
+  let buy = 0;
+  let shell = prices.length;
+  let maxProfit = 0;
+  while (buy < shell) {
+    let profit = prices[buy] - prices[shell];
+    if (profit > maxProfit) {
+      maxProfit = profit;
+    }
+  }
+  return maxProfit;
 }
 
-let s1 = [1, 2, 3, 4, 5];
-let s2 = [1, 2, 3, 4, 5, 4, 5];
-
-console.log(merge(s1, s2));
+console.log(stock([10, 1, 5, 6, 7, 1]));
