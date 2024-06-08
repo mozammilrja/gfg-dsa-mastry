@@ -757,15 +757,26 @@
 // console.log(newLength); // Output: 2
 // console.log(nums); // Output: [2, 2, _, _]
 
-function removeDuplicate(nums) {
-  let res = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i - 1] !== nums[i]) {
-      res = nums[i];
-    }
-  }
-  return res;
-}
+// function removeDuplicate(nums) {
+//   let res = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i - 1] !== nums[i]) {
+//       res = nums[i];
+//     }
+//   }
+//   return res;
+// }
 
-let nums = [3, 1, 3, 4, 2];
-console.log(removeDuplicate(num));
+// let nums = [3, 1, 3, 4, 2];
+// console.log(removeDuplicate(nums));
+
+function lastWordLength(str) {
+  res = str.trim().split(" ");
+  let n = res[res.length - 1];
+  return n.length;
+}  res = str.trim().split(" ");
+  let n = res[res.length - 1];
+  return n.length;
+
+let str = "Hello World";
+console.log(lastWordLength(str));
