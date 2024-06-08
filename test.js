@@ -706,17 +706,66 @@
 
 // console.log(stock([10, 1, 5, 6, 7, 1]));
 
-function stock(prices) {
-  let buy = 0;
-  let shell = prices.length;
-  let maxProfit = 0;
-  while (buy < shell) {
-    let profit = prices[buy] - prices[shell];
-    if (profit > maxProfit) {
-      maxProfit = profit;
+// function stock(prices) {
+//   let buy = 0;
+//   let shell = prices.length;
+//   let maxProfit = 0;
+//   while (buy < shell) {
+//     let profit = prices[buy] - prices[shell];
+//     if (profit > maxProfit) {
+//       maxProfit = profit;
+//     }
+//   }
+//   return maxProfit;
+// }
+
+// console.log(stock([10, 1, 5, 6, 7, 1]));
+
+// function duplicate(nums) {
+//   let set = new Set();
+//   for (const num of nums) {
+//     if (set.has(num)) {
+//       return true;
+//     }
+//     set.add(num);
+//   }
+//   return -1;
+// }
+
+// console.log(duplicate([1, 2, 2, 3, 4, 5]));
+
+// function removeElement(nums, val) {
+//   let res = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== val) {
+//       nums[res] = nums[i];
+//       console.log(res);
+//       res++;
+//     }
+//   }
+//   return res;
+// }
+// let num = [3, 2, 2, 3]
+// let val = 3
+// let remove = removeElement(num, val);
+// console.log(remove);
+// console.log(num);
+
+// let nums = [3, 2, 2, 3];
+// let val = 3;
+// let newLength = removeElement(nums, val);
+// console.log(newLength); // Output: 2
+// console.log(nums); // Output: [2, 2, _, _]
+
+function removeDuplicate(nums) {
+  let res = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i - 1] !== nums[i]) {
+      res = nums[i];
     }
   }
-  return maxProfit;
+  return res;
 }
 
-console.log(stock([10, 1, 5, 6, 7, 1]));
+let nums = [3, 1, 3, 4, 2];
+console.log(removeDuplicate(num));
