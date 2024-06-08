@@ -9,7 +9,6 @@ function removeElement(nums, val) {
   return result;
 }
 
-const nums = [3, 2, 2, 3];
 const val = 3;
 const k = removeElement(nums, val);
 console.log(`Number of elements not equal to ${val}: ${k}`); // Output: 2
