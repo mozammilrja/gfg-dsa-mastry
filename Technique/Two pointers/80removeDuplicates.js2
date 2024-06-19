@@ -1,8 +1,7 @@
 function removeDuplicate(nums) {
   if (nums.length < 2) return 0;
-  let left = 2;
-  let right = 2;
-  let res = 0;
+  let left = 0;
+  let right = 0;
   while (right < nums.length) {
     let isQual = nums[left - 2] === nums[right];
     if (!isQual) {
