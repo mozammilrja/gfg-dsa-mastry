@@ -770,13 +770,86 @@
 // let nums = [3, 1, 3, 4, 2];
 // console.log(removeDuplicate(nums));
 
-function lastWordLength(str) {
-  res = str.trim().split(" ");
-  let n = res[res.length - 1];
-  return n.length;
-}  res = str.trim().split(" ");
-  let n = res[res.length - 1];
-  return n.length;
+// function lastWordLength(str) {
+//   res = str.trim().split(" ");
+//   let n = res[res.length - 1];
+//   return n.length;
+// }  res = str.trim().split(" ");
+//   let n = res[res.length - 1];
+//   return n.length;
 
-let str = "Hello World";
-console.log(lastWordLength(str));
+// let str = "Hello World";
+// console.log(lastWordLength(str));
+
+// async function sleep(millis) {
+//   await new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve();
+//     }, millis);
+//   });
+// }
+
+// let t = Date.now();
+// sleep(100).then(() => console.log(Date.now() - t)); // 100
+
+// var timeLimit = function (fn, t) {
+//   return async function (...args) {
+//     return new Promise((resolve, reject) => {
+//       let timmer = setTimeout(() => {
+//         reject("Time Limit Exceed");
+//       }, t);
+//       fn(...args)
+//         .then((result) => {
+//           clearTimeout(timmer);
+//           resolve(result);
+//         })
+//         .catch((err) => {
+//           clearTimeout(timmer);
+
+//           reject(err);
+//         });
+//     });
+//   };
+// };
+
+// const fn = async (n) => {
+//   await new Promise((res) => setTimeout(res, 100));
+//   return n * n;
+// };
+
+// const limited = timeLimit(fn, 50);
+// const start = performance.now();
+// limited(5)
+//   .then((res) => {
+//     console.log({ resolved: res, time: Math.floor(performance.now() - start) });
+//   })
+//   .catch((err) => {
+//     console.log({ rejected: err, time: Math.floor(performance.now() - start) });
+//   });
+
+// function reverseStr(str) {
+//   let left = 0;
+//   let right = str.length - 1;
+
+//   while (left < right) {
+//     [str[left], str[right]] = [str[right], str[left]];
+//     left++;
+//     right--;
+//   }
+//   return str;
+// }
+// let s = ["H", "a", "n", "n", "a", "h"];
+// console.log(reverseStr(s));
+
+function removeDuplicate(arr) {
+  let res = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[res - 1] !== arr[i]) {
+      arr[res] = arr[i];
+      res++;
+    }
+  }
+  return arr.slice(0, res);
+}
+let nums = [1, 1, 2];
+console.log(removeDuplicate(nums));
