@@ -841,15 +841,37 @@
 // let s = ["H", "a", "n", "n", "a", "h"];
 // console.log(reverseStr(s));
 
-function removeDuplicate(arr) {
-  let res = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[res - 1] !== arr[i]) {
-      arr[res] = arr[i];
-      res++;
+// function removeDuplicate(arr) {
+//   let res = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[res - 1] !== arr[i]) {
+//       arr[res] = arr[i];
+//       res++;
+//     }
+//   }
+//   return arr.slice(0, res);
+// }
+// let nums = [1, 1, 2];
+// console.log(removeDuplicate(nums));
+
+function searchInsert(nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    if (nums[mid] === target) {
+      return mid;
+    } else if (nums[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
     }
   }
-  return arr.slice(0, res);
+  return left;
 }
-let nums = [1, 1, 2];
-console.log(removeDuplicate(nums));
+
+let nums = [1, 3, 5, 6];
+let target = 2;
+
+console.log(searchInsert(nums, target));
