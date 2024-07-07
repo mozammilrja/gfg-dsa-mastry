@@ -25,6 +25,9 @@ const handleScroll = () => {
   console.log("Scroll event triggered");
 };
 
+
+
+
 // Debounce the handleScroll function
 const debouncedHandleScroll = debounce(handleScroll, 1000, true);
 

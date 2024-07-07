@@ -48,4 +48,6 @@ function primeNumbers(n) {
   return true;
 }
 
+
+
 console.log(primeNumbers(9));

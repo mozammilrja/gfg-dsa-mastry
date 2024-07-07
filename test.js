@@ -854,24 +854,55 @@
 // let nums = [1, 1, 2];
 // console.log(removeDuplicate(nums));
 
-function searchInsert(nums, target) {
-  let left = 0;
-  let right = nums.length - 1;
+// function searchInsert(nums, target) {
+//   let left = 0;
+//   let right = nums.length - 1;
 
-  while (left <= right) {
-    let mid = Math.floor((left + right) / 2);
-    if (nums[mid] === target) {
-      return mid;
-    } else if (nums[mid] < target) {
-      left = mid + 1;
-    } else {
-      right = mid - 1;
+//   while (left <= right) {
+//     let mid = Math.floor((left + right) / 2);
+//     if (nums[mid] === target) {
+//       return mid;
+//     } else if (nums[mid] < target) {
+//       left = mid + 1;
+//     } else {
+//       right = mid - 1;
+//     }
+//   }
+//   return left;
+// }
+
+// let nums = [1, 3, 5, 6];
+// let target = 2;
+
+// console.log(searchInsert(nums, target));
+
+// function primeNumbers(nums) {
+//   for (let i = 2; i < nums.length; i++) {
+//     if (nums % i === 0) {
+//       console.log(i)
+//       return false;
+//     }
+//   }
+//   return nums;
+// }
+
+// let num = [2, 3, 54, 5, 6, 3, 6, 7]
+
+// console.log(primeNumbers(9));
+
+// function infiniteCurring(a) {
+//   return function b(params) {
+    
+//   }
+// }
+
+
+function sum(a) {
+  return function(b){
+    if(!b){
+        return a;
     }
+    return sum(a+b);
   }
-  return left;
 }
-
-let nums = [1, 3, 5, 6];
-let target = 2;
-
-console.log(searchInsert(nums, target));
+console.log(sum(1)(2)(3)(4)(5)(6)());  //21
