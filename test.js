@@ -892,17 +892,129 @@
 
 // function infiniteCurring(a) {
 //   return function b(params) {
-    
+
 //   }
 // }
 
+// function sum(a) {
+//   return function(b){
+//     if(!b){
+//         return a;
+//     }
+//     return sum(a+b);
+//   }
+// }
+// console.log(sum(1)(2)(3)(4)(5)(6)());  //21
 
-function sum(a) {
-  return function(b){
-    if(!b){
-        return a;
-    }
-    return sum(a+b);
+// function isprime(n) {
+//   if (n < 0) {
+//     return 1;
+//   }
+
+//   for (let i = 2; i * i < n; i++) {
+//     if (n % i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(isprime(5));
+
+// function sumUnderModulo(a, b) {
+//   let Mod = 1000000007;
+
+//   // let sum = (BigInt(a) + BigInt(b)) % BigInt(Mod);
+//   let sum = (BigInt(a) + BigInt(b)) % BigInt(Mod);
+
+//   return sum.toString();
+// }
+
+// let a = 9223372036854775807;
+// let b = 9223372036854775807;
+// console.log(sumUnderModulo(a, b));
+
+// function sumUnderModulo(a, b) {
+//   const MOD = BigInt(1000000007);
+
+// Convert a and b to BigInt
+//   const bigA = BigInt(a);
+//   const bigB = BigInt(b);
+
+//   // Calculate the sum
+//   const sum = (bigA + bigB);
+
+//   // Apply modulo operation
+//   const result = sum % MOD;
+
+//   // Convert the result to string
+//   return result.toString();
+// }
+
+// let a = 9223372036854775807;
+// let b = 9223372036854775807;
+// console.log(sumUnderModulo(a, b)); // Should output 582344006
+
+// function fibonacci(n) {
+//   if (n <= 1) {
+//     return n;
+//   }
+
+//   return fibonacci(n - 1) + fibonacci(n - 2);
+// }
+
+// console.log(fibonacci(20));
+
+// function countDigits(n) {
+//   let count = 0;
+//   while (n > 0) {
+//     n = Math.floor(n / 10);
+//     count++;
+//   }
+//   return count;
+// }
+// console.log(countDigits(22))
+
+// function countDigits(n) {
+//   if (n == 0) {
+//     return 0;
+//   }
+//   return 1 + countDigits(Math.floor(n / 10));
+// }
+// console.log(countDigits(22));
+
+// function Power(n, p) {
+//   if (p == 0) return 1;
+//   // if (p == 1) return n;
+//   return n * Power(n, p - 1);
+// }
+
+// console.log(Power(9, 9));
+
+// function digitalRoot(n) {
+//   while (n >= 10) {
+//     let sum = 0;
+//     while (n > 0) {
+//       sum += n % 10;
+//       n = Math.floor(n / 10);
+//     }
+//     n = sum;
+//   }
+
+//   return n;
+// }
+// console.log(digitalRoot(99999));
+
+function digitalRoot(n) {
+  if (n < 10) {
+    return n;
   }
+  let sum = 0;
+  while (n > 0) {
+    sum += n % 10;
+    n = Math.floor(n / 10);
+  }
+
+  return digitalRoot(sum);
 }
-console.log(sum(1)(2)(3)(4)(5)(6)());  //21
+console.log(digitalRoot(99999));
