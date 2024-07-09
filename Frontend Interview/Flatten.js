@@ -42,5 +42,9 @@ const arr = [
   18,
   [19, [20, [21, [22, [23, [24, [[[[[25]]]]]]]]]]],
 ];
+
+
+
+
 const flattened = [...flatten(arr)];
 console.log(flattened); // Output: [1, 2, 3, 4, 5]

@@ -1019,20 +1019,99 @@
 // }
 // console.log(digitalRoot(99999));
 
-function reverseSubArraysOfSizeK(arr, k) {
-  for (let i = 0; i < arr.length; i += k) {
-    let left = i;
-    let right = Math.min(i + k - 1, arr.length - 1);
+// function reverseSubArraysOfSizeK(arr, k) {
+//   for (let i = 0; i < arr.length; i += k) {
+//     let left = i;
+//     let right = Math.min(i + k - 1, arr.length - 1);
 
-    while (left < right) {
-      [arr[left], arr[right]] = [arr[right], arr[left]];
-      left++;
-      right--;
-    }
-  }
-  return arr;
-}
-let arr = [1, 2, 3, 4, 5];
-let k = 3;
+//     while (left < right) {
+//       [arr[left], arr[right]] = [arr[right], arr[left]];
+//       left++;
+//       right--;
+//     }
+//   }
+//   return arr;
+// }
+// let arr = [1, 2, 3, 4, 5];
+// let k = 3;
 
-console.log(reverseSubArraysOfSizeK(arr, k)); // [3, 2, 1, 5, 4]
+// console.log(reverseSubArraysOfSizeK(arr, k)); // [3, 2, 1, 5, 4]
+
+// input
+
+// console.log(computeAmount().lacs(15).crore(5).crore(2).lacs(20).thousand(45).crore(7).value)A)
+
+// class ComputeAmount {
+//   constructor() {
+//     this.amount = 0;
+//   }
+
+//   lacs(value) {
+//     this.amount += value * 100_000; // 1 lac = 100,000
+//     return this;
+//   }
+
+//   crore(value) {
+//     this.amount += value * 10_000_000; // 1 crore = 10,000,000
+//     return this;
+//   }
+
+//   thousand(value) {
+//     this.amount += value * 1_000; // 1 thousand = 1,000
+//     return this;
+//   }
+
+//   get value() {
+//     return this.amount;
+//   }
+
+//   format() {
+//     return new Intl.NumberFormat().format(this.amount); // Format as a string with commas
+//   }
+// }
+
+// // Example usage:
+// const example1 = new ComputeAmount()
+//   .crore(10)
+//   .lacs(30)
+//   .thousand(45)
+//   .crore(1)
+//   .format();  // Should output "143,545,000"
+// console.log(example1);
+
+// function Calculate() {
+//   let totalAmount = 0;
+
+//   this.lacs = function (value) {
+//     this.totalAmount += value * 100_000; // 1 lac = 100,000
+//     return this;
+//   };
+
+//   this.crore = function (value) {
+//     this.totalAmount += value * 10_000_000; // 1 crore = 10,000,000
+//     return this;
+//   };
+
+//   this.thousand = function (value) {
+//     this.totalAmount += value * 1_000; // 1 thousand = 1,000
+//     return this;
+//   };
+
+//   this.value = function () {
+//     return this.totalAmount;
+//   };
+// }
+
+// function computeAmount() {
+//   return new Calculate();
+// }
+
+// const res = new computeAmount()
+//   .crore(10)
+//   .lacs(30)
+//   .thousand(45)
+//   .crore(1)
+//   .format();
+// console.log(res);
+
+
