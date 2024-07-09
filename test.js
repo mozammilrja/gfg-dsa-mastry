@@ -1005,16 +1005,34 @@
 // }
 // console.log(digitalRoot(99999));
 
-function digitalRoot(n) {
-  if (n < 10) {
-    return n;
-  }
-  let sum = 0;
-  while (n > 0) {
-    sum += n % 10;
-    n = Math.floor(n / 10);
-  }
+// function digitalRoot(n) {
+//   if (n < 10) {
+//     return n;
+//   }
+//   let sum = 0;
+//   while (n > 0) {
+//     sum += n % 10;
+//     n = Math.floor(n / 10);
+//   }
 
-  return digitalRoot(sum);
+//   return digitalRoot(sum);
+// }
+// console.log(digitalRoot(99999));
+
+function reverseSubArraysOfSizeK(arr, k) {
+  for (let i = 0; i < arr.length; i += k) {
+    let left = i;
+    let right = Math.min(i + k - 1, arr.length - 1);
+
+    while (left < right) {
+      [arr[left], arr[right]] = [arr[right], arr[left]];
+      left++;
+      right--;
+    }
+  }
+  return arr;
 }
-console.log(digitalRoot(99999));
+let arr = [1, 2, 3, 4, 5];
+let k = 3;
+
+console.log(reverseSubArraysOfSizeK(arr, k)); // [3, 2, 1, 5, 4]

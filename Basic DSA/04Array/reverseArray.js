@@ -16,5 +16,6 @@ function reverceArr(arr) {
     low++;
     high--;
   }
+  return arr;
 }
 console.log(reverceArr([1, 2, 3, 4, 5]));
