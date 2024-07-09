@@ -1,10 +1,10 @@
 import React from "react";
-import Accordian from "./Components/Accordian/Accordian";
+import Todo from "./Components/Todo/Todo";
 
 const App = () => {
   return (
     <div>
-      <Accordian />
+      <Todo />
     </div>
   );
 };
