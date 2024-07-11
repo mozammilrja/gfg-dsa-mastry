@@ -1,34 +1,89 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+
+//create custom hooks
+
+// const useHandleToggle = () => {
+//   const [isEditing, setIsEditing] = useState(null);
+
+//   const startEditing = (index) => setIsEditing(index);
+//   const stopEditing = () => setIsEditing(null);
+
+//   return {
+//     isEditing,
+//     startEditing,
+//     stopEditing,
+//   };
+// };
 
 const Todo = () => {
-  const [data, setData] = useState("");
-  console.log("data", data);
+  const [data, setData] = useState([]);
+  const [isEditing, setIsEditing] = useState(null);
+  const [editText, setEditText] = useState("");
+  let todoInput = useRef();
   const fetchData = async () => {
-    await fetch("https://dummyjson.com/todos")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-          setData(data.todos);
-          console.log("data.todos", data.todos);
-        }
-      });
+    const res = await fetch("https://dummyjson.com/todos");
+    if (res.status === 200) {
+      const data = await res.json();
+      setData(data?.todos);
+    }
   };
 
   useEffect(() => {
     fetchData();
   }, []);
+
+  const addTask = () => {
+    const newData = {
+      id: data.length + 1,
+      todo: todoInput.current.value,
+      completed: false,
+    };
+    setData([newData, ...data]);
+  };
+
+  const startEditing = (index) => {
+    setIsEditing(index);
+    setEditText(data[index].todo);
+  };
+
+  const saveEdit = (index) => {
+    const updatedData = [...data];
+    updatedData[index].todo = editText;
+    setData(updatedData);
+    setIsEditing(null);
+    setEditText("");
+  };
+
   return (
     <div>
       <h1>Todo</h1>
-
-      {data?.map((item, index) => (
-        <ul key={index}>
-          <li>
-            <sp>{item.id}</sp>
-            {item.todo}
+      <input type='text' ref={todoInput} />
+      <button onClick={addTask}>Add</button>
+      <ul>
+        {data?.map((item, index) => (
+          <li key={index}>
+            {isEditing === index ? (
+              <>
+                <input
+                  type='text'
+                  value={editText}
+                  onChange={(e) => setEditText(e.target.value)}
+                />
+                <button type='text' onClick={() => saveEdit(index)}>
+                  save
+                </button>
+              </>
+            ) : (
+              <>
+                <span>{item.id}</span> {item?.todo}
+                <button type='text' onClick={() => startEditing(index)}>
+                  edit
+                </button>
+              </>
+            )}
           </li>
-        </ul>
-      ))}
+        ))}
+      </ul>
     </div>
   );
 };
