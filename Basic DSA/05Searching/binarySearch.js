@@ -17,25 +17,34 @@ function binarySearch(nums, target) {
 console.log(binarySearch([-1, 0, 3, 5, 9, 12], 9)); //output 4
 
 
-// linearSearch 
-// function search(nums, N, TARGET) {
-//   for (let i = 0; i < N; i++) {
-//     if (nums[i] === TARGET) {
-//       return i; // Return the indetarget if element is found
-//     }
-//   }
-//   return -1; // Return -1 if element is not found
-// }
+// recursive
+function binarySearch(arr, target, start = 0, end = arr.length - 1) {
+  // Base case: if the range is invalid
+  if (start > end) {
+    return -1;
+  }
 
-// // Etargetample usage:
-// // let nums1 = [1, 2, 3, 4];
-// let nums1 = [1, 10, 10, 10, 20, 20, 40];
+  // Calculate the middle index
+  const mid = Math.floor((start + end) / 2);
 
-// let N1 = nums1.length;
-// let TARGET1 = 4;
-// console.log(search(nums1, N1, TARGET1)); // Output: 2
+  // Check if the middle element is the target
+  if (arr[mid] === target) {
+    return mid;
+  }
 
-// let nums2 = [1, 2, 3, 4, 5];
-// let N2 = nums2.length;
-// let TARGET2 = 5;
-// console.log(search(nums2, N2, TARGET2)); // Output: 4
+  // If the target is less than the middle element, search the left half
+  if (target < arr[mid]) {
+    return binarySearch(arr, target, start, mid - 1);
+  }
+
+  // If the target is greater than the middle element, search the right half
+  return binarySearch(arr, target, mid + 1, end);
+}
+
+// Example usage:
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const target = 5;
+const result = binarySearch(arr, target);
+console.log(result); // Output: 4
+
+
