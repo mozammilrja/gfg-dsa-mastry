@@ -3,7 +3,7 @@ function insertionSort(arr) {
   for (let i = 0; i < n; i++) {
     let current = arr[i];
     let j = i - 1;
-
+    //Sort in the ascending order
     while (j >= 0 && arr[j] > current) {
       arr[j + 1] = arr[j];
       j--;

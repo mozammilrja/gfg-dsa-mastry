@@ -17,5 +17,5 @@ function missingNumer(nums) {
   }
   return res;
 }
-let arr = [3, 0, 1];
+let arr = [2, 3, 4, 7, 11];
 console.log(missingNumer(arr)); //output 2

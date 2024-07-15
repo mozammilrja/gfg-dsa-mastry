@@ -1114,4 +1114,63 @@
 //   .format();
 // console.log(res);
 
+// function findKthPositive(nums, k) {
+//   let left = 0;
+//   let right = nums.length - 1;
+//   while (left <= right) {
+//     let mid = Math.floor((left + right) / 2);
+//     if (nums[mid] - mid - 1 < k) {
+//       left = mid + 1;
+//     } else {
+//       right = mid - 1;
+//     }
+//   }
+//   return left + k;
+// }
+// let arr = [2, 3, 4, 7, 11];
+// let k = 5;
 
+// console.log(findKthPositive(arr, k)); // Output: 9
+
+// function buubleSort(arr) {
+//   let n = arr.length;
+
+//   for (let i = 0; i < n - 1; i++) {
+//     for (let j = 0; j < n - i - 1; j++) {
+//       if (arr[j] > arr[j + 1]) {
+//         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+//       }
+//     }
+//   }
+//   return arr;
+// }
+
+// let arr = [50, 96, 756, 65, 66, 683];
+
+// console.log(buubleSort(arr));
+
+// console.log('arr', arr)
+
+//Optimize
+function buubleSort(arr) {
+  let n = arr.length;
+  let swapped = false;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        swapped = true;
+      }
+    }
+    if (!swapped) {
+      break;
+    }
+  }
+  return arr;
+}
+
+let arr = [50, 96, 756, 65, 66, 683];
+
+console.log(buubleSort(arr));
+
+console.log("arr", arr);
