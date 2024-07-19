@@ -1,0 +1,46 @@
+class MyHash {
+  constructor(b) {
+    // Initialize the number of buckets and create an array of empty lists.
+    this.BUCKET = b;
+    this.table = [];
+    for (let i = 0; i < this.BUCKET; i++) {
+      this.table[i] = [];
+    }
+  }
+
+  // Insert key into the hash table.
+  insert(k) {
+    let i = k % this.BUCKET;  // Compute hash index.
+    this.table[i].push(k);  // Add key to the corresponding bucket.
+  }
+
+  // Search for key in the hash table.
+  search(k) {
+    let i = k % this.BUCKET;  // Compute hash index.
+    for (let j = 0; j < this.table[i].length; j++) {
+      if (this.table[i][j] === k) return true;  // Key found.
+    }
+    return false;  // Key not found.
+  }
+
+  // Remove key from the hash table.
+  remove(k) {
+    let i = k % this.BUCKET;  // Compute hash index.
+    for (let j = 0; j < this.table[i].length; j++) {
+      if (this.table[i][j] === k) {
+        this.table[i].splice(j, 1);  // Remove key from the bucket.
+        return;
+      }
+    }
+  }
+}
+
+// Example usage:
+let mh = new MyHash(7);
+mh.insert(10);
+mh.insert(20);
+mh.insert(15);
+mh.insert(7);
+console.log(mh.search(10)); // true
+mh.remove(15);
+console.log(mh.search(15)); // false
