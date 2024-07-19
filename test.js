@@ -1152,25 +1152,54 @@
 // console.log('arr', arr)
 
 //Optimize
-function buubleSort(arr) {
-  let n = arr.length;
-  let swapped = false;
-  for (let i = 0; i < n - 1; i++) {
-    for (let j = 0; j < n - i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-        swapped = true;
-      }
-    }
-    if (!swapped) {
-      break;
-    }
+// function buubleSort(arr) {
+//   let n = arr.length;
+//   let swapped = false;
+//   for (let i = 0; i < n - 1; i++) {
+//     for (let j = 0; j < n - i - 1; j++) {
+//       if (arr[j] > arr[j + 1]) {
+//         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+//         swapped = true;
+//       }
+//     }
+//     if (!swapped) {
+//       break;
+//     }
+//   }
+//   return arr;
+// }
+
+// let arr = [50, 96, 756, 65, 66, 683];
+
+// console.log(buubleSort(arr));
+
+// console.log("arr", arr);
+
+// const curryFn = () => {
+//   let prevSum = 0;
+//   return (newVal = 0) => {
+//     prevSum += newVal;
+//     return prevSum;
+//   };
+// };
+
+// const sum = curryFn();
+// console.log(sum(1)); // Output: 1 (previous sum + 1)
+// console.log(sum(3)); // Output: 4 (previous sum + 3)
+// console.log(sum(3)); // Output: 7 (previous sum + 3)
+// console.log(sum(4)); // Output: 11 (previous sum + 4)
+// console.log(sum()); // Output: 11 (current sum without any new value)
+
+function getConcatenation(nums) {
+  let n = nums.length;
+  let res = new Array(2 * n);
+  for (let i = 0; i < n; i++) {
+    res[i] = nums[i];
+    res[i + n] = nums[i];
   }
-  return arr;
+  return res;
 }
 
-let arr = [50, 96, 756, 65, 66, 683];
+let num = [1, 2, 1]
 
-console.log(buubleSort(arr));
-
-console.log("arr", arr);
+console.log(getConcatenation(num))

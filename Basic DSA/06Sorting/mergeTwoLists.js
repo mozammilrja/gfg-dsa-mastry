@@ -54,6 +54,7 @@ function mergeArrays(arr1, arr2, arr3) {
   const n2 = arr2.length;
   const n3 = arr3.length;
   const arr4 = new Array(n1 + n2 + n3);
+
   let i = 0,
     j = 0,
     k = 0,
@@ -72,17 +73,17 @@ function mergeArrays(arr1, arr2, arr3) {
 
   // Merge the remaining elements of arr1 and arr2
   while (i < n1 && j < n2) {
-    arr4[m++] = (arr1[i] < arr2[j]) ? arr1[i++] : arr2[j++];
+    arr4[m++] = arr1[i] < arr2[j] ? arr1[i++] : arr2[j++];
   }
 
   // Merge the remaining elements of arr2 and arr3
   while (j < n2 && k < n3) {
-    arr4[m++] = (arr2[j] < arr3[k]) ? arr2[j++] : arr3[k++];
+    arr4[m++] = arr2[j] < arr3[k] ? arr2[j++] : arr3[k++];
   }
 
   // Merge the remaining elements of arr1 and arr3
   while (i < n1 && k < n3) {
-    arr4[m++] = (arr1[i] < arr3[k]) ? arr1[i++] : arr3[k++];
+    arr4[m++] = arr1[i] < arr3[k] ? arr1[i++] : arr3[k++];
   }
 
   // Add the remaining elements of arr1, if any
@@ -99,8 +100,9 @@ function mergeArrays(arr1, arr2, arr3) {
   while (k < n3) {
     arr4[m++] = arr3[k++];
   }
-
-  return arr4;
+  let res = arr4.sort((a, b) => a - b);
+  console.log("arr4", res);
+  return res;
 }
 
 // Test cases
