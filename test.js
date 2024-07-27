@@ -1190,16 +1190,70 @@
 // console.log(sum(4)); // Output: 11 (previous sum + 4)
 // console.log(sum()); // Output: 11 (current sum without any new value)
 
-function getConcatenation(nums) {
-  let n = nums.length;
-  let res = new Array(2 * n);
-  for (let i = 0; i < n; i++) {
-    res[i] = nums[i];
-    res[i + n] = nums[i];
+// function getConcatenation(nums) {
+//   let n = nums.length;
+//   let res = new Array(2 * n);
+//   for (let i = 0; i < n; i++) {
+//     res[i] = nums[i];
+//     res[i + n] = nums[i];
+//   }
+//   return res;
+// }
+
+// let num = [1, 2, 1]
+
+// console.log(getConcatenation(num))
+
+// function twoSum(nums, target) {
+//   let res = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] + nums[j] === target) {
+//         res.push(i + 1, j + 1);
+//       }
+//     }
+//   }
+//   return res;
+// }
+// let numbers = [-1, 0];
+// let target = -1;
+
+// console.log(twoSum(numbers, target));
+
+// function twoSum(nums, target) {
+//   let left = 0;
+//   let right = nums.length - 1;
+
+//   while (left < right) {
+//     let sum = nums[left] + nums[right];
+//     if (sum === target) {
+//       return [left + 1, right + 1];
+//     }
+//     if (sum < target) {
+//       left++;
+//     } else {
+//       right--;
+//     }
+//   }
+//   return -1;
+// }
+// let numbers = [2, 3, 4];
+// let target = 6;
+
+// console.log(twoSum(numbers, target));
+
+function singleNumber(nums) {
+  let res = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === nums[i-1]) {
+     console.log(i)
+    } else {
+      res++;
+    }
+
   }
   return res;
 }
 
-let num = [1, 2, 1]
-
-console.log(getConcatenation(num))
+let nums = [2, 2, 1];
+console.log(singleNumber(nums));
