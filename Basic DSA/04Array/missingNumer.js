@@ -1,4 +1,4 @@
-function missingNumer(arr) {
+function missingNumer(nums) {
     let res = nums.length;
     for (let i = 0; i < nums.length; i++) {
       res += i - nums[i];
