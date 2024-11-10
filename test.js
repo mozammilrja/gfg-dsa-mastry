@@ -1242,18 +1242,70 @@
 
 // console.log(twoSum(numbers, target));
 
-function singleNumber(nums) {
-  let res = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === nums[i-1]) {
-     console.log(i)
-    } else {
-      res++;
-    }
+// function singleNumber(nums) {
+//   let res = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === nums[i-1]) {
+//      console.log(i)
+//     } else {
+//       res++;
+//     }
 
-  }
-  return res;
+//   }
+//   return res;
+// }
+
+// let nums = [2, 2, 1];
+// console.log(singleNumber(nums));
+
+// function findDuplicate(nums) {
+//   nums.sort((a, b) => a - b);
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i - 1] === nums[i]) {
+//       return nums[i];
+//     }
+//   }
+//   return -1;
+// }
+// const arr = [3, 1, 3, 4, 2];
+// const resultLength = findDuplicate(arr);
+
+// console.log(resultLength);
+
+// function reversestr(str) {
+//   let word = str.split(" ");
+
+//   console.log("word", word);
+//   let left = 0;
+//   let right = word.length - 1;
+//   while (right > left) {
+//     [word[left], word[right]] = [word[right], word[left]];
+//     left++;
+//     right--;
+//   }
+//   return word.join(" ");
+// }
+
+// let str = "Hello World from JavaScript";
+
+// console.log(reversestr(str));
+
+// function findDuplicate(nums) {
+//   nums.sort((a, b) => a - b);
+//   let res = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i - 1] === nums[i]) {
+//       res.push(nums[i]);
+//     }
+//   }
+//   return res;
+// }
+
+// const arr = [3, 1, 3, 4, 4, 2, 5, 6, 6, 7, 7];
+// console.log(findDuplicate(arr));
+
+
+
+function findMissingNo(nums) {
+  
 }
-
-let nums = [2, 2, 1];
-console.log(singleNumber(nums));
