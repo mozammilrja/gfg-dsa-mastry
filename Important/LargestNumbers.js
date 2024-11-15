@@ -8,29 +8,20 @@
 //     return result;
 // }
 // console.log(LargestNumbers([3, 6, 2, 56, 32, 5, 89, 32]));
-function FourLargestNumbers(arr) {
+function LargestNumbers(nums) {
   let largest = 0;
   let secondLargest = 0;
-  let thirdLargest = 0;
-  let forthLargest = 0;
-
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > largest) {
-      forthLargest = thirdLargest;
-      thirdLargest = secondLargest;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > largest) {
       secondLargest = largest;
-      largest = arr[i];
-    } else if (arr[i] > secondLargest) {
-      forthLargest = thirdLargest;
-      thirdLargest = secondLargest;
-      secondLargest = arr[i];
-    } else if (arr[i] > thirdLargest) {
-      forthLargest = thirdLargest;
-      thirdLargest = arr[i];
-    } else if (arr[i] > forthLargest) {
-      forthLargest = arr[i];
+      largest = nums[i];
+    } else if (nums[i] > secondLargest) {
+      secondLargest = nums[i];
     }
   }
-  return forthLargest;
+  return secondLargest;
 }
-console.log(FourLargestNumbers([3, 6, 2, 56, 32, 5, 89, 32]));
+
+let num = [1, 3, 4, 6, 7];
+
+console.log(LargestNumbers(num));
