@@ -1304,8 +1304,128 @@
 // const arr = [3, 1, 3, 4, 4, 2, 5, 6, 6, 7, 7];
 // console.log(findDuplicate(arr));
 
+// function findMissingNo(nums) {
+//   let n = nums.length;
+//   let sum = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     sum += nums[i];
+//   }
+//   let miss = (n * (n + 1)) / 2;;
+//   console.log("miss", miss);
+//   return miss - sum;
+// }
+// const arr = [3, 1];
+// console.log(findMissingNo(arr));
 
+// function findDuplicate(nums) {
+//   let set = new Set();
+//   let res = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     if (set.has(nums[i])) {
+//       res.push(nums[i]);
+//     }
+//     set.add(nums[i]);
+//     }
+//     return res
+// }
 
-function findMissingNo(nums) {
-  
+// const arr = [3, 1, 3, 4, 4, 2, 5, 6, 6, 7, 7];
+// console.log(findDuplicate(arr));
+
+// function missingNumber(nums) {
+//   let n = nums.length;
+//   let sum = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     n += i - nums[i];
+//   }
+//   return n;
+// }
+
+// console.log(missingNumber([0, 2]));
+
+//  callback function
+// const fruits = ["Apple", "Mango", "Chocolate"];
+
+// const annimateAll = (animate) => {
+//   console.log("Starting");
+//   setTimeout(() => {
+//     animate(fruits[0]);
+//     setTimeout(() => {
+//       animate(fruits[1]);
+//       setTimeout(() => {
+//         animate(fruits[2]);
+//       }, 1000);
+//     }, 2000);
+//   }, 3000);
+// };
+
+// const animate = (fruits) => {
+//   console.log(fruits + " is being animated");
+// };
+
+// annimateAll(animate);
+
+// function secondLargestNumbers(nums) {
+//   let largest = 0;
+//   let second = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] > largest) {
+//       largest = nums[i];
+//     } else if (nums[i] < largest) {
+//       second = largest;
+//       second = nums[i];
+//     }
+//   }
+//   return second;
+// }
+
+// console.log(secondLargestNumbers([1, 7, 2]));
+
+// function Calculate(x) {
+//   multiply = (y) => {
+//     return x * y;
+//   };
+//   return multiply;
+// }
+
+// const calculate = Calculate(3);
+// const calculate2 = Calculate(4);
+
+// console.log("calculate", calculate(3));
+
+// let numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// function calculateAge(total, age) {
+//   return total + age;
+// }
+// let res = numbers.reduce(calculateAge);
+// console.log("res", res);
+
+// function reverseStr(str) {
+//   let left = 0;
+//   let right = str.length - 1;
+//   while (left < right) {
+//     [str[left], str[right]] = [str[right], str[left]];
+//     left++;
+//     right--;
+//   }
+//   return str;
+// }
+
+// console.log(reverseStr(["hello", "world"]));
+
+function removeDuplicate(nums) {
+  let set = new Set();
+  let count = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (!set.has([i])) {
+      set.add(i);
+      count.push(i);
+    }
+  }
+  return count;
 }
+
+const arr = [1, 1, 4, 5, 6, 6, 7, 7, 8, 8];
+const resultLength = removeDuplicate(arr);
+console.log(resultLength); // Output: [1, 4, 5, 6, 7, 8]

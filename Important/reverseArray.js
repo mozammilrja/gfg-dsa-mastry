@@ -26,7 +26,7 @@ function reverceArr(arr) {
     low++;
     high--;
   }
-   return arr
+  return arr;
 }
 console.log(reverceArr([1, 2, 3, 4, 5]));
 console.log(reverceArr(["a", "b", "c", "c", "raja", "raja"]));
