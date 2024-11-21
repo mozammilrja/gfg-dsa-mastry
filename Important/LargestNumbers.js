@@ -8,18 +8,20 @@
 //     return result;
 // }
 // console.log(LargestNumbers([3, 6, 2, 56, 32, 5, 89, 32]));
-function secondLargestNumbers(nums) {
+function LargestNumbers(nums) {
   let largest = 0;
-  let second = 0;
+  let secondLargest = 0;
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] > largest) {
+      secondLargest = largest;
       largest = nums[i];
-    } else if (nums[i] < largest) {
-      second = largest;
-      second = nums[i];
+    } else if (nums[i] > secondLargest) {
+      secondLargest = nums[i];
     }
   }
-  return second;
+  return secondLargest;
 }
 
-console.log(secondLargestNumbers([1, 7, 2]));
+let num = [1, 3, 4, 6, 7];
+
+console.log(LargestNumbers(num));
