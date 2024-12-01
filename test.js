@@ -1414,18 +1414,86 @@
 
 // console.log(reverseStr(["hello", "world"]));
 
-function removeDuplicate(nums) {
-  let set = new Set();
-  let count = [];
-  for (let i = 0; i < nums.length; i++) {
-    if (!set.has([i])) {
-      set.add(i);
-      count.push(i);
-    }
-  }
-  return count;
-}
+// function removeDuplicate(nums) {
+//   let set = new Set();
+//   let count = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     if (!set.has([i])) {
+//       set.add(i);
+//       count.push(i);
+//     }
+//   }
+//   return count;
+// }
 
-const arr = [1, 1, 4, 5, 6, 6, 7, 7, 8, 8];
-const resultLength = removeDuplicate(arr);
-console.log(resultLength); // Output: [1, 4, 5, 6, 7, 8]
+// const arr = [1, 1, 4, 5, 6, 6, 7, 7, 8, 8];
+// const resultLength = removeDuplicate(arr);
+// console.log(resultLength); // Output: [1, 4, 5, 6, 7, 8]
+
+// function sumOfDigit(nums) {
+//   let sum = 0;
+//   for (let i = 0; i <= nums; i++) {
+//     sum += i;
+//   }
+//   return sum;
+// }
+
+// console.log(sumOfDigit(3));
+
+// function removeDuplicate(arr) {
+//   let set = new Set();
+//   let res = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!set.has(arr[i])) {
+//       set.add(arr[i]);
+//       res.push(arr[i]);
+//     }
+//   }
+//   return res;
+// }
+
+// console.log(removeDuplicate([1, 2, 3, 3, 7, 7]));
+
+// const promise = new Promise((resolve, reject) => {
+//   let success = false;
+//   if (success) {
+//     resolve("the promise has been fulfilled");
+//   } else {
+//     reject("the promise has been rejected");
+//   }
+// });
+
+// promise
+//   .then((messege) => {
+//     console.log("success", messege);
+//   })
+//   .catch((res) => {
+//     console.log("Error", res);
+//   });
+
+// function groupAnagram(str) {
+//   let res = {};
+//   for (let i = 0; i < str.length; i++) {
+//     let soreted = str[i].split("").sort().join("");
+//     if (!res[soreted]) {
+//       res[soreted] = [];
+//     }
+//     res[soreted].push(str[i]);
+//   }
+//   console.log("res", res);
+//   return Object.values(res);
+// }
+
+// let strs = ["eat", "tea", "tan", "ate", "nat", "bat"];
+
+// console.log(groupAnagram(strs));
+
+// function sumOfElementSmallestBetweenK1AndK2(nums, k1, k2) {
+//   nums.sort((a, b) => a - b);
+//   let result = 0;
+//   for (let i = k1; i < k2 - 1; i++) {
+//     result += nums[i];
+//   }
+//   return result;
+// }
+// console.log(sumOfElementSmallestBetweenK1AndK2([1, 3, 12, 5, 15, 11], 3, 6)); // output sum of element 23

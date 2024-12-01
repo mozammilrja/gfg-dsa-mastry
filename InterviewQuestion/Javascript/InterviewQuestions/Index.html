@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling and Capturing</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .products span {
+        padding: 10px 20px;
+        border: 2px solid #007bff;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s;
+      }
+
+      .products span:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+
+      .products span:active {
+        background-color: #003f7f;
+        border-color: #003f7f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Delegation</h1>
+    <div class="products">
+      <span class="mobile">Mobile</span>
+      <span class="HeadPhone">HeadPhone</span>
+      <span class="Laptop">Laptop</span>
+      <span class="Speaker">Speaker</span>
+      <span class="USB Docks">USB Docks</span>
+      <span class="Tripod">Tripod</span>
+    </div>
+    <script src="./EventDelegation.js"></script>
+  </body>
+</html>
