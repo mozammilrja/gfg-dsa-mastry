@@ -21,7 +21,6 @@
 
 // console.log(findMissingAndDuplicate([3, 1, 2, 5, 3])); //output :[3, 4]
 
-
 function findMissingAndDuplicate(nums) {
   let numSet = new Set();
   let missingNums = [];
@@ -44,7 +43,7 @@ function findMissingAndDuplicate(nums) {
     }
   }
 
-  return { missing: missingNums, duplicate: duplicateNums[0] };
+  return { missing: missingNums, duplicate: duplicateNums };
 }
 
-console.log(findMissingAndDuplicate([0, 2, 7, 4])); // Output: { missing: [4], duplicate: 3 }
+console.log(findMissingAndDuplicate([0, 2, 7, 4, 4, 2, 7])); // Output: { missing: [ 1, 3, 5, 6 ], duplicate: [ 4, 2, 7 ] }

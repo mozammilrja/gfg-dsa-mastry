@@ -1497,3 +1497,48 @@
 //   return result;
 // }
 // console.log(sumOfElementSmallestBetweenK1AndK2([1, 3, 12, 5, 15, 11], 3, 6)); // output sum of element 23
+
+// function isHappy(n) {
+//   let set = new Set();
+//   while (n != 1) {
+//     if (set.has(n)) {
+//       return false;
+//     }
+//     set.add(n);
+//     n = getSumOfSquares(n);
+//   }
+//   return true;
+// }
+
+// function getSumOfSquares(num) {
+//   let sum = 0;
+//   while (num > 0) {
+//     let digit = num % 10;
+//     sum += digit * digit;
+//     num = Math.floor(num / 10);
+//   }
+//   return sum;
+// }
+
+// // Example usage:
+// console.log(isHappy(19)); // Output: true
+// console.log(isHappy(2)); // Output: false
+
+function maxSumSubarray(nums, k) {
+  let max = Infinity;
+  let n = nums.length;
+  for (let i = 0; i <= n - k; i++) {
+    let sum = 0;
+    for (let j = i; j < i + k; j++) {
+      sum += nums[j];
+    }
+    max = Math.min(max, sum);
+  }
+  return max;
+}
+
+let arr = [2, 1, 5, 1, 3, 2];
+let K = 3;
+
+console.log(maxSumSubarray(arr, K)); // Output: 6
+
