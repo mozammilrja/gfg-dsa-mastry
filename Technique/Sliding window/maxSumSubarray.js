@@ -26,11 +26,10 @@ function maxSumSubarray(nums, k) {
   for (let i = 0; i < k; i++) {
     window += nums[i]
   }
-  
   let maxSum = window
   for (let i = k; i < n; i++) {
     window += arr[i] - arr[i - k]; // Add the next element and remove the first element of the previous window
-    maxSum = Math.min(maxSum, window);
+    maxSum = Math.max(maxSum, window);
   }
   return maxSum; 
 }
