@@ -1534,6 +1534,7 @@ function maxSumSubarray(nums, k) {
     }
     max = Math.min(max, sum);
   }
+
   return max;
 }
 
@@ -1541,4 +1542,3 @@ let arr = [2, 1, 5, 1, 3, 2];
 let K = 3;
 
 console.log(maxSumSubarray(arr, K)); // Output: 6
-
