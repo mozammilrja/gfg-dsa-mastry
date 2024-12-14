@@ -1,4 +1,4 @@
-    // Write a function to calculate the average of elements in an array.
+// Write a function to calculate the average of elements in an array.
 
 function calAvgElemArr(arr) {
   let sum = 0;
@@ -9,5 +9,4 @@ function calAvgElemArr(arr) {
   return sum / arr.length;
 }
 
-
-console.log(calAvgElemArr([1,2,3,4,5]));
+console.log(calAvgElemArr([1, 2, 3, 4, 5]));

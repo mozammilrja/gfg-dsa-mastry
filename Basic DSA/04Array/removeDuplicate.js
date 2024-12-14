@@ -2,6 +2,7 @@ function removeDuplicate(arr) {
   let res = 1;
   for (let i = 1; i < arr.length; i++) {
     if (arr[res - 1] !== arr[i]) {
+      console.log(arr[res - 1] !== arr[i]);
       arr[res] = arr[i];
       res++;
     }

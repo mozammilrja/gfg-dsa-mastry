@@ -1524,21 +1524,29 @@
 // console.log(isHappy(19)); // Output: true
 // console.log(isHappy(2)); // Output: false
 
-function maxSumSubarray(nums, k) {
-  let max = Infinity;
-  let n = nums.length;
-  for (let i = 0; i <= n - k; i++) {
-    let sum = 0;
-    for (let j = i; j < i + k; j++) {
-      sum += nums[j];
-    }
-    max = Math.min(max, sum);
-  }
+// function maxSumSubarray(nums, k) {
+//   let max = Infinity;
+//   let n = nums.length;
+//   for (let i = 0; i <= n - k; i++) {
+//     let sum = 0;
+//     for (let j = i; j < i + k; j++) {
+//       sum += nums[j];
+//     }
+//     max = Math.min(max, sum);
+//   }
 
-  return max;
+//   return max;
+// }
+
+// let arr = [2, 1, 5, 1, 3, 2];
+// let K = 3;
+
+// console.log(maxSumSubarray(arr, K)); // Output: 6
+
+function firstLetterCaps(str) {
+  let word = str.split(" ");
+  let res = word.toUpperCase();
+  return res;
 }
 
-let arr = [2, 1, 5, 1, 3, 2];
-let K = 3;
-
-console.log(maxSumSubarray(arr, K)); // Output: 6
+console.log(firstLetterCaps("hello mozammil"));
