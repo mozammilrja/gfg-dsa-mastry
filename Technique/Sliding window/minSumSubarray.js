@@ -31,6 +31,6 @@ function minSumSubarray(nums, k) {
   }
   return minSum;
 }
-let arr = [2, 3, 5, 2, 9, 7, 1];
-let K = 3;
+let arr = [2, 3, 1, 2, 4, 3];
+let K = 7;
 console.log(minSumSubarray(arr, K)); // Output: 10 (subarray [2,3,5])
