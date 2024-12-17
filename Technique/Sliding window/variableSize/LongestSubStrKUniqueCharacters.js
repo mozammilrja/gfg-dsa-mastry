@@ -1,7 +1,6 @@
 // //Brutforce
-// Longest Substring With Without Repeating Characters 
 
-function lengthOfLongestSubstring(s) {
+function lengthOfLongestUniqueSubstring(s) {
     let maxLength = 0;
 
     for (let i = 0; i < s.length; i++) {
@@ -17,17 +16,17 @@ function lengthOfLongestSubstring(s) {
     return maxLength;
 }
 
-console.log(lengthOfLongestSubstring("xxxx")); // Output: 1
-console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3
-console.log(lengthOfLongestSubstring("pwwkew")); // Output: 3
-console.log(lengthOfLongestSubstring("")); // Output: 0
-console.log(lengthOfLongestSubstring("a")); // Output: 1
-console.log(lengthOfLongestSubstring("au")); // Output: 2
+console.log(lengthOfLongestUniqueSubstring("xxxx")); // Output: 1
+console.log(lengthOfLongestUniqueSubstring("abcabcbb")); // Output: 3
+console.log(lengthOfLongestUniqueSubstring("pwwkew")); // Output: 3
+console.log(lengthOfLongestUniqueSubstring("")); // Output: 0
+console.log(lengthOfLongestUniqueSubstring("a")); // Output: 1
+console.log(lengthOfLongestUniqueSubstring("au")); // Output: 2
 
 
 //sliding windo
 
-function lengthOfLongestSubstring(s) {
+function lengthOfLongestUniqueSubstring(s) {
   let set = new Set();
   let maxLength = 0;
   let start = 0;
@@ -46,16 +45,16 @@ function lengthOfLongestSubstring(s) {
   return maxLength;
 }
 
-console.log(lengthOfLongestSubstring("xxxx")); // Output: 1
-console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3
-console.log(lengthOfLongestSubstring("pwwkew")); // Output: 3
-console.log(lengthOfLongestSubstring("")); // Output: 0
-console.log(lengthOfLongestSubstring("a")); // Output: 1
-console.log(lengthOfLongestSubstring("au")); // Output: 2
+console.log(lengthOfLongestUniqueSubstring("xxxx")); // Output: 1
+console.log(lengthOfLongestUniqueSubstring("abcabcbb")); // Output: 3
+console.log(lengthOfLongestUniqueSubstring("pwwkew")); // Output: 3
+console.log(lengthOfLongestUniqueSubstring("")); // Output: 0
+console.log(lengthOfLongestUniqueSubstring("a")); // Output: 1
+console.log(lengthOfLongestUniqueSubstring("au")); // Output: 2
 
 
 
-function lengthOfLongestSubstring(s) {
+function lengthOfLongestUniqueSubstring(s) {
     let map = new Map();
     let maxLength = 0;
     let start = 0;
@@ -70,10 +69,10 @@ function lengthOfLongestSubstring(s) {
     return maxLength;
 }
 
-console.log(lengthOfLongestSubstring("xxxx")); // Output: 1
-console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3
-console.log(lengthOfLongestSubstring("pwwkew")); // Output: 3
-console.log(lengthOfLongestSubstring("")); // Output: 0
-console.log(lengthOfLongestSubstring("a")); // Output: 1
-console.log(lengthOfLongestSubstring("au")); // Output: 2
+console.log(lengthOfLongestUniqueSubstring("xxxx")); // Output: 1
+console.log(lengthOfLongestUniqueSubstring("abcabcbb")); // Output: 3
+console.log(lengthOfLongestUniqueSubstring("pwwkew")); // Output: 3
+console.log(lengthOfLongestUniqueSubstring("")); // Output: 0
+console.log(lengthOfLongestUniqueSubstring("a")); // Output: 1
+console.log(lengthOfLongestUniqueSubstring("au")); // Output: 2
 
