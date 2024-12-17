@@ -37,22 +37,20 @@
 
 
 
-function throttle(fun, delay) {
-  let shouldCall = true;
+function debounce(fun, delay) {
+  let timeOut;
   return function (...args) {
-    if (!shouldCall) return;
-
-    fun.apply(this, args);
-    shouldCall = false;
-    setTimeout(() => {
-      shouldCall = true;
+    clearTimeout(timeOut);
+    timeOut = setTimeout(() => {
+      fun.apply(this, args);
     }, delay);
   };
 }
 
-const throttledFunction = throttle(() => {
-  console.log("Throttled function executed!");
+const debouncedFunction = debounce(() => {
+  console.log("Debounced function executed!");
 }, 1000);
 
-throttledFunction(); // Executes immediately
-throttledFunction(); // Ignored if called within 1 second
+debouncedFunction(); // Will only execute after 1 second, unless interrupted
+debouncedFunction(); // Resets the timer
+
