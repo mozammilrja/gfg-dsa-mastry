@@ -1,5 +1,5 @@
 // //Brutforce
-
+// Longest Substring Without Repeating Characters
 function lengthOfLongestUniqueSubstring(s) {
     let maxLength = 0;
 
@@ -27,22 +27,21 @@ console.log(lengthOfLongestUniqueSubstring("au")); // Output: 2
 //sliding windo
 
 function lengthOfLongestUniqueSubstring(s) {
+  let largest = 0;
   let set = new Set();
-  let maxLength = 0;
-  let start = 0;
-  let end = 0;
+  let left = 0;
 
-  while (end < s.length) {
-    if (!set.has(s[end])) {
-      set.add(s[end]);
-      end++;
-      maxLength = Math.max(maxLength, set.size);
-    } else {
-      set.delete(s[start]);
-      start++;
+  // Sliding window approach
+  for (let right = 0; right < s.length; right++) {
+    while (set.has(s[right])) {
+      set.delete(s[left]);
+      left++;
     }
+    set.add(s[right]);
+    largest = Math.max(largest, right - left + 1);
   }
-  return maxLength;
+
+  return largest;
 }
 
 console.log(lengthOfLongestUniqueSubstring("xxxx")); // Output: 1
