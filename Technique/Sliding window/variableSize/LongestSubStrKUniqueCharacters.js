@@ -1,24 +1,28 @@
 // //Brutforce
 
-// function LongestSubStrKUniqueCharacters(str, k) {
-//   let largest = 0;
+function lengthOfLongestSubstring(s) {
+    let maxLength = 0;
 
-//   for (let i = 0; i < str.length; i++) {
-//     let sum = 0;
-//     for (let j = i; j < str.length; j++) {
-//       largest += str[j];
-//       if (sum === k) {
-//       }
-//       largest = Math.max(sum, j - i + 1);
-//     }
-//   }
-//   return largest;
-// }
+    for (let i = 0; i < s.length; i++) {
+        let set = new Set();
+        for (let j = i; j < s.length; j++) {
+            if (set.has(s[j])) {
+                break; // If a duplicate character is found, break out of the inner loop
+            }
+            set.add(s[j]);
+            maxLength = Math.max(maxLength, j - i + 1);
+        }
+    }
+    return maxLength;
+}
 
-// let str = aabacbebebe;
-// let k = 3;
+console.log(lengthOfLongestSubstring("xxxx")); // Output: 1
+console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3
+console.log(lengthOfLongestSubstring("pwwkew")); // Output: 3
+console.log(lengthOfLongestSubstring("")); // Output: 0
+console.log(lengthOfLongestSubstring("a")); // Output: 1
+console.log(lengthOfLongestSubstring("au")); // Output: 2
 
-// console.log(LongestSubStrKUniqueCharacters(str, k)); //Output: 7
 
 //sliding windo
 
