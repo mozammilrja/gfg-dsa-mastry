@@ -26,34 +26,53 @@ console.log(lengthOfLongestSubstring("au")); // Output: 2
 
 //sliding windo
 
-function longestSubstrWithKUniqueChars(str, k) {
-    let windowStart = 0, maxLength = 0;
-    const charFrequency = new Map();
+function lengthOfLongestSubstring(s) {
+  let set = new Set();
+  let maxLength = 0;
+  let start = 0;
+  let end = 0;
 
-    for (let windowEnd = 0; windowEnd < str.length; windowEnd++) {
-        const rightChar = str[windowEnd];
-        if (!charFrequency.has(rightChar)) {
-            charFrequency.set(rightChar, 0);
-        }
-        charFrequency.set(rightChar, charFrequency.get(rightChar) + 1);
-
-        while (charFrequency.size > k) {
-            const leftChar = str[windowStart];
-            charFrequency.set(leftChar, charFrequency.get(leftChar) - 1);
-            if (charFrequency.get(leftChar) === 0) {
-                charFrequency.delete(leftChar);
-            }
-            windowStart++;
-        }
-
-        if (charFrequency.size === k) {
-            maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
-        }
+  while (end < s.length) {
+    if (!set.has(s[end])) {
+      set.add(s[end]);
+      end++;
+      maxLength = Math.max(maxLength, set.size);
+    } else {
+      set.delete(s[start]);
+      start++;
     }
+  }
+  return maxLength;
+}
 
+console.log(lengthOfLongestSubstring("xxxx")); // Output: 1
+console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3
+console.log(lengthOfLongestSubstring("pwwkew")); // Output: 3
+console.log(lengthOfLongestSubstring("")); // Output: 0
+console.log(lengthOfLongestSubstring("a")); // Output: 1
+console.log(lengthOfLongestSubstring("au")); // Output: 2
+
+
+
+function lengthOfLongestSubstring(s) {
+    let map = new Map();
+    let maxLength = 0;
+    let start = 0;
+
+    for (let end = 0; end < s.length; end++) {
+        if (map.has(s[end])) {
+            start = Math.max(map.get(s[end]) + 1, start);
+        }
+        map.set(s[end], end);
+        maxLength = Math.max(maxLength, end - start + 1);
+    }
     return maxLength;
 }
 
-let str = "aabacbebebe";
-let k = 3;
-console.log(longestSubstrWithKUniqueChars(str, k)); // Output: 7
+console.log(lengthOfLongestSubstring("xxxx")); // Output: 1
+console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3
+console.log(lengthOfLongestSubstring("pwwkew")); // Output: 3
+console.log(lengthOfLongestSubstring("")); // Output: 0
+console.log(lengthOfLongestSubstring("a")); // Output: 1
+console.log(lengthOfLongestSubstring("au")); // Output: 2
+
