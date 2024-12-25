@@ -5,7 +5,6 @@ function firstPositiveIntegerBruteForce(arr, k) {
   for (let i = 0; i <= arr.length - k; i++) {
     let positive = false;
     for (let j = 0; j < k; j++) {
-      console.log(j,i)
       if (arr[i + j] > 0) {
         result.push(arr[i + j]);
         positive = true;

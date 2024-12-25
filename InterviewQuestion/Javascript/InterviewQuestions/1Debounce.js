@@ -25,17 +25,11 @@
 //   console.log("Scroll event triggered");
 // };
 
-
-
-
 // // Debounce the handleScroll function
 // const debouncedHandleScroll = debounce(handleScroll, 1000, true);
 
 // // Attach the debounced function to the scroll event
 // window.addEventListener("scroll", debouncedHandleScroll);
-
-
-
 
 function debounce(fun, delay) {
   let timeOut;
@@ -47,10 +41,15 @@ function debounce(fun, delay) {
   };
 }
 
-const debouncedFunction = debounce(() => {
-  console.log("Debounced function executed!");
-}, 1000);
+// const debouncedFunction = debounce(() => {
+//   console.log("Debounced function executed!");
+// }, 1000);
 
-debouncedFunction(); // Will only execute after 1 second, unless interrupted
-debouncedFunction(); // Resets the timer
+// debouncedFunction(1, 2, 3); // Will only execute after 1 second, unless interrupted
+// debouncedFunction(4, 5, 6); // Resets the timer and passes new arguments
+const debouncedLog = debounce(function(...args) {
+  console.log('Debounced log:', ...args);
+}, 3000);
 
+debouncedLog(1, 2, 3); // Will log "Debounced log: 1 2 3" after 1 second
+debouncedLog(4, 5, 6); // Resets the timer and will log "Debounced log: 4 5 6" after 1 second

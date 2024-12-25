@@ -1543,10 +1543,23 @@
 
 // console.log(maxSumSubarray(arr, K)); // Output: 6
 
-function firstLetterCaps(str) {
-  let word = str.split(" ");
-  let res = word.toUpperCase();
-  return res;
+// function firstLetterCaps(str) {
+//   let word = str.split(" ");
+//   let res = word.toUpperCase();
+//   return res;
+// }
+
+// console.log(firstLetterCaps("hello mozammil"));
+
+function equivalenteArr(word1, word2) {
+  console.log("".concat(...word2));
+  if ("".concat(...word1) === "".concat(...word2)) {
+    return true;
+  }
+  return false;
 }
 
-console.log(firstLetterCaps("hello mozammil"));
+let word1 = ["abc", "d", "defg"],
+  word2 = ["abcddefg"];
+
+console.log(equivalenteArr(word1, word2));
