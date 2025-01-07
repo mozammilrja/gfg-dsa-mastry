@@ -1551,15 +1551,32 @@
 
 // console.log(firstLetterCaps("hello mozammil"));
 
-function equivalenteArr(word1, word2) {
-  console.log("".concat(...word2));
-  if ("".concat(...word1) === "".concat(...word2)) {
-    return true;
+// function equivalenteArr(word1, word2) {
+//   console.log("".concat(...word2));
+//   if ("".concat(...word1) === "".concat(...word2)) {
+//     return true;
+//   }
+//   return false;
+// }
+
+// let word1 = ["abc", "d", "defg"],
+//   word2 = ["abcddefg"];
+
+// console.log(equivalenteArr(word1, word2));
+
+
+
+Array.prototype.myMap = function (cb) {
+  let temp = [];
+  for (let i = 0; i < this.length; i++) {
+    temp.push(cb(this[i], i, this));
   }
-  return false;
-}
+  return temp;
+};
 
-let word1 = ["abc", "d", "defg"],
-  word2 = ["abcddefg"];
+let nums = [1, 2, 3, 4];
+let multiply = nums.myMap((num) => {
+  return num * 3;
+});
 
-console.log(equivalenteArr(word1, word2));
+console.log(multiply);

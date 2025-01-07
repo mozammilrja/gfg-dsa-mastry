@@ -10,8 +10,14 @@
 let a = 10;
 let b = 20;
 
-a = a * b;
-b = a / b;
-a = a / b;
+// a = a * b;
+// b = a / b;
+// a = a / b;
+
+// addition and subtraction operator
+a = a + b;
+b = a - b;
+a = a - b;
+
 
 console.log(`a: ${a}, b: ${b}`);
