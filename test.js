@@ -1551,15 +1551,52 @@
 
 // console.log(firstLetterCaps("hello mozammil"));
 
-function equivalenteArr(word1, word2) {
-  console.log("".concat(...word2));
-  if ("".concat(...word1) === "".concat(...word2)) {
-    return true;
-  }
-  return false;
-}
+// function equivalenteArr(word1, word2) {
+//   console.log("".concat(...word2));
+//   if ("".concat(...word1) === "".concat(...word2)) {
+//     return true;
+//   }
+//   return false;
+// }
 
-let word1 = ["abc", "d", "defg"],
-  word2 = ["abcddefg"];
+// let word1 = ["abc", "d", "defg"],
+//   word2 = ["abcddefg"];
 
-console.log(equivalenteArr(word1, word2));
+// console.log(equivalenteArr(word1, word2));
+
+
+
+const passengers = [
+  {
+    id: 1,
+    passengerName: "Freddie Mercury",
+    isVegetarianOrVegan: false,
+    connectedFlights: 2,
+  },
+  {
+    id: 2,
+    passengerName: "Amy Winehouse",
+    isVegetarianOrVegan: true,
+    connectedFlights: 4,
+  },
+    {
+    id: 3,
+    passengerName: "Kurt Cobain",
+    isVegetarianOrVegan: true,
+    connectedFlights: 3,
+  },
+     {
+    id: 3,
+    passengerName: "Michael Jackson",
+    isVegetarianOrVegan: true,
+    connectedFlights: 1,
+  },
+];
+
+
+
+const res = passengers.filter((item)=>{
+  return console.log(item.passengerName);
+})
+
+
