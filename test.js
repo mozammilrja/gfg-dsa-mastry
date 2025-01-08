@@ -1564,44 +1564,40 @@
 
 // console.log(equivalenteArr(word1, word2));
 
+// Array.prototype.myMap = function (cb) {
+//   let temp = [];
+//   for (let i = 0; i < this.length; i++) {
+//     temp.push(cb(this[i], i, this));
+//   }
+//   return temp;
+// };
 
+// let nums = [1, 2, 3, 4];
+// let multiply = nums.myMap((num) => {
+//   return num * 3;
+// });
 
-// const passengers = [
-//   {
-//     id: 1,
-//     passengerName: "Freddie Mercury",
-//     isVegetarianOrVegan: false,
-//     connectedFlights: 2,
-//   },
-//   {
-//     id: 2,
-//     passengerName: "Amy Winehouse",
-//     isVegetarianOrVegan: true,
-//     connectedFlights: 4,
-//   },
-//     {
-//     id: 3,
-//     passengerName: "Kurt Cobain",
-//     isVegetarianOrVegan: true,
-//     connectedFlights: 3,
-//   },
-//      {
-//     id: 3,
-//     passengerName: "Michael Jackson",
-//     isVegetarianOrVegan: true,
-//     connectedFlights: 1,
-//   },
-// ];
+// console.log(multiply);
 
+function countOfElement(nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+  let count = 0;
 
-
-// const res = passengers.filter((item)=>{
-//   return console.log(item.passengerName);
-// })
-
-
-
-
-function armStrongNumbers(nums) {
-  
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    if (nums[mid] === target) {
+      count++;
+      console.log("count", mid);
+      return mid;
+    } else if (nums[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+  return -1;
 }
+
+const nums = [1, 2, 3, 4, 4, 4, 5, 6, 7];
+console.log(countOfElement(nums,4));
