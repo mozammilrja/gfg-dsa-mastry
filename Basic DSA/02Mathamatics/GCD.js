@@ -1,18 +1,15 @@
 // naive method
+function HCFandGCD(n1,n2) {
+  let result;
+  for (let i = 1; i <= n1 && i <= n2; i++) {
+    if (n1 % i === 0 && n2 % i === 0) {
+      result = i;
+    }
+  }
+  return result;
+}
 
-// function GCD(a, b) {
-//   let result = Math.min(a, b);
-
-//   while (result > 0) {
-//     if (a % result === 0 && b % result === 0) {
-//       return result;
-//     }
-//     result--;
-//   }
-
-//   return result;
-// }
-// console.log(GCD(4, 6));
+console.log(HCFandGCD(60, 72));
 
 // standord algoritham
 // Optimised Euclidean Algorithm Code
