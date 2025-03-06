@@ -15,77 +15,87 @@ import React, { useEffect, useRef, useState } from "react";
 //   };
 // };
 
-const Todo = () => {
-  const [data, setData] = useState([]);
-  const [isEditing, setIsEditing] = useState(null);
-  const [editText, setEditText] = useState("");
-  let todoInput = useRef();
-  const fetchData = async () => {
-    const res = await fetch("https://dummyjson.com/todos");
-    if (res.status === 200) {
-      const data = await res.json();
-      setData(data?.todos);
-    }
-  };
+// const Todo = () => {
+//   const [data, setData] = useState([]);
+//   const [isEditing, setIsEditing] = useState(null);
+//   const [editText, setEditText] = useState("");
+//   let todoInput = useRef();
+//   const fetchData = async () => {
+//     const res = await fetch("https://dummyjson.com/todos");
+//     if (res.status === 200) {
+//       const data = await res.json();
+//       setData(data?.todos);
+//     }
+//   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+//   useEffect(() => {
+//     fetchData();
+//   }, []);
 
-  const addTask = () => {
-    const newData = {
-      id: data.length + 1,
-      todo: todoInput.current.value,
-      completed: false,
-    };
-    setData([newData, ...data]);
-  };
+//   const addTask = () => {
+//     const newData = {
+//       id: data.length + 1,
+//       todo: todoInput.current.value,
+//       completed: false,
+//     };
+//     setData([newData, ...data]);
+//   };
 
-  const startEditing = (index) => {
-    setIsEditing(index);
-    setEditText(data[index].todo);
-  };
+//   const startEditing = (index) => {
+//     setIsEditing(index);
+//     setEditText(data[index].todo);
+//   };
 
-  const saveEdit = (index) => {
-    const updatedData = [...data];
-    updatedData[index].todo = editText;
-    setData(updatedData);
-    setIsEditing(null);
-    setEditText("");
-  };
+//   const saveEdit = (index) => {
+//     const updatedData = [...data];
+//     updatedData[index].todo = editText;
+//     setData(updatedData);
+//     setIsEditing(null);
+//     setEditText("");
+//   };
 
-  return (
+//   return (
+//     <div>
+//       <h1>Todo</h1>
+//       <input type='text' ref={todoInput} />
+//       <button onClick={addTask}>Add</button>
+//       <ul>
+//         {data?.map((item, index) => (
+//           <li key={index}>
+//             {isEditing === index ? (
+//               <>
+//                 <input
+//                   type='text'
+//                   value={editText}
+//                   onChange={(e) => setEditText(e.target.value)}
+//                 />
+//                 <button type='text' onClick={() => saveEdit(index)}>
+//                   save
+//                 </button>
+//               </>
+//             ) : (
+//               <>
+//                 <span>{item.id}</span> {item?.todo}
+//                 <button type='text' onClick={() => startEditing(index)}>
+//                   edit
+//                 </button>
+//               </>
+//             )}
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default Todo;
+
+const TodoApp = () =>{
+  return(
     <div>
-      <h1>Todo</h1>
-      <input type='text' ref={todoInput} />
-      <button onClick={addTask}>Add</button>
-      <ul>
-        {data?.map((item, index) => (
-          <li key={index}>
-            {isEditing === index ? (
-              <>
-                <input
-                  type='text'
-                  value={editText}
-                  onChange={(e) => setEditText(e.target.value)}
-                />
-                <button type='text' onClick={() => saveEdit(index)}>
-                  save
-                </button>
-              </>
-            ) : (
-              <>
-                <span>{item.id}</span> {item?.todo}
-                <button type='text' onClick={() => startEditing(index)}>
-                  edit
-                </button>
-              </>
-            )}
-          </li>
-        ))}
-      </ul>
+      <h1>Hello</h1>
     </div>
-  );
-};
+  )
+}
 
-export default Todo;
+export default TodoApp
