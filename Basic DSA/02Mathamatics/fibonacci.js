@@ -1,4 +1,7 @@
 function fibonacci(n) {
+  if (n <= 0) return []; // Return an empty array for n <= 0
+  if (n === 1) return [0]; // Return [0] if only one term is requested
+
   const result = [0, 1];
 
   for (let i = 2; i < n; i++) {
@@ -9,10 +12,10 @@ function fibonacci(n) {
 }
 
 // Example usage:
-const n = 10; // Number of Fibonacci numbers to generate
-const fibSeries = fibonacci(n);
-console.log(`First ${n} Fibonacci numbers:`, fibSeries);
-
+console.log(fibonacci(10)); // ✅ [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+console.log(fibonacci(1)); // ✅ [0]
+console.log(fibonacci(0)); // ✅ []
+console.log(fibonacci(-5)); // ✅ []
 
 // nth fibonacci number
 // function fibonacci(nums) {

@@ -41,15 +41,18 @@ function debounce(fun, delay) {
   };
 }
 
-// const debouncedFunction = debounce(() => {
-//   console.log("Debounced function executed!");
-// }, 1000);
-
-// debouncedFunction(1, 2, 3); // Will only execute after 1 second, unless interrupted
-// debouncedFunction(4, 5, 6); // Resets the timer and passes new arguments
-const debouncedLog = debounce(function(...args) {
-  console.log('Debounced log:', ...args);
-}, 3000);
+const debouncedLog = debounce(function (...args) {
+  console.log("Debounced log:", ...args);
+}, 1000);
 
 debouncedLog(1, 2, 3); // Will log "Debounced log: 1 2 3" after 1 second
 debouncedLog(4, 5, 6); // Resets the timer and will log "Debounced log: 4 5 6" after 1 second
+
+const debouncedSearch = debounce((query) => {
+  console.log("Searching for:", query);
+}, 1000);
+
+debouncedSearch("Hello");
+debouncedSearch("Hello, W");
+debouncedSearch("Hello, World"); // Only this one executes after 1s
+

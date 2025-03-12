@@ -90,12 +90,32 @@ import React, { useEffect, useRef, useState } from "react";
 
 // export default Todo;
 
-const TodoApp = () =>{
-  return(
-    <div>
-      <h1>Hello</h1>
-    </div>
-  )
-}
+const TodoApp = () => {
+  const [input, setInput] = useState("");
+  const [todoList, setDotoList] = useState([]);
+  const [edit, setEdit] = useState(null);
 
-export default TodoApp
+  const addTodo = () => {
+    if (edit !==null) {
+      const updatedTodo = [...todoList]
+      updatedTodo[edit] = input
+      setDotoList(updatedTodo)
+    }
+    setDotoList();
+  };
+
+  return (
+    <div>
+      <h1>Todo</h1>
+
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setDotoList(e.target.value)}
+      />
+      <button onSubmit={addEditTodo}>Submit</button>
+    </div>
+  );
+};
+
+export default TodoApp;

@@ -4,10 +4,17 @@ const logger = (item, index) => {
   console.log(item, index);
 };
 
-Array.prototype.forEach = function (callBack) {
+Array.prototype.myForEach = function (callBack) {
   for (let i = 0; i < this.length; i++) {
     callBack(this[i], i);
   }
 };
 
-arr.forEach(logger);
+arr.myForEach(logger);
+
+console.log("\nTest Case 2: Summing Up an Array");
+let sum = 0;
+[5, 10, 15].myForEach((num) => {
+  sum += num;
+});
+console.log("Sum:", sum);

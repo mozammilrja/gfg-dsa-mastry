@@ -1602,16 +1602,65 @@
 // const nums = [1, 2, 3, 4, 4, 4, 5, 6, 7];
 // console.log(countOfElement(nums,4));
 
-function findDuplicate(nums) {
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i]=== nums[i-1]) {
-      return true
-      
-    }    
-  }
-  return false;
+// function findDuplicate(nums) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i]=== nums[i-1]) {
+//       return true
+
+//     }
+//   }
+//   return false;
+// }
+
+// const arr = [1, 2, 3,];
+// console.log(findDuplicate(arr)); // Output: true
+
+// function findLongestWord(str) {
+//   let words = str.split(" ");
+//   let res = "";
+
+//   for (let i = 0; i < words.length; i++) {
+//     if (words[i].length > res.length) {
+//       res = words[i];
+//     }
+//   }
+//   return res;
+// }
+
+// console.log(findLongestWord("Hi Iam Saikrishna Iam a UI Developer"));
+
+// const findLongestWord = (sentence) => {
+//   let words = sentence.split(" ");
+//   let longestWord = "";
+//   for (let i = 0; i < words.length; i++) {
+//     if (words[i].length > longestWord.length) {
+//       longestWord = words[i];
+//     }
+//   }
+//   console.log(longestWord);
+// };
+// findLongestWord("Hi Iam Saikrishna Iam a UI Developer");
+
+// function findLargestNo(nums) {
+//   let largest = 0;
+
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] > largest) {
+//       largest = nums[i];
+//     }
+//   }
+//   return largest;
+// }
+
+// console.log(findLargestNo([1, 2, 3, 4, 5, 7, 6]));
+
+//  Given 2 arrays that are sorted [0,3,4,31] and [4,6,30].
+// Merge them and sort [0,3,4,4,6,30,31] ?
+
+function mergeSortedArr(arr1, arr2) {
+  let res = [...arr1, ...arr2];
+  let soreted1 = res.sort((a, b) => a - b);
+  console.log(soreted1);
 }
 
-
-const arr = [1, 2, 3,];
-console.log(findDuplicate(arr)); // Output: true
+mergeSortedArr([0, 3, 4, 31], [4, 6, 30]);
