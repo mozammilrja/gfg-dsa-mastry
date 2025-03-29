@@ -31,19 +31,45 @@
 // // Attach the throttled function to the scroll event
 // window.addEventListener("scroll", throttledHandleScroll);
 
+// function throttle(fun, delay) {
+//   let shouldCall = true;
+//   return function (...args) {
+//     if (!shouldCall) return;
 
+//     fun.apply(this, args);
+//     shouldCall = false;
+//     setTimeout(() => {
+//       shouldCall = true;
+//     }, delay);
+//   };
+// }
 
+// const throttledFunction = throttle(() => {
+//   console.log("Throttled function executed!");
+// }, 1000);
 
-function throttle(fun, delay) {
-  let shouldCall = true;
+// throttledFunction(); // Executes immediately
+// throttledFunction(); // Ignored if called within 1 second
+
+// function throttle(fun, delay) {
+//   let lastCall = 0;
+//   return function (...args) {
+//     const now = Date.now();
+//     if (now - lastCall < delay) return;
+//     lastCall = now;
+//     return fun(...args);
+//   };
+// }
+
+function throttle(fn, wait) {
+  let lastCall = 0;
+
   return function (...args) {
-    if (!shouldCall) return;
-
-    fun.apply(this, args);
-    shouldCall = false;
-    setTimeout(() => {
-      shouldCall = true;
-    }, delay);
+    const now = Date.now();
+    if (now - lastCall >= wait) {
+      lastCall = now;
+      fn(...args);
+    }
   };
 }
 

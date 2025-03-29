@@ -16,7 +16,7 @@ function reverseWords(S) {
 
 // Example usage:
 
-const inputString1 = "i.like.this.program.very.much";
+const inputString1 = "the sky is blue";
 console.log(reverseWords(inputString1)); // Output: much.very.program.this.like.i
 
 const inputString2 = "pqr.mno";

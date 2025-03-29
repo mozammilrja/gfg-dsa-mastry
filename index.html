@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add/Remove Class</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+
+  <button id="add-btn">Add Highlight</button>
+  <button id="remove-btn">Remove Highlight</button>
+
+  <script src="./index.js">
+
+    document.getElementById("add-btn").addEventListener("click", function(){
+
+      const List = document.querySelectorAll(".item")
+      const addNewItem  = document.createElement("li")
+      addNewItem.textContent = `Item ${List.children.length + 1}`
+      List.appendChild(addNewItem)
+      
+    })
+    
+    
+    
+  </script>
+</body>
+</html>

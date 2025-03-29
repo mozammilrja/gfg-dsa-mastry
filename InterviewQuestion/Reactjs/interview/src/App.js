@@ -1,10 +1,10 @@
 import React from "react";
-import Todo from "./Components/Todo/Todo";
+import StarRating from "./Components/StarRating/StarRating";
 
 const App = () => {
   return (
     <div>
-      <Todo />
+      <StarRating />
     </div>
   );
 };

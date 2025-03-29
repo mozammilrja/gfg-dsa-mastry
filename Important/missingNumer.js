@@ -23,17 +23,21 @@
 // let arr = [0, 2];
 // console.log(missingNumber(arr));  // Output: 1
 
-function missingNumber(nums) {
-  let set = new Set(nums);
-  let res = [];
-  for (let i = 0; i <= Math.max(...nums); i++) {
-    if (!set.has(i)) {
-      res.push(i);
-    }
-  }
+function findMissingNumberInSequence(numbers) {
+  const numSet = new Set(numbers);
+  const n = numbers.length;  // It should have been numbers.length + 1 ideally
 
-  return res;
+  for (let i = 0; i <= n; i++) {  // Iterate from 0 to n (including n)
+      if (!numSet.has(i)) {
+          return i;  // Found the missing number
+      }
+  }
+  return -1; // Just in case no number is missing
 }
 
-let arr = [0, 2, 7, 4];
-console.log(missingNumber(arr)); // Output: [ 1, 3, 5, 6 ]
+// ✅ Test Cases
+console.log(findMissingNumberInSequence([0, 1, 3, 4])); // Output: 2
+console.log(findMissingNumberInSequence([1, 2, 3, 4])); // Output: 0 (missing 0)
+console.log(findMissingNumberInSequence([0, 2, 3, 4])); // Output: 1 (missing 1)
+console.log(findMissingNumberInSequence([0, 1, 2, 3, 4, 5, 6, 8])); // Output: 7
+

@@ -1,13 +1,14 @@
-function flatArray(a, flattened = []) {
+function flatArray(a, result = []) {
   for (let i = 0; i < a.length; i++) {
     if (Array.isArray(a[i])) {
-      flatArray(a[i], flattened);
+      flatArray(a[i], result);
     } else {
-      flattened.push(a[i]);
+      result.push(a[i]);
     }
   }
-  return flattened;
+  return result;
 }
 
-const a = [1, 2, 3, [4, [5, 6]], 7, 8];
-console.log(flatArray(a));
+const arr = [1, [2, [3, 4, 5]], [6, [7, 8, [9, 10, 11], 12, 13]]];
+
+console.log(flatArray(arr));

@@ -18,7 +18,7 @@ console.log(twoSum(nums,target))
 function twoSum(nums, target) {
   let map = new Map();
   for (let i = 0; i < nums.length; i++) {
-    let pairTarget = target - nums[i];
+    let diff = target - nums[i];
     if (map.has(pairTarget)) {
       return [map.get(pairTarget), i];
     }

@@ -95,7 +95,7 @@ const TodoApp = () => {
   const [todoList, setDotoList] = useState([]);
   const [edit, setEdit] = useState(null);
 
-  const addTodo = () => {
+  const addEditTodo = () => {
     if (edit !==null) {
       const updatedTodo = [...todoList]
       updatedTodo[edit] = input
@@ -103,6 +103,7 @@ const TodoApp = () => {
     }
     setDotoList();
   };
+  
 
   return (
     <div>

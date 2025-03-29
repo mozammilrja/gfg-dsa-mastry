@@ -1657,10 +1657,693 @@
 //  Given 2 arrays that are sorted [0,3,4,31] and [4,6,30].
 // Merge them and sort [0,3,4,4,6,30,31] ?
 
-function mergeSortedArr(arr1, arr2) {
-  let res = [...arr1, ...arr2];
-  let soreted1 = res.sort((a, b) => a - b);
-  console.log(soreted1);
-}
+// function mergeSortedArr(arr1, arr2) {
+//   let res = [...arr1, ...arr2];
+//   let soreted1 = res.sort((a, b) => a - b);
+//   console.log(soreted1);
+// }
 
-mergeSortedArr([0, 3, 4, 31], [4, 6, 30]);
+// mergeSortedArr([0, 3, 4, 31], [4, 6, 30]);
+
+// const sortedData = (arr1, arr2) => {
+//   let i = 0,
+//     j = 0;
+//   let mergedArray = [];
+
+//   while (i < arr1.length || j < arr2.length) {
+//     if (j >= arr2.length || (i < arr1.length && arr1[i] < arr2[j])) {
+//       mergedArray.push(arr1[i]);
+//       i++;
+//     } else {
+//       mergedArray.push(arr2[j]);
+//       j++;
+//     }
+//   }
+
+//   return mergedArray;
+// };
+
+// // Example Usage
+// console.log(sortedData([0, 3, 4, 31], [4, 6, 30]));
+// // Output: [1, 2, 3, 4, 5, 6, 8, 9]
+
+// function checkPalindrome(str) {
+//   let len = str.length
+
+//   for (let i = 0; i < len/2; i++) {
+//     if (str[i]!==str[len-i-1]) {
+//       return false
+//     }
+//   }
+//   return true
+// }
+// console.log(checkPalindrome("racecar")); // true
+
+// console.log(checkPalindrome("Was it a car or a cat I saw?"));
+
+// function isAnagram(s, t) {
+//   if (s.length !== t.length) {
+//     return false;
+//   }
+//   let countS = {};
+//   let countT = {};
+
+//   for (let i = 0; i < s.length; i++) {
+//     countS[s[i]] = (countS[s[i]] || 0) + 1;
+//     countT[t[i]] = (countT[t[i]] || 0) + 1;
+//   }
+
+//   for (const key in countS) {
+//     if (countS[key] !== countT[key]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// let s = "anagram";
+// let t = "nagaram";
+
+// console.log(isAnagram(s, t));
+
+// function twoSum(nums, target) {
+//   let map = new Map();
+
+//   for (let i = 0; i < nums.length; i++) {
+//     let diff = target - nums[i];
+
+//     if (map.has(diff)) {
+//       return [map.get(diff), i];
+//     }
+//     map.set(nums[i], i);
+//   }
+//   return [];
+// }
+
+// console.log(twoSum([2, 7, 11, 15], 9));
+
+// function groupAnagram(strs) {
+//   let map = new Map();
+
+//   for (let i = 0; i < strs.length; i++) {
+//     const sorted = strs[i].split("").sort().join("");
+//     if (!map.has(sorted)) {
+//       map.set(sorted, []); // If key doesn’t exist, create an empty array
+//     }
+//     map.get(sorted).push(strs[i]); // Push the word into its group
+//   }
+//   return Array.from(map.values());
+// }
+
+// let strs = ["eat", "tea", "tan", "ate", "nat", "bat"];
+
+// console.log(groupAnagram(strs)); // Time complexity is O(N * K log K).
+
+// function add(a) {
+//   return function (b) {
+//     if (b === undefined) {
+//       return a;
+//     }
+//     return add(a + b);
+//   };
+// }
+
+// console.log(add(2)(4)(7)());
+// console.log(add(5)(10)(0)()); // Output: 15 (handles 0 correctly)
+
+// function curry(fn) {
+//   return function curried(...args) {
+//     if (args.length >= fn.length) {
+//       return fn.apply(this, args);
+//     } else {
+//       return (...args2) => curried.apply(this, [...args, ...args2]);
+//     }
+//   };
+// }
+
+// // Example Function to Curry
+// const join = (a, b, c) => `${a}_${b}_${c}`;
+
+// const curriedJoin = curry(join);
+
+// // ✅ Different Ways to Call the Curried Function
+// console.log(curriedJoin(1, 2, 3)); // Output: "1_2_3"
+// console.log(curriedJoin(1)(2, 3)); // Output: "1_2_3"
+// console.log(curriedJoin(1, 2)(3)); // Output: "1_2_3"
+// console.log(curriedJoin(1)(2)(3)); // Output: "1_2_3"
+
+// Function.prototype.myCall = function (thisArg, ...argArray) {
+//   if (typeof this !== "function") {
+//     throw new TypeError("myCall must be called on a function");
+//   }
+
+//   // Ensure thisArg is an object (or null/undefined)
+//   thisArg = thisArg ?? globalThis;
+
+//   // Create a unique property on thisArg to store the function reference
+//   const fnKey = Symbol();
+//   thisArg[fnKey] = this;
+
+//   // Call the function with provided arguments and capture the result
+//   const result = thisArg[fnKey](...argArray); // Fix: Use argArray instead of args
+
+//   // Clean up by deleting the temporary function reference
+//   delete thisArg[fnKey];
+
+//   return result;
+// };
+
+// function isAnagram(s, t) {
+//   if (s.length !== t.length) return false;
+
+//   let count = {};
+
+//   for (let i = 0; i < s.length; i++) {
+//     count[s[i]] = (count[s[i]] || 0) + 1;
+//     count[t[i]] = (count[t[i]] || 0) - 1;
+//   }
+
+//   return Object.values(count).every((val) => val === 0);
+// }
+// let s = "anagram";
+// let t = "nagaram";
+
+// console.log(isAnagram(s, t));
+
+// function Person(name, age) {
+//   this.name = name;
+//   this.age = age;
+// }
+
+// const user = new Person("Mozammil", 29);
+
+// console.log(user);
+
+// Apply
+// function greet(greet,) {
+//   console.log(greet + " " + this.name);
+// }
+// const Person = { name: "Mozammil" };
+
+// greet.call(Person, "Hello");
+// greet.apply(Person, ["Hello", "555"]);
+
+// const Greet = greet.bind(Person, "Hello");
+// Greet();
+
+// function BankAccount(initialBalance) {
+//   let balance = initialBalance;
+//   return {
+//     deposit: function (amount) {
+//       if (amount > 0) {
+//         balance += amount;
+//       } else {
+//         console.log("Deposit amount must be positive");
+//       }
+//     },
+//     withdraw: function (amount) {
+//       if (amount > 0 && amount <= balance) {
+//         balance -= amount;
+//       } else {
+//         console.log("Insufficient funds or invalid amount");
+//       }
+//     },
+//     getBalance: function () {
+//       return balance;
+//     },
+//   };
+// }
+
+// // ✅ Create accounts
+// const account1 = BankAccount(1000);
+// const account2 = BankAccount(2000);
+
+// // ✅ Test cases
+// account1.deposit(500);
+// console.log(account1.getBalance()); // Expected: 1500
+
+// account1.withdraw(200);
+// console.log(account1.getBalance()); // Expected: 1300
+
+// account2.deposit(100);
+// console.log(account2.getBalance()); // Expected: 2100
+
+// console.log(account1.balance); // ❌ Undefined (balance is private)
+
+// const createCounter = (n) => {
+//   return n++;
+// };
+
+// console.log(createCounter(10));
+// console.log(createCounter(10));
+// console.log(createCounter(10));
+
+// function createCounter(num) {
+//   let current = num;
+//   return function counter() {
+//     return current++;
+//   };
+// }
+
+// const counter = createCounter(10);
+// console.log(counter()); // 10
+// console.log(counter()); // 11
+// console.log(counter()); // 12
+
+// function calculateTotalBonuses(
+//   employees,
+//   minRating,
+//   performance,
+//   bonusPercentage
+// ) {
+//   let res = employees.filter((item) => item.performance < minRating);
+//   console.log("res :>> ", res);
+// }
+
+// const employees = [
+//   { name: "Alice", salary: 6000, department: "Engineering", performance: 4 },
+//   { name: "Bob", salary: 4500, department: "Marketing", performance: 3 },
+//   { name: "Charlie", salary: 5500, department: "Sales", performance: 5 },
+// ];
+
+// console.log(calculateTotalBonuses(employees, 4, 10)); //132000
+
+// const output = [
+//   {
+//     name: "Alice",
+//     salary: 6000,
+//     department: "Engineering",
+//     annulSalary: 72000,
+//     isEligibleForBonus: true,
+//   },
+//   {
+//     name: "Bob",
+//     salary: 4500,
+//     department: "Marketing",
+//     annulSalary: 5400,
+//     isEligibleForBonus: false,
+//   },
+//   {
+//     name: "Charlie",
+//     salary: 5500,
+//     department: "Sales",
+//     annulSalary: 66000,
+//     isEligibleForBonus: true,
+//   },
+// ];
+
+// function processArray(arr, commands) {
+//   let result = [];
+//   commands.forEach(({ start, end, operation }) => {
+//     let slicedArr = arr.slice(start, end);
+//     switch (operation) {
+//       case "reverse":
+//         result.push(slicedArr.reverse());
+//         break;
+//       case "sum":
+//         result.push(slicedArr.reduce((sum, num) => sum + num, 0));
+//         break;
+//       case "length":
+//         result.push(slicedArr.length);
+//         break;
+//       default:
+//         console.log("error");
+//     }
+//   });
+//   return result;
+// }
+
+// let arr = [1, 2, 3, 4, 5, 6];
+// const commands = [
+//   { start: 1, end: 4, operation: "reverse" },
+//   { start: 0, end: 3, operation: "sum" },
+//   { start: 2, end: 5, operation: "length" },
+// ];
+
+// const result = processArray(arr, commands);
+
+// console.log(result); // output [[4,3,2],6,3]
+
+// function twoSum(num, target) {
+//   let map = new Map();
+
+//   for (let i = 0; i < num.length; i++) {
+//     const diff = target - num[i];
+//     console.log('diff :>> ', diff);
+//     if (map.has(diff)) {
+//       return [map.get(diff), i];
+//     }
+//     map.set(num[i], i);
+//   }
+//   return [];
+// }
+
+// console.log(twoSum([2, 7, 11, 15], 9));
+
+// const mockApi = [
+//   { id: 1, name: "Leanne Graham", email: "Sincere@april.biz" },
+//   { id: 2, name: "Ervin Howell", email: "Shanna@melissa.tv" },
+//   { id: 3, name: "Clementine Bauch", email: "Nathan@yesenia.net" },
+// ];
+
+// async function fetchUserData(userId, api = mockApi) {
+//   try {
+//     const response = fetch({ api });
+
+//     if (!response.ok) {
+//       throw new Error("Failed to fetch user data");
+//     }
+//     const data = await fetchdata.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// }
+
+// // async function getUserDetails(userId, api = mockApi) {
+
+// // }
+
+// fetchUserData();
+
+// function getProUsers(users) {
+//   const res = users.filter((user) => user.skills.length > 2);
+
+//   return res;
+// }
+
+// const users = [
+//   { name: "Brook", scores: 75, skills: ["HTM", "CSS", "JS"], age: 16 },
+//   { name: "Alex", scores: 80, skills: ["HTM", "CSS", "JS"], age: 18 },
+//   { name: "David", scores: 75, skills: ["HTM", "CSS"], age: 22 },
+//   { name: "John", scores: 85, skills: ["HTML"], age: 25 },
+//   { name: "Sara", scores: 95, skills: ["HTM", "CSS", "JS"], age: 26 },
+//   { name: "Martha", scores: 80, skills: ["HTM", "CSS", "JS"], age: 18 },
+//   { name: "Thomas", scores: 90, skills: ["HTM", "CSS", "JS"], age: 20 },
+// ];
+
+// console.log(getProUsers(users));
+// class UserTracker {
+//   constructor() {
+//     // TODO: Initialize a Set for unique visitors
+//     // TODO: Initialize a Map for last visit timestamps
+//     // TODO: Initialize a WeakSet for active users
+
+//     this.uniqueVisitors = new Set();
+//     this.lastVisitTimestamps = new Map();
+//     this.activeUsers = new WeakSet();
+//   }
+
+//   addUser(user) {
+//     try {
+//       // TODO: Validate the user object
+//       if (!user || typeof user !== "object" || !user.id) {
+//         throw new Error("Invalid user object");
+//       }
+//       // TODO: Add user to the Set if new
+//       this.uniqueVisitors.add(user);
+//       return `${user.id} added to unique visitor.`;
+//     } catch (error) {
+//       return `Error: ${error.message}`;
+//     }
+//   }
+
+//   updateLastVisit(user) {
+//     try {
+//       // TODO: Validate the user object
+//       if (!user || typeof user !== "object" || !user.id) {
+//         throw new Error("Invalid user object");
+//       }
+//       // TODO: Store/update the last visit timestamp in the Map
+//       const timestamp = new Date();
+//       this.lastVisitTimestamps.set(user, timestamp);
+//       return `Updated last visit for ${user.id} at ${timestamp}.`;
+//     } catch (error) {
+//       return `Error: ${error.message}`;
+//     }
+//   }
+
+//   getVisitDetails(user) {
+//     try {
+//       // TODO: Validate the user object
+//       if (!user || typeof user !== "object" || !user.id) {
+//         throw new Error("Invalid user object");
+//       }
+//       // TODO: Return visit details from Set and Map
+//       const isVisited = this.uniqueVisitors.has(user);
+//       const lastVisited = this.lastVisitTimestamps.get(user);
+
+//       return { userId: user.id, isVisited, lastVisited };
+//     } catch (error) {
+//       return `Error: ${error.message}`;
+//     }
+//   }
+
+//   markActive(user) {
+//     try {
+//       // TODO: Validate the user object
+//       if (!user || typeof user !== "object" || !user.id) {
+//         throw new Error("Invalid user object");
+//       }
+
+//       this.activeUsers.add(user);
+//       return `${user.id} marked is active.`;
+//       // TODO: Add the user to WeakSet as an active user
+//     } catch (error) {
+//       return `Error: ${error.message}`;
+//     }
+//   }
+// }
+
+// const tracker = new UserTracker();
+// const user1 = { id: "123", name: "Alice" };
+
+// console.log(tracker.addUser(user1));
+// console.log(tracker.updateLastVisit(user1));
+// console.log(tracker.getVisitDetails(user1));
+// console.log(tracker.markActive(user1));
+
+// const timestamp = new Date();
+// console.log("timestamp :>> ", timestamp.toLocaleString());
+
+// function manageUniqueWords(words) {
+//   const wordSet = new Set(words);
+//   return {
+//     addWord: function (word) {
+//       if (!wordSet.has(word)) {
+//         wordSet.add(word);
+//         return word;
+//       }
+//     },
+//     removeWord: function (word) {
+//       if (wordSet.has(word)) {
+//         wordSet.delete(word);
+//         return word;
+//       }
+//     },
+//     hasWord: function (word) {
+//       return wordSet.has(word);
+//     },
+//     getAllWords: function () {
+//       return Array.from(wordSet).sort();
+//     },
+//   };
+// }
+
+// const words = [
+//   "apple",
+//   "banana",
+//   "cherry",
+//   "dog",
+//   "elephant",
+//   "flower",
+//   "guitar",
+//   "happy",
+//   "island",
+//   "jungle",
+// ];
+
+// const collection = manageUniqueWords(words);
+
+// console.log(collection.addWord("Mozammil"));
+// console.log(collection.removeWord("dog"));
+// console.log(collection.hasWord("island"));
+// console.log(collection.getAllWords());
+
+// function processContacts(contacts, tags) {
+//   // Iterate through the Map and print contacts
+//   for (const [name, phoneNumber] of contacts) {
+//     console.log(`${name}: ${phoneNumber}`);
+//   }
+
+//   // Convert Set to an array, sort it, and print sorted tags
+//   const sortedTags = [...tags].sort();
+//   console.log("Tags:", sortedTags.join(", "));
+// }
+
+// // Example usage
+// const contacts = new Map([
+//   ["Alice", "123-456-7890"],
+//   ["Bob", "987-654-3210"],
+//   ["Charlie", "555-123-4567"],
+// ]);
+
+// const tags = new Set(["Work", "Friends", "Family", "Friends"]);
+
+// processContacts(contacts, tags);
+
+// function productData(arr) {
+//   const res = arr.filter(
+//     (product) =>
+//       product.category === "electronics" &&
+//       product.rating >= 4 &&
+//       product.price * 0.9 < 1000
+//   );
+//   console.log(res);
+// }
+
+// const products = [
+//   { name: "Laptop", price: 1200, category: "electronics", rating: 4.5 },
+//   { name: "Shoes", price: 100, category: "fashion", rating: 4.7 },
+//   { name: "Smartphone", price: 900, category: "electronics", rating: 4.3 },
+//   { name: "TV", price: 1500, category: "electronics", rating: 3.9 },
+//   { name: "Headphones", price: 200, category: "electronics", rating: 4.8 },
+//   { name: "Washing Machine", price: 800, category: "appliances", rating: 4.2 },
+//   { name: "Tablet", price: 1100, category: "electronics", rating: 4.6 },
+// ];
+
+// console.log(productData(products));
+
+// function productData(arr, k) {
+//   const filteredProducts = products.filter(
+//     (product) =>
+//       product.category === "electronics" && // Must be electronics
+//       product.rating >= 4 && // Minimum rating 4
+//       product.price * 0.9 < 1000 // Discounted price < $1000
+//   );
+
+//   return filteredProducts;
+// }
+
+// const products = [
+//   { name: "Laptop", price: 1200, category: "electronics", rating: 4.5 },
+//   { name: "Shoes", price: 100, category: "fashion", rating: 4.7 },
+//   { name: "Smartphone", price: 900, category: "electronics", rating: 4.3 },
+//   { name: "TV", price: 1500, category: "electronics", rating: 3.9 },
+//   { name: "Headphones", price: 200, category: "electronics", rating: 4.8 },
+//   { name: "Washing Machine", price: 800, category: "appliances", rating: 4.2 },
+//   { name: "Tablet", price: 1100, category: "electronics", rating: 4.6 },
+// ];
+
+// console.log(productData(products));
+
+// const arr1 = [1, 2, 3, 4, 5];
+// const arr2 = [3, 4, 5, 6, 7];
+
+// function uniqueElements(arr1, arr2) {
+//   return [
+//     ...arr1.filter((num) => !arr1.includes(num)),
+//     ...arr2.filter((num) => !arr2.includes(num)),
+//   ];
+// }
+
+// console.log(uniqueElements(arr1, arr2));
+
+// function topPaidEmployees(arr, percentage) {
+//   const sortedSalaries = [...arr].sort((a, b) => b.salary - a.salary);
+//   const topCount = Math.ceil(arr.length * (percentage / 100));
+
+//   return sortedSalaries.slice(0, topCount);
+// }
+
+// const employees = [
+//   { name: "Alice", salary: 5000 },
+//   { name: "Bob", salary: 3000 },
+//   { name: "Charlie", salary: 10000 },
+//   { name: "David", salary: 8000 },
+//   { name: "Eve", salary: 2000 },
+// ];
+
+// console.log(topPaidEmployees(employees, 20));
+
+// function aggregateScoresBySkills(students, skill) {
+//   return students
+//     .filter((student) => student.skills?.includes(skill))
+//     .map((student) => student.Scores)
+//     .reduce((total, score) => total + score);
+// }
+
+// const students = [
+//   { name: "Emma", Scores: 85, skills: ["React", "JavaScript", "HTML"] },
+//   { name: "Liam", Scores: 80, skills: ["CSS", "Python"] },
+//   { name: "Olivia", Scores: 100, skills: ["HTML", "CSS"] },
+//   { name: "Noah", Scores: 90, skills: ["JavaScript", "React"] },
+// ];
+
+// const skill = "JavaScript";
+
+// console.log(aggregateScoresBySkills(students, skill)); // output 175
+
+// function findTopExperiencedUsers(users, skill) {
+//   return users
+//     .filter((user) => user.skills[skill] !== undefined) // 1️⃣ Keep only users who have the skill
+//     .map((user) => ({ name: user.name, experience: user.skills[skill] })) // 2️⃣ Extract { name, experience }
+//     .sort((a, b) => b.experience - a.experience) // 3️⃣ Sort by experience (descending)
+//     .slice(0, 3) // 4️⃣ Get top 3 users
+//     .map((user) => user.name); // 5️⃣ Return just the names
+// }
+
+// const users = [
+//   { name: "Emma", age: 25, skills: { React: 3, JavaScript: 5, HTML: 4 } },
+//   { name: "Liam", age: 30, skills: { React: 2, CSS: 4 } },
+//   { name: "Olivia", age: 28, skills: { HTML: 5, CSS: 3 } },
+//   { name: "Noah", age: 22, skills: { JavaScript: 4, React: 6 } },
+//   { name: "Ava", age: 27, skills: { React: 5, JavaScript: 3 } },
+//   { name: "William", age: 32, skills: { React: 4, JavaScript: 2 } },
+// ];
+
+// const skillToFind = "React";
+
+// console.log(findTopExperiencedUsers(users, skillToFind));
+// // ✅ Output: [ "Noah", "Ava", "William" ] (Users with highest React experience)
+
+// 🛠️ Your Task
+// Write a single pipeline using .filter(), .map(), .reduce(), and .sort() to:
+
+// Filter "electronics" category.
+
+// Map to apply 15% discount on price.
+
+// Sort discounted products by price in descending order.
+
+// Reduce to get total discounted price.
+
+function totalDiscountedPrice(products) {
+  return products
+    .filter(
+      (product) => product.category === "electronics" && product.rating >= 4
+    )
+    .map((product) => ({
+      ...product,
+      discountedPrice: product.price * 0.8,
+    }))
+    .sort((a, b) => a.discountedPrice - b.discountedPrice)
+    .reduce((total, product) => total + product.discountedPrice, 0);
+}
+const products = [
+  { name: "Laptop", price: 1500, category: "electronics", rating: 4.5 },
+  { name: "Shoes", price: 100, category: "fashion", rating: 4.7 },
+  { name: "Smartphone", price: 900, category: "electronics", rating: 4.3 },
+  { name: "TV", price: 1800, category: "electronics", rating: 3.9 },
+  { name: "Headphones", price: 300, category: "electronics", rating: 4.8 },
+  { name: "Tablet", price: 1200, category: "electronics", rating: 4.6 },
+];
+
+console.log(totalDiscountedPrice(products)); // output:3120
+
+const today = new Date();
+const h = today.getHours();
+const m = today.getMinutes();
+const s = today.toLocaleTimeString();
+
+console.log(h, m, s);
