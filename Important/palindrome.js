@@ -1,7 +1,23 @@
-function palindrome(str) {
-  const reversed = str.split("").reverse().join("");
+// function palindrome(str) {
+//   const reversed = str.split("").reverse().join("");
 
-  return str === reversed;
+//   return str === reversed;
+// }
+
+// let s = "A man, a plan, a canal: Panama"
+
+// console.log(palindrome(s));
+
+function isPalindrome(str) {
+  let len = str.length;
+  for (let i = 0; i < len / 2; i++) {
+    if (str[i] !== str[len - i - 1]) {
+      return false;
+    }
+  }
+  return true;
 }
 
-console.log(palindrome("madam"));
+let s = "A man, a plan, a canal: Panama";
+
+console.log(isPalindrome(s));

@@ -28,8 +28,7 @@
 //   }
 // }
 
-function flattenArray(a) {
-  let flatten = [];
+function flattenArray(a, flatten = []) {
   for (let i = 0; i < a.length; i++) {
     if (Array.isArray(a[i])) {
       flattenArray(a[i], flatten); // Recursively flatten the nested array
@@ -58,4 +57,3 @@ function flattenArray(a) {
 
 // const flattened = [...flattenArray(arr)];
 // console.log(flattened); // Output: [1, 2, 3, 4, 5]
-

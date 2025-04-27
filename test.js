@@ -2318,32 +2318,467 @@
 
 // Reduce to get total discounted price.
 
-function totalDiscountedPrice(products) {
-  return products
-    .filter(
-      (product) => product.category === "electronics" && product.rating >= 4
-    )
-    .map((product) => ({
-      ...product,
-      discountedPrice: product.price * 0.8,
-    }))
-    .sort((a, b) => a.discountedPrice - b.discountedPrice)
-    .reduce((total, product) => total + product.discountedPrice, 0);
+// function totalDiscountedPrice(products) {
+//   return products
+//     .filter(
+//       (product) => product.category === "electronics" && product.rating >= 4
+//     )
+//     .map((product) => ({
+//       ...product,
+//       discountedPrice: product.price * 0.8,
+//     }))
+//     .sort((a, b) => a.discountedPrice - b.discountedPrice)
+//     .reduce((total, product) => total + product.discountedPrice, 0);
+// }
+// const products = [
+//   { name: "Laptop", price: 1500, category: "electronics", rating: 4.5 },
+//   { name: "Shoes", price: 100, category: "fashion", rating: 4.7 },
+//   { name: "Smartphone", price: 900, category: "electronics", rating: 4.3 },
+//   { name: "TV", price: 1800, category: "electronics", rating: 3.9 },
+//   { name: "Headphones", price: 300, category: "electronics", rating: 4.8 },
+//   { name: "Tablet", price: 1200, category: "electronics", rating: 4.6 },
+// ];
+
+// console.log(totalDiscountedPrice(products)); // output:3120
+
+// const today = new Date();
+// const h = today.getHours();
+// const m = today.getMinutes();
+// const s = today.toLocaleTimeString();
+
+// console.log(h, m, s);
+
+// function maxArea(height) {
+//   let maxWater = 0;
+
+//   for (let i = 0; i < height.length; i++) {
+//     for (let j = i + 1; j < height.length; j++) {
+//       let area = (j - i) * Math.min(height[i], height[j]);
+
+//       maxWater = Math.max(maxWater, area);
+//     }
+//   }
+
+//   return maxWater;
+// }
+
+// let height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+// console.log(maxArea(height));
+
+// function maxArea(height) {
+//   let left = 0;
+//   let right = height.length - 1;
+
+//   let maxWater = 0;
+
+//   while (left < right) {
+//     let area = (right - left) * Math.min(height[left], height[right]);
+
+//     maxWater = Math.max(maxWater, area);
+//     if (height[left] < height[right]) {
+//       left++;
+//     } else {
+//       right--;
+//     }
+//   }
+//   return maxWater;
+// }
+
+// let height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+// console.log(maxArea(height));
+
+// function buysell(price) {
+//   let maxProfit = 0;
+
+//   for (let i = 0; i < price.length; i++) {
+//     for (let j = i + 1; j < price.length; j++) {
+//       let profit = price[j] - price[i];
+
+//       maxProfit = Math.max(maxProfit, profit);
+//     }
+//   }
+//   return maxProfit;
+// }
+
+// let prices = [7, 1, 5, 3, 6, 4];
+
+// console.log(buysell(prices));
+
+// function buysell(price) {
+//   let left = 0;
+//   let right = 1;
+//   let maxProfit = 0;
+
+//   while (right < price.length) {
+//     if (price[right] > price[left]) {
+//       let profit = price[right] - price[left];
+//       maxProfit = Math.max(maxProfit, profit);
+//     } else {
+//       left = right;
+//     }
+//     right++;
+//   }
+
+//   return maxProfit;
+// }
+
+// let prices = [7, 1, 5, 3, 6, 4];
+
+// console.log(buysell(prices));
+
+// function duplicate(arr) {
+//   let set = new Set();
+//   let result = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (set.has(arr[i])) {
+//       result.push(arr[i]);
+//     } else {
+//       set.add(arr[i]);
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(duplicate([1, 6, 7, 1, 3, 9, 3]));
+
+// function mean(arr) {
+//   let sum = 0;
+//   let res = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//     res = sum / arr.length;
+//   }
+//   return res;
+// }
+
+// console.log(mean([4, 2, 8, 6])); // => 5
+
+// const person = {
+//   name: "mozammil",
+//   greet: function () {
+//     console.log(`Hello! ${this.name}`);
+//   },
+// };
+
+// //object Litral
+// person.greet();
+
+// //using new object
+// const obj = new Object(person);
+// obj.greet();
+
+// function Person(name, age) {
+//   (this.name = name),
+//     (this.age = age),
+//     (this.greet = function () {
+//       console.log(`Hello! ${this.name} how old are you ${this.age}`);
+//     });
+// }
+
+// //constructor functions
+// const person3 = new Person("Mozammil", 20);
+
+// person3.greet();
+
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   greet() {
+//     console.log(`Hello! ${this.name}hi ${this.age}`);
+//   }
+// }
+
+// let person4 = new Person("Raja",24)
+// person4.greet()
+
+// export default function flatten(value, result = []) {
+//   for (let i = 0; i < value.length; i++) {
+//     if (Array.isArray(value[i])) {
+//       return flatten(value[i], result);
+//     } else {
+//       result.push(value[i]);
+//     }
+//   }
+//   return result;
+// }
+
+// function maxSumSubArray(numbers) {
+//   let maximum = 0;
+//   let sum = 0;
+//   for (let i = 1; i < numbers.length; i++) {
+//     sum += numbers[i];
+//     maximum = Math.max(maximum, sum);
+//   }
+//   return maximum;
+// }
+// let numbers = [-1, 5, -3, 9, -11];
+
+// console.log(maxSumSubArray(numbers)); // o/p 11
+
+// Using brutforce
+// function maxProduct(nums) {
+//   let maxSum = -Infinity;
+
+//   for (let i = 0; i < nums.length; i++) {
+//     let maxProduct = 1;
+//     for (let j = i; j < nums.length; j++) {
+//       maxProduct *= nums[j];
+//       maxSum = Math.max(maxSum, maxProduct);
+//     }
+//   }
+//   return maxSum;
+// }
+// let numbers = [2, 3, -2, 4];
+
+// console.log(maxProduct(numbers)); // o/p 6
+
+// Kadane
+
+// /**
+//  * @param {number[]} nums
+//  * @param {number} target
+//  * @return {number}
+//  */
+// var search = function (nums, target) {
+//   let left = 0;
+//   let right = nums.length - 1;
+
+//   while (left <= right) {
+//     let mid = Math.floor((left + right) / 2);
+
+//     if (nums[mid] === target) {
+//       return mid;
+//     }
+
+//     if (nums[left] <= nums[mid]) {
+//       if (target >= nums[left] && target < nums[mid]) {
+//         right = mid - 1;
+//       } else {
+//         left = mid + 1;
+//       }
+//     } else {
+//       if (target > nums[mid] && target <= nums[mid]) {
+//         left = mid + 1;
+//       } else {
+//         right = mid - 1;
+//       }
+//     }
+//   }
+// };
+
+// function findMin(nums) {
+//   let res = nums[0];
+//   for (let i = 1; i < nums.length; i++) {
+//     if (nums[i] < res) {
+//       res = nums[i];
+//     }
+//   }
+
+//   return res;
+// }
+
+// console.log(findMin([3, 4, 5, 1, 2]));
+
+// function findMin(nums) {
+//   let left = 0;
+//   let right = nums.length - 1;
+
+//   while (left < right) {
+//     let mid = Math.floor((left + right) / 2);
+
+//     if (nums[mid] > nums[right]) {
+//       left = mid + 1;
+//     } else {
+//       right = mid;
+//     }
+//   }
+//   return nums[left];
+// }
+
+// console.log(findMin([3, 4, 5, 1, 2]));
+
+//brutforce
+
+// function isPalindrome(str) {
+//   return str === str.split("").reverse().join("");
+// }
+
+// function countSubstrings(s) {
+// let count = 0;
+// for (let i = 0; i < s.length; i++) {
+//   for (let j = i; j < s.length; j++) {
+//     let subStr = s.slice(i, j + 1);
+//     if (isPalindrome(subStr)) {
+//       count++;
+//     }
+//   }
+// }
+// return count;
+// }
+
+// // Input: s = "abc"
+// // Output: 3
+// // Explanation: Three palindromic strings: "a", "b", "c".
+
+// console.log(countSubstrings("abc"));
+
+// for (let i = 0; i < 5; i++) {
+//   ((j) => {
+//     setTimeout(() => {
+//       console.log(j);
+//     }, 1000);
+//   })(i);
+// }
+
+//brufrorce
+// function searchRotatedArrII(nums, target) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === target) {
+//       return true;
+//     }
+//   }
+
+//   return false;
+// }
+
+// let nums = [2, 5, 6, 0, 0, 1, 2],
+//   target = 0;
+
+// console.log(searchRotatedArrII(nums, target));
+
+// Using binary search
+// function searchRotatedArrII(nums, target) {
+//   let left = 0;
+//   let right = nums.length - 1;
+
+//   while (left <= right) {
+//     let mid = Math.floor((left + right) / 2);
+
+//     if (nums[mid] === target) {
+//       return true;
+//     }
+
+//     // handle duplicates
+
+//     if (nums[left] === nums[mid] && nums[mid] === nums[right]) {
+//       left++;
+//       right--;
+//     }
+//     //left part sorted
+//     else if (nums[left] <= nums[mid]) {
+//       if (nums[left] <= target && target < nums[mid]) {
+//         right = mid - 1;
+//       } else {
+//         left = mid + 1;
+//       }
+//     } else {
+//       if (nums[mid] < target && target <= nums[right]) {
+//         left = mid + 1;
+//       } else {
+//         right = mid - 1;
+//       }
+//     }
+//   }
+//   return false;
+// }
+
+// let nums = [2, 5, 6, 0, 0, 1, 2],
+//   target = 0;
+
+// console.log(searchRotatedArrII(nums, target));
+
+// console.log("begins");
+// setTimeout(() => {
+//   console.log("setTimeout 1");
+//   Promise.resolve().then(() => {
+//     console.log("promise 1");
+//   });
+// }, 0);
+
+// new Promise(function (resolve, reject) {
+//   console.log("promise 2");
+//   setTimeout(function () {
+//     console.log("setTimeout 2");
+//     resolve("resolve 1");
+//   }, 0);
+
+// }).then((res) => {
+//   console.log("dot then 1");
+//   setTimeout(() => {
+//     console.log(res);
+//   }, 0);
+// });
+
+// 1begins
+// promise 1
+// promise 2
+//dot then 1
+//setTimeout 1
+//setTimeout 2
+// res
+
+// begins
+// promise 2
+// setTimeout 1
+// promise 1
+// setTimeout 2
+// dot then 1
+// resolve 1
+
+"use strict";
+
+// var myFunction = function () {
+//   console.log(this.a);
+// };
+
+// var a = 5;
+// myFunction(); //5
+
+// Check if the system prefers dark mode or light mode
+// const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// if (prefersDarkMode) {
+//   console.log('System default theme: Dark');
+// } else {
+//   console.log('System default theme: Light');
+// }
+
+// function reverseWord(str) {
+//   let word = str.split(" ");
+//   let left = 0;
+//   let right = word.length - 1;
+
+//   while (left <= right) {
+//     [word[left], word[right]] = [word[right], word[left]];
+
+//     left++;
+//     right--;
+//   }
+//   return word.join(" ");
+// }
+
+// let words = "hello world";
+
+// console.log(reverseWord(words)); // o/p world hello
+
+// Check if Two Strings are Anagrams
+// function checkAnagram(char) {
+//   let res = char.split("").sort().join("");
+//   let res2 = char.split("").sort().join("");
+
+//   return res2 === res;
+// }
+
+// console.log(checkAnagram("anagram")); // true
+
+// Find the Number of Words in a String
+function findTheNoOfWordInStr(str) {
+  let word = str.split(" ")
+
+
+  return word.length
 }
-const products = [
-  { name: "Laptop", price: 1500, category: "electronics", rating: 4.5 },
-  { name: "Shoes", price: 100, category: "fashion", rating: 4.7 },
-  { name: "Smartphone", price: 900, category: "electronics", rating: 4.3 },
-  { name: "TV", price: 1800, category: "electronics", rating: 3.9 },
-  { name: "Headphones", price: 300, category: "electronics", rating: 4.8 },
-  { name: "Tablet", price: 1200, category: "electronics", rating: 4.6 },
-];
 
-console.log(totalDiscountedPrice(products)); // output:3120
-
-const today = new Date();
-const h = today.getHours();
-const m = today.getMinutes();
-const s = today.toLocaleTimeString();
-
-console.log(h, m, s);
+console.log(findTheNoOfWordInStr(" "));
