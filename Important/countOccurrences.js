@@ -1,4 +1,3 @@
-
 function countOccurrences(arr) {
   const count = {};
   arr.forEach((element) => {
@@ -30,3 +29,4 @@ console.log(result);
 // const arr = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
 // const result = countOccurrences(arr);
 // console.log(result); // Map { 1 => 1, 2 => 2, 3 => 3, 4 => 4 }
+

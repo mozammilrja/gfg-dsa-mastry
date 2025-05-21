@@ -5,13 +5,7 @@ function getProUsers(users) {
     return res
      
    }
-   
-   
-   
-   
-   
-   
-   
+      
    const users = [
      { name: 'Brook', scores: 75, skills: ['HTM', 'CSS', 'JS'], age: 16 },
      { name: 'Alex', scores: 80, skills: ['HTM', 'CSS', 'JS'], age: 18 },

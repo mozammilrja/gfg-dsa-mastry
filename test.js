@@ -114,7 +114,7 @@
 
 // console.log(LongestCommanPrefix(longest));
 
-// function duplicates(nums) {
+// function duplicates(res) {
 //   let result = new Set(nums);
 //   return result;
 // }
@@ -2774,11 +2774,1480 @@
 // console.log(checkAnagram("anagram")); // true
 
 // Find the Number of Words in a String
-function findTheNoOfWordInStr(str) {
-  let word = str.split(" ")
+// function findTheNoOfWordInStr(str) {
+//   let word = str.split(" ")
 
+//   return word.length
+// }
 
-  return word.length
+// console.log(findTheNoOfWordInStr(" "));
+
+// function sum(num) {
+//   let currentsum = num;
+//   function inner(b) {
+//     if (b !== undefined) {
+//       currentsum += b;
+//       return inner;
+//     } else {
+//       return currentsum;
+//     }
+//   }
+//   inner.valueOf = function () {
+//     return currentsum;
+//   };
+//   return inner;
+// }
+
+// const sum1 = sum(1);
+// console.log(sum1(2) == 3); // true
+// console.log(sum1(3) == 4); // true
+// console.log(sum(1)(2)(3) == 6); // true
+// console.log(sum(5)(-1)(2) == 6); // true
+
+// function sum(num) {
+//   let currentsum = num;
+
+//   function inner(b) {
+//     // If b is not undefined, keep adding and chaining
+//     if (b !== undefined) {
+//       currentsum += b;
+//       return inner; // Return the function for chaining
+//     } else {
+//       return currentsum; // Return the sum when no more arguments are passed
+//     }
+//   }
+
+//   // Ensure proper comparison by using valueOf
+//   inner.valueOf = function() {
+//     return currentsum; // Return the sum when compared to a number
+//   };
+
+//   return inner; // Return the inner function to allow chaining
+// }
+
+// const sum1 = sum(1);
+// console.log(sum1(2) == 3); // true
+// console.log(sum1(3) == 4); // true
+// console.log(sum(1)(2)(3) == 6); // true
+// console.log(sum(5)(-1)(2) == 6); // true
+
+// function createCounter() {
+//   let count = 0;
+//   return {
+//     get count() {
+//       return count++;
+//     },
+//     set count(value) {
+//       console.error('Cannot assign a new value to count.');
+//     },
+//   };
+// }
+
+// const counter = createCounter();
+
+// console.log(counter.count); // 0
+// console.log(counter.count); // 1
+// console.log(counter.count); // 2
+// counter.count = 100; // Cannot assign a new value to count.
+// console.log(counter.count); // 3
+
+function fizbuz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("fizzbuzz");
+    } else if (i % 3 === 0) {
+      console.log("fizz");
+    } else if (i % 5 === 0) {
+      console.log("buzz");
+    } else {
+      console.log(i);
+    }
+  }
 }
 
-console.log(findTheNoOfWordInStr(" "));
+// fizbuz(100);
+
+// const arr = [
+//   { name: "Mike", age: 20 },
+//   { name: "Peter", age: 30 },
+//   { name: "Doris", age: 18 },
+//   { name: "Edgar", age: 30 },
+// ];
+
+// const res = arr.sort((a, b) => {
+//   //sort by name with alphabetical
+//   if (a.name < b.name) {
+//     return -1;
+//   }
+//   if (a.name > b.name) {
+//     return 1;
+//   } else {
+//     return 0;
+//   }
+// });
+
+// console.log(res);
+// Find the Most Frequent Word
+
+// function mostFrequentWord(str) {
+//   const words = str.trim().split(/\s+/);
+
+//   let maxCount = 0;
+//   let mostFrequent = "";
+
+//   for (let i = 0; i < words.length; i++) {
+//     let count = 0;
+//     for (let j = 0; j < words.length; j++) {
+//       if (words[i] === words[j]) {
+//         count++;
+//       }
+//     }
+//     if (count > maxCount) {
+//       maxCount = count;
+//       mostFrequent = words[i];
+//     }
+//   }
+//   return { word: mostFrequent, count: maxCount };
+// }
+
+// console.log(
+//   mostFrequentWord("the quick brown fox jumps over the lazy dog the the fox")
+// ); // the
+
+// Remove Duplicate Words from a Sentence
+
+// function removeDuplicateWords(str) {
+//   const Words = str.trim(0).split(/\s+/);
+//   let res = []
+//   const set = new Set();
+//   for (let i = 0; i < Words.length; i++) {
+//     if (!set.has(Words[i])) {
+//       set.add(Words[i])
+//       res.push(Words[i])
+//     }
+//   }
+//   return res.join(" ")
+// }
+
+// // Input: "hello hello world world hello"
+// // Output: "hello world"
+
+// console.log(removeDuplicateWords("hello hello world world hello"));
+
+// Reverse Each Word in a Sentence
+
+// function reverseWordSenetenece(str) {
+//   const words = str.trim().split(/\s+/);
+//   let res;
+//   for (let i = 0; i < words.length; i++) {
+//     words[i] = words[i].toLowerCase().split("").reverse().join("");
+//   }
+
+//   return words.join(" ");
+// }
+
+// // Input: "React is awesome"
+// // Output: "tcaeR si emosewa"
+
+// console.log(reverseWordSenetenece("React is awesome"));
+
+// Check if Sentence is a Palindrome (Ignore spaces & case)
+
+// function checkPalindrome(str) {
+//   let str2 = str.toLowerCase().replace(/\s/g, "");
+//   let res = str2.split("").reverse().join("");
+
+//   return res === str2;
+// }
+
+// // Input: "Was it a car or a cat I saw"
+// // Output: true
+
+// console.log(checkPalindrome("Was it a car or a cat I saw"));
+
+// Replace a Word in a Sentence
+
+// function replaceWord(sentence, target, replace) {
+//   return sentence.split(target).join(replace);
+// }
+
+// // Input: ("I love CSS", "CSS", "JavaScript")
+// // Output: "I love JavaScript"
+
+// console.log(replaceWord("I love CSS", "CSS", "JavaScript"));
+
+// Find the Longest Palindromic Substring
+
+// 1️⃣ Reverse a String
+// 2️⃣ Check for Palindrome
+// 3️⃣ FizzBuzz: print numbers 1 to 100 replacing the multiples of 3 with fizz, multiples of 5 with buzz and multiples of both with fizzbuzz
+// 4️⃣ Find Factorial
+// 5️⃣ Find the Largest Number in an Array
+// 6️⃣ Count the Occurrences of Characters in a String
+// 7️⃣ Sort an Array Without Using .sort()
+// 8️⃣ Remove Duplicates from an Array
+
+// function missingNumber(num) {
+//   let set = new Set(num);
+//   let n = num.length;
+
+//   for (let i = 0; i <= n; i++) {
+//     if (!set.has(i)) {
+//       return i;
+//     }
+//   }
+// }
+
+// function missingNumber(nums,k) {
+//   const set = new Set(nums);
+//   const result = []
+
+//   for (let i = 0; i <= k; i++) {
+//     if (!set.has(i)) {
+//       result.push(i)
+//     };
+//   }
+//   return result
+// }
+
+// console.log(missingNumber([1, 3, 4],4));
+
+// function reverseString(str) {
+//   let result = "";
+
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     result += str[i];
+//   }
+
+//   return result;
+// }
+
+// console.log(reverseString("hello"));
+
+// function checkForPalindrome(str) {
+//   let s = str.toLowerCase();
+//   let left = 0,
+//     right = s.length - 1;
+
+//     while (left<right) {
+//       if (s[left] !== s[right]) {
+//         return false
+//       }
+//       left++
+//       right--
+//     }
+
+//   return true
+// }
+
+// console.log(checkForPalindrome("maam"));  // true
+// console.log(checkForPalindrome("Racecar"));  // true
+// console.log(checkForPalindrome("hello"));  // false
+
+// function FizzBuzz(nums) {
+//   for (let i = 1; i <= nums; i++) {
+//     if (i % 3 === 0 && i % 5 === 0) {
+//       console.log("FizzBuzz");
+//     } else if (i % 3 === 0) {
+//       console.log("Fizz");
+//     } else if (i % 5 === 0) {
+//       console.log("Buzz");
+//     } else {
+//       console.log(i);
+//     }
+//   }
+// }
+
+// FizzBuzz(100)
+
+// function findFactorial(n) {
+//   let result = 1;
+//   for (let i = 2; i <= n; i++) {
+//     result = result * i
+//   }
+//   return result
+// }
+
+// console.log(findFactorial(5));
+
+//  Find the Largest Number in an Array
+
+// function findLargestNo(arr) {
+//   let res = arr[0];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > res) {
+//       res = arr[i]
+//     }
+//   }
+//   return res;
+// }
+
+// console.log(findLargestNo([1, 2, 3, 4, 5]));
+
+// function removeDuplicate(nums) {
+//   let set = new Set();
+//   let res = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     if (!set.has(nums[i])) {
+//       set.add(nums[i]);
+//       res.push(nums[i]);
+//     }
+//   }
+//   return res;
+// }
+
+// console.log(removeDuplicate([1, 2, 3, 3]));
+
+// // using bubble sort
+// function sortArr(arr) {
+//   let n = arr.length;
+
+//   for (let i = 0; i < n - 1; i++) {
+//     for (let j = 0; j < n - 1; j++) {
+//       if (arr[i] > arr[j + 1]) {
+//         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+//       }
+//     }
+//   }
+//   return arr;
+// }
+
+// let array = [50, 96, 756, 65, 66, 683];
+// console.log(sortArr(array));
+
+// x is hoisted, but not initialized
+// let a = [1, 2];
+//  let b = [1, 2];
+//   console.log(a == b);
+//   console.log(a === b);
+
+// let x = [1, 2, 3];
+// let y = x;
+// y.push(4);
+// console.log(x);
+
+// function isStringAnagram(str1, str2) {
+//   let s1 = str1.split("").sort().join("");
+//   let s2 = str2.split("").sort().join("");
+
+//   return s1 === s2;
+// }
+
+// let str1 = "abcd",
+//   str2 = "dcba";
+
+// console.log(isStringAnagram(str1, str2));
+
+// function palindrome(arr) {
+//   let res = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let soreted = arr[i].split("").reverse().join("");
+
+//     if (soreted === arr[i]) {
+//       res.push(arr[i]);
+//     }
+//   }
+//   return res;
+// }
+
+// const words = [
+//   "madam",
+//   "hello",
+//   "racecar",
+//   "world",
+//   "level",
+//   "openai",
+//   "noon",
+//   "javascript",
+// ];
+
+// console.log(palindrome(words)); //["madam", "racecar", "level", "noon"]
+
+// function groupAnagram(arr) {
+//   let map = new Map();
+
+//   let res = 0;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let sortArr = arr[i].split("").sort().join("");
+
+//     if (!map.has(sortArr)) {
+//       map.set(sortArr, []);
+//     }
+//     map.get(sortArr).push(arr[i]);
+//   }
+
+//   return Array.from(map.values());
+// }
+
+// let strs = ["abc", "bca", "cab", "xyz", "zyx"];
+
+// console.log(groupAnagram(strs));
+
+// function throttle(fun, wait) {
+//   let lastCall = 0;
+
+//   return function (...args) {
+//     let now = Date.now();
+
+//     if (now - lastCall >= wait) {
+//       lastCall = now;
+//       fun(...args);
+//     }
+//   };
+// }
+
+// const throttlefun = throttle(() => {
+//   console.log("throttle");
+// }, 5000);
+
+// throttlefun();
+
+// throttlefun();
+// throttlefun();
+
+// function flattenArr(arr, result = []) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (Array.isArray(arr[i])) {
+//        flattenArr(arr[i], result);
+//     } else {
+//       result.push(arr[i]);
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(flattenArr([1,2,3,[3],[4]]));
+
+// //Find the Most Frequent Character
+// function mostFrequentChar(str) {
+//   let frequency = "";
+//   let maxCount = 0;
+
+//   for (let i = 0; i < str.length; i++) {
+//     let count = 0;
+//     for (let j = 0; j < str.length; j++) {
+//       if (str[i] === str[j]) {
+//         count++;
+//       }
+//     }
+//     if (count > maxCount) {
+//       maxCount = count;
+//       frequency = str[i];
+//     }
+//   }
+//   return { char: frequency, count: maxCount };
+// }
+
+// console.log(mostFrequentChar("hello"));
+
+// Remove a Given Character from a String
+// function removeChar(str, k) {
+//   let res = "";
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] !== k) {
+//       res += str[i];
+//     }
+//   }
+//   return res
+// }
+
+// let str = "javascript",
+//   charToRemove = "a";
+// console.log(removeChar(str, charToRemove));
+
+//Kiwi Technologies India Pvt. Ltd.
+
+// function shuffle(arr) {
+//   return arr
+//   .map(value => ({ value, sort: Math.random() }))
+//   .sort((a, b) => a.sort - b.sort)
+//   .map(({ value }) => value);
+// }
+
+// console.log(shuffle([1, 2, 3, 4, 5]));
+
+// function sum(n) {
+
+//   let res = 0
+
+//   for (let i = 0; i < n.length; i+=3) {
+
+//     res += n[i]
+//   }
+// return res
+// }
+
+// console.log(sum([1,2,3,1,7,3]));
+
+//Write a JavaScript function that returns the Fibonacci
+// sequence up to a given number of terms.
+
+// function fibonacci(n) {
+//   let res = [];
+//   for (let i = 0; i < n.length; i++) {
+//     for (let j = 1; j < n.length; j++) {
+//       res.push(n[j]);
+//     }
+//   }
+//   return res;
+// }
+
+// console.log(fibonacci(10));
+
+// function countCharacterOccurrences(str) {
+//   const charCount = {}; // Initialize an empty object to store counts
+
+//   // Loop through the string and count each character
+//   for (let i = 0; i < str.length; i++) {
+//     // If the character is not in the object, initialize it to 0
+//     if (charCount[str[i]]) {
+//       charCount[str[i]] += 1; // Increment the count if it exists
+//     } else {
+//       charCount[str[i]] = 1; // Otherwise, set the count to 1
+//     }
+//   }
+
+//   return charCount;
+// }
+
+// // Example usage:
+// const input = "aabcc";
+// console.log(countCharacterOccurrences(input));
+
+// function isSubsequence(s, t) {
+//   let i = 0;
+//   let j = 0;
+
+//   while (i < s.length && j < t.length) {
+//     if (s[i] === t[j]) {
+//       i++;
+//     }
+//     j++;
+//   }
+//   return i === s.length;
+// }
+
+// console.log(isSubsequence("ace", "abcde"));
+
+// function subarray(arr,k) {
+//   let map = new Map();
+
+//   for (let i = 0; i < k; i++) {
+//     if (!map.has(arr[i])) {
+//       map.set(arr[i], []);
+//     }
+//     map.get(arr[i]).push(arr[i]);
+//   }
+//   return Array.from(map.values());
+// }
+
+// let arr = [1, 2, 5, 6, 7, 8, 1, 2, 3, 3, 3, 4, 5];
+// console.log(subarray(arr,3));
+
+// function counter(intialval = 0) {
+//   let count = intialval;
+
+//   return {
+//     increment() {
+//       return ++count;
+//     },
+//     decrement() {
+//       return --count;
+//     },
+//     reset() {
+//       return (count = 0);
+//     },
+//   };
+// }
+
+// let countval = counter();
+// console.log(countval.increment());
+// console.log(countval.increment());
+// console.log(countval.decrement());
+// console.log(countval.reset());
+
+// function missingNumber(nums, n) {
+// let set = new Set(nums)
+// let res = []
+// for (let i = 0; i <=n; i++) {
+//   if (!set.has(i)) {
+//     res.push(i)
+//   }
+
+// }
+// return res
+// }
+
+// console.log(missingNumber([3, 0, 1,5], 4));
+
+// function reverseWord(str) {
+//   let word = str.trim().split(/\s/);
+
+//   let largest = word[0];
+//   let secondlargest = word[0];
+
+//   for (let i = 0; i < word.length; i++) {
+//     if (word.length > largest.length) {
+//       secondlargest = largest;
+//       largest = word
+//       if (word.length > secondlargest.length) {
+//         secondlargest = word
+//       }
+//     }
+//   }
+//   return secondlargest;
+// }
+
+// console.log(reverseWord(" Word programm set"));
+
+// function isPalindrome(str) {
+//   let res = str.split("").reverse().join("")
+//   return str ===res
+// }
+
+// console.log(isPalindrome("race a car"));
+
+// function largestNo(num) {
+//   let largest = num[0]
+
+//   for (let i = 0; i < num.length; i++) {
+
+//     if (num[i] > largest) {
+//       largest = num[i]
+//     }
+//   }
+//   return largest
+// }
+
+// console.log(largestNo([1,2,3]));
+
+// function deepClone(obj) {
+//   if (obj === null || typeof obj !== "object") {
+//     return obj;
+//   }
+
+//   let clone = Array.isArray(obj) ? [] : {};
+
+//   for (const key in obj) {
+//     if (obj.hasOwnProperty(key)) {
+//       clone[key] = deepClone(obj[key]);
+//     }
+//   }
+//   return clone;
+// }
+// const original = {
+//   name: "Mozammil",
+//   details: {
+//     age: 28,
+//     skills: ["JavaScript", "React"],
+//   },
+// };
+
+// const copy = deepClone(original);
+// copy.details.skills[0] = "Python";
+
+// console.log(original.details.skills[1]); // Still "JavaScript" — original is safe
+
+// Reverse a string
+
+// function reverseStr(str) {
+//   let res = "";
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     res += str[i]
+//   }
+//   return res
+// }
+
+// console.log(reverseStr("hello"));
+
+// Find the first non-repeating character
+// Input: "leetcode"
+// Output: 'l'
+
+// function nonRepeatingChar(str) {
+//   let res = "";
+//   for (let i = 0; i < str.length; i++) {
+//     let count = 0;
+//     for (let j = 0; j < str.length; j++) {
+//       if (str[i] === str[j]) {
+//         count++;
+//       }
+//     }
+//     if (count === 1) {
+//       return str[i];
+//     }
+//   }
+//   return null;
+// }
+
+// console.log(nonRepeatingChar("Hello"));
+
+// Count frequency of each character.
+
+// function countOfFrequencyChar(str) {
+//   let map = new Map();
+//   for (let i = 0; i < str.length; i++) {
+//     map.set(str[i], (map.get(str[i]) || 0) + 1);
+//   }
+
+//   return map
+// }
+
+// console.log(countOfFrequencyChar("Hello"));
+// //Map(4) { 'H' => 1, 'e' => 1, 'l' => 2, 'o' => 1 }
+
+// ✦ Remove duplicate characters from a string.//done
+// z
+// function removeChar(str) {
+//   let set = new Set()
+
+//   let res = []
+//   for (let i = 0; i < str.length; i++) {
+//     if (!set.has(str[i])) {
+//       set.add(str[i])
+//       res.push(str[i])
+//     }
+//   }
+//   return res
+// }
+
+// console.log(removeChar("hello"));
+
+// // Reverse each word in a sentence (not just the string)
+// function reverseWord(str) {
+//   let words = str.trim("").split(/\s/);
+//   let res = [];
+//   for (let j = words.length - 1; j >= 0; j--) {
+//     res.push(words[j]);
+//   }
+//   return res;
+// }
+
+// console.log(reverseWord("hello world"));
+
+//Longest substring without repeating characters
+// function longestSubStringNonRepeating(s) {
+//   let largest = 0
+
+//     for (let i = 0; i < s.length; i++) {
+//         let char = new Set()
+//         for (let j = i; j < s.length; j++) {
+//             if (char.has(s[j])) {
+//                 break
+//             }
+//             char.add(s[j])
+//             largest =
+//         }
+//     }
+//     return largest
+// }
+
+// //"abcabcbb"
+// //"abc"
+
+// console.log(longestSubStringNonRepeating("abcabcbb"));
+
+// function groupAnagram(str) {
+//   let map = new Map();
+
+//   for (let i = 0; i < str.length; i++) {
+//     let sorted = str[i].split("").sort().join("");
+
+//     if (!map.has(sorted)) {
+//       map.set(sorted, []);
+//     }
+//     map.get(sorted).push(str[i]);
+//   }
+//   return Array.from(map.values());
+// }
+
+// let strs = ["act", "pots", "tops", "cat", "stop", "hat"];
+
+// // Output: [["hat"],["act", "cat"],["stop", "pots", "tops"]]
+
+// console.log(groupAnagram(strs));
+
+// function findMissingNumberInSequence(numbers) {
+//   let set = new Set(numbers);
+//   let res = [];
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (!set.has(i)) {
+//       res.push(i);
+//     }
+//   }
+//   return res;
+// }
+
+// console.log(findMissingNumberInSequence([1, 3, 0])); // o/p 11
+// function reverseWords(sentence) {
+//   if (sentence.length === 0) return;
+
+//   let words = sentence.replace(/\s+/g, "");
+
+//   let res = [];
+
+//   for (let i = 0; i < words.length; i++) {
+//     let sorted = words[i].split("").reverse().join("");
+//     if ((words[i] = sorted)) {
+//       res.push(words[i]);
+//     }
+//   }
+
+//   return res.join("");
+// }
+
+// //For the purpose of user debugging.
+// console.log(reverseWords("Hello World"));
+
+// Input: str1 = "xyz", str2 = "axabz"
+// Output: 2
+
+// function vowelCount(str) {
+//   let  count = 0;
+//   let res = []
+//   for (let i = 0; i < str.length; i++) {
+//     if ("AEIOUEaeioue".includes(str[i])) {
+//       count++;
+//       res.push(str[i])
+//     }
+//   }
+//   return {count:count, char:res};
+// }
+
+// console.log(vowelCount("hello"));
+
+// function findMaxNumber(nums) {
+//   let res = nums[0];
+
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] > res) {
+//       res = nums[i];
+//     }
+//   }
+
+//   return res;
+// }
+
+// console.log(findMaxNumber([1, 2, 3, 4, 5]));
+// console.log(findMaxNumber([-10, -20, -30, -1]));
+
+// function searchBruteForce(numbers, target) {
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] === target) {
+//       return i;
+//     }
+//   }
+//   return -1;
+// }
+
+// function reverseVowels(str) {
+//   let vowels = "aeioueAEIOUE";
+//   let res = [];
+//   for (let i = 0; i < str.length; i++) {
+//     if (vowels.includes(str[i])) {
+//       res.push(str[i]);
+//     }
+//   }
+//   return res
+// }
+
+// // Input: s = "leetcode"
+// // Output: "leotcede"
+
+// console.log(reverseVowels("leetcode"));
+
+// function removeElement(nums, val) {
+//   let res = [];
+
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] != val) {
+//       res.push(nums[i]);
+//     }
+//   }
+//   return res;
+// }
+
+// let nums = [0, 1, 2, 2, 3, 0, 4, 2],
+//   val = 2;
+
+// console.log(removeElement(nums, val));
+
+// function removeElement(nums, val) {
+//   let k = 0;
+
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] != val) {
+//       nums[k++] = nums[i]
+//       // k++
+//     }
+//   }
+//   return k;
+// }
+// function removeElement(nums, val) {
+//   let k = 0; // slow pointer - the next index to place a valid element
+
+//   for (let i = 0; i < nums.length; i++) {
+//     // fast pointer
+//     if (nums[i] !== val) {
+//       nums[k] = nums[i]; // copy only the needed values
+//       k++;
+//     }
+//   }
+
+//   return k; // new length of the array
+// }
+
+// let nums = [0, 1, 2, 2, 3, 0, 4, 2],
+//   val = 2;
+
+// console.log(removeElement(nums, val));
+
+// let data = {
+//   films: [
+//     { url: "https://test.com/api/films/1/", id: 11 },
+//     { url: "https://test.com/api/films/2/", id: 11 },
+//     { url: "https://test.com/api/films/3/", id: 1 },
+//     { url: "https://test.com/api/films/6/", id: 2 },
+//   ],
+// };
+// const res = data.films
+//   .filter((item, index) => item.id === 11)
+//   .map((item) => item.url);
+
+// console.log("res :>> ", res);
+
+// let x = 7 + 1 + "2" + 1 + 5;
+
+// 8215
+
+// let y = 7 + "2" + 1 + 1 + 5;
+// 72115
+
+// let obj1 = { a: 1, b: 3 };
+// let obj2 = { b: 2 };
+
+// console.log({ ...obj1, ...obj2 });
+
+// function deepEqual(a, b) {
+//   if (a === b) return true;
+
+//   if (
+//     typeof a !== "object" ||
+//     typeof b !== "object" ||
+//     a === null ||
+//     b === null
+//   )
+//     return false;
+
+//   const keysA = Object.keys(a);
+//   const keysB = Object.keys(b);
+
+//   console.log(keysA, keysB);
+
+//   if (keysA.length !== keysB.length) return false;
+
+//   return keysA.every((key) => deepEqual(a[key], b[key]));
+// }
+
+// const obj1 = {
+//   name: "Mozammil",
+//   details: { age: 28, city: "Delhi" },
+// };
+
+// const obj2 = {
+//   name: "Mozammil",
+//   details: { age: 28, city: "Delhi" },
+// };
+
+// console.log(deepEqual(obj1, obj2));
+
+// function findElement(arr1, arr2) {
+//   let res = arr1
+//     .filter((item) => !arr2.includes(item))
+//     .concat(arr2.filter((item) => !arr1.includes(item)));
+//   return res;
+// }
+
+// var a = [1, 2, 3, 4];
+// var b = [5, 7, 2, 3];
+
+// console.log(findElement(a, b));
+
+// // output =  [ 1 , 4 , 5 , 7 ]
+
+// function reverseStr(str) {
+//   let res = "";
+
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     res += str[i];
+//   }
+//   return res;
+// }
+
+// console.log(reverseStr("hello"));
+
+// let data = [
+//   { name: "Mozammil", value: "4" },
+//   { name: "Aozammil", value: "4" },
+//   { name: "Zozammil", value: "4" }
+// ];
+
+// const res = data.sort((a,b) => a.name.localeCompare(b.name))
+
+// console.log(res);
+
+// To find character occurance for the string
+
+// function characterOccurance(str, latter) {
+//   let freqency = {};
+
+//   let count = 0;
+//   for (let i = 0; i < str.length - 1; i++) {
+//     if (str.charAt(i) === latter) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(characterOccurance("mozammil", "m"));
+
+// function getSumZeros(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 1; j < arr.length; j++) {
+//       if (arr[i] + arr[j] === 0) {
+//         return [arr[i], arr[j]];
+//       }
+//     }
+//   }
+// }
+
+// // Input: [-5, -3, -1, 0, 1, 3, 4, 5]
+// // Output: [-5, 5] or [-3, 3]
+
+// console.log(getSumZeros([-5, -3, -1, 0, 1, 3, 4, 5]));
+
+// find the largest pair of the 2 elements using indexing with unsorted elements
+
+// function largestPairSumOfTwo(arr) {
+//   let res = arr.sort((a, b) => b - a);
+
+//   console.log(res);
+
+//   return res[0] + res[1];
+// }
+
+// const result = largestPairSumOfTwo([9, 7, 8, 4, 5, 6, 1, 2, 3]);
+
+// console.log(result);
+
+//To find the largest pair of the 2 elements using indexing with sorted elements
+
+// function largestPairSumOfTwo(arr) {
+
+//   return arr[arr.length-1] + arr[arr.length-2]
+// }
+
+// const result = largestPairSumOfTwo([1,2,3,4,5,6,7,8,9])
+
+// console.log(result);
+
+// Code 23: To find the index of an element from an array
+
+// function findTheIndexOF(str) {
+//   let res = str.indexOf("d")
+
+// console.log(res);}
+
+// const array = ["a", "b", "a", "c", "a", "d"];
+
+// console.log(findTheIndexOF(array));
+
+//Fibonacci Series (0,1,1,2,3,5,8,13....)
+
+// function fibonacci(nums) {
+//   let res = [0, 1];
+
+//   for (let i = 1; i < nums; i++) {
+//     res.push(res[i] + res[i - 1]);
+//   }
+//   return res
+// }
+// console.log(fibonacci(5));
+
+//26: Finding a missing elements in an array and then add with existing elements. (-1 means if elements not found then it will return always -1 as per rule)
+
+// function missingNumber(arr) {
+//   let n = arr.length + 1;
+
+//   let res = (n * (n + 1)) / 2;
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//   }
+
+//   return res - sum;
+// }
+
+// console.log(missingNumber([1, 3])); // Output: 2
+
+// Sorting of an string/character
+
+// function sorting(str) {
+//   let result = str.sort()
+//   return result
+// }
+
+// console.log(sorting(["d","g","y","e","r","p"]))
+
+// To check if given number is prime or not
+
+// function prime(n) {
+//   for (let i = 2; i < n; i++) {
+//     if (n % i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(prime(17));
+
+// "Print all Prime Numbers between 2 and 100"
+
+// function Prime(n) {
+//   for (let i = 2; i <= n; i++) {
+//     let flag = 0;
+//     for (let j = 2; j < i; j++) {
+//       if (i % j == 0) {
+//         flag = 1;
+//         break;
+//       }
+//     }
+
+//     if (i > 1 && flag == 0) {
+//       console.log(i);
+//     }
+//   }
+// }
+
+// Prime(100);
+
+// To find unique values from 2 arrays and keep into one array.
+
+// function uniqueElements(arr1, arr2) {
+//   let res = arr1
+//     .filter((item) => !arr2.includes(item))
+//     .concat(arr2.filter((item) => !arr1.includes(item)));
+//   console.log(res);
+// }
+
+// function uniqueElements(arr1, arr2) {
+//   let res = [...arr1, ...arr2];
+//   console.log([...new Set(res)]);
+// }
+
+// uniqueElements([1, 2, 3, 4, 4], [2, 3, 4, 5, 6]);
+
+// Find first duplicate element from an array
+
+// function findFirstDuplicate(arr) {
+//   let set = new Set();
+//   for (let i = 0; i < arr.length; i++) {
+//     if (set.has(arr[i])) {
+//       return arr[i];
+//     }
+//     set.add(arr[i]);
+//   }
+//   return null;
+// }
+
+// const arr = [2, 5, 3, 4, 5, 2, 3]; //5
+
+// console.log(findFirstDuplicate(arr));
+
+//  print "Fizz" instead of the number, and for the multiples of five, print "Buzz".
+// For numbers which are multiples of both three and five, print "FizzBuzz"
+
+// function fizbuz(n) {
+//   for (let i = 1; i <= n; i++) {
+//     if (i % 5 === 0 && i % 3 === 0) {
+//       console.log("FizzBuzz");
+//     } else if (i % 3 === 0) {
+//       console.log("Fizz");
+//     } else if (i % 5 === 0) {
+//       console.log("Buzz");
+//     }
+//     console.log(i);
+//   }
+// }
+
+// fizbuz(100);
+
+//Uppercase of each first letter of a words
+// function firstLetterCaps(str) {
+//   let word = str.split(" ");
+
+//   for (let i = 0; i < word.length; i++) {
+//     word[i] = word[i].charAt(0).toUpperCase() + word[i].slice(1);
+//   }
+//   return word.join(" ");
+// }
+
+// console.log(firstLetterCaps("hello word"));
+
+//Code 36: Uppercase of each first letter of a words using map function
+
+// function firstLetterCaps(str) {
+
+// let res = str.split(" ").map((item) => {
+//   return item[0].toUpperCase()+ item.slice(1)
+// })
+// return res.join(' ')
+// }
+
+// console.log(firstLetterCaps("hello word"));
+
+// To check ending of the string with given character/s using inbuild function
+
+// function checkEndchar(str, end) {
+//   return str.endsWith(end);
+// }
+// let str = "Hello Mozammil";
+// let ending = "mil";
+
+// console.log(checkEndchar(str, ending));
+
+// To check ending of the string with given character/s using custom
+
+// function checkEndchar(str, end) {
+// let res = str.lastIndexOf(end.length)
+// let res2 = str.slice(-end.length)
+// console.log(res2===end);
+// }
+// let str = "Hello Mozammil";
+// let ending = "mil";
+
+// console.log(checkEndchar(str, ending));
+
+// function largestFromArray(arr) {
+//   let result = []
+//   for (let i = 0; i < arr.length; i++) {
+//     let max = arr[i][0];
+//     for (let j = 0; j < arr[i].length; j++) {
+//       if (arr[i][j] > max) {
+//         max = arr[i][j];
+//       }
+//     }
+//     result.push(max)
+//   }
+//   return result
+// }
+
+// const arr = [
+//   [3, 8, 12],
+//   [9, 4, 11],
+//   [1, 7, 15],
+// ];
+// //15
+// console.log(
+//   largestFromArray([
+//     [1, 2, 3, 4],
+//     [5, 6, 7, 9],
+//     [45, 76, 2, 1],
+//     [89, 90, 87, 9],
+//   ])
+// );
+// console.log(largestFromArray(arr));
+
+// Print string n times using inbuilt function
+
+// function stringPrint(str) {
+//   let res = "";
+//   for (let i = 1; i <= 3; i++) {
+//     res += str + " ";
+//   }
+//   return res;
+// }
+
+// console.log(stringPrint("Hello"));
+
+//Code 45: Converting one dimensional array into n dimensional array using slice
+
+// function arrToSubArr(arr, size) {
+//   let result = [];
+
+//   while (arr.length > 0) {
+//     result.push(arr.splice(0, size));
+//     // arr = arr.slice(size);
+//   }
+//   return result;
+// }
+
+// console.log(arrToSubArr([1, 2, 3, 4, 5, 6, 7, 8, 9],4));
+
+// function removeFalseValue(arr) {
+//   // let res = [];
+//   // for (const item of arr) {
+//   //   if (item) {
+//   //     res.push(item);
+//   //   }
+//   // }
+//   // return res;
+
+//   // using filter
+//   return arr.filter((item) => item)
+// }
+
+// console.log(
+//   removeFalseValue(["priya", 0, "", false, null, undefined, "ate", NaN, 9])
+// ); //["priya","ate",9]
+
+//Checking all letters of second words should present in first word, in the same order using include function
+
+// function charCheck(str) {
+//   for (let i = 0; i < str.length; i++) {
+//     if ("abc".includes(str[i])) {
+//       return true;
+//     }
+//   }
+
+//   return false;
+// }
+
+// console.log(charCheck("abcde"));
+
+//  Unique values only from 2 arrays
+
+// function diffArrayElement(arr1,arr2) {
+
+//   let res = arr1.filter((item) => !arr2.includes(item)).concat(arr2.filter((item) => !arr1.includes(item)))
+
+//   console.log('res :>> ', res);
+
+// }
+
+// console.log(diffArrayElement([1,2,3,4], [2,3,4,5])) //[1,5]
+
+//Using the Array filter Method to Remove Items By Value
+// var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+// let res = array.filter((item) => item != 5);
+
+// console.log('res :>> ', res);
+
+// //  Spiral Matrix Printing | Print the elements of a matrix in spiral form
+// var input = [
+//   [1, 2, 3, 4],
+//   [5, 6, 7, 8],
+//   [9, 10, 11, 12],
+//   [13, 14, 15, 16],
+// ];
+
+// let res = input.flat(Infinity)
+
+// console.log('res :>> ', res);
+
+// //[1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]
+
+// const arr = [
+//   ["a", "b"],
+//   ["c", "d"],
+//   ["e", "f"],
+// ];
+
+// let res = arr.reduce((a,b) => a.concat(b))
+
+// console.log('res :>> ', res);
+
+// Reverse of a nuber using converting into string
+
+// function reverseNumber(num) {
+
+//   let str =  num.toString()
+
+//   let rev = str.split("").reverse().join("")
+
+//   console.log('str :>> ', str);
+//   console.log('rev :>> ', rev);
+
+// }
+
+// console.log(reverseNumber(123)) //321
+
+// Check Armstrong Number
+// function CheckArmstrongNum(num) {
+//   const digits = num.toString().split("");
+//   let res = [];
+//   // console.log("digits :>> ", digits);
+//   for (let i = 1; i <= digits.length; i++) {
+//     console.log([i]**[i]);
+//     // res.push(num[i] * num[i]);
+//   }
+// }
+
+// console.log(CheckArmstrongNum(153));
+
+// function Person(name) {
+//   this.name = name
+//   this.Greet = function(){
+//     console.log(`Hello ${this.name}`);
+//   }
+// }
+
+// const greet = new Person("Mozammil")
+
+// greet.Greet()
+
+// To find all the missing numbers from an array
+
+// function allMissingNo(nums) {
+//   let set = new Set(nums);
+//   let res = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     if (!set.has(i)) {
+//       res.push(i);
+//     }
+//     // set.add(nums[i]);
+//   }
+//   return res;
+// }
+
+// console.log(allMissingNo[(1, 3, 5, 7)]);
+
+//sort by frequency of the letters
+//Remove duplicate elements from an array using filter
+// function removeDuplicate(str) {
+//   return str.filter((value, index, arr) => arr.indexOf(value) === index);
+
+// }
+
+// console.log(removeDuplicate([1, 2, 2, 3, 3, 8, 8, 9]));
+//Reverse a string with reversing individual words
+// function reverseStr(str) {
+//   let res = [];
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     res.push(str[i])
+//   }
+//   return res.join("");
+// }
+
+// // Output: "gnimmargorp evol I"
+// console.log(reverseStr("I love programming"));
+
+// function checkArgumet() {
+//   console.log(arguments);
+// }
+
+// console.log(checkArgumet([1,2,3,4]));
+
+function varArgsFunc(...params) {
+  params.forEach(function (value, index) {
+    console.log(index, ": ", value);
+  });
+}
+
+// driver code
+varArgsFunc("Hello", ",", "World", "!!!");

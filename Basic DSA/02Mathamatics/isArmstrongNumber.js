@@ -41,3 +41,7 @@ if (isArmstrongNumber(exampleNumber)) {
 // } else {
 //   console.log(`${exampleNumber} is not an Armstrong number.`);
 // }
+
+
+// To find the closest number in an array
+

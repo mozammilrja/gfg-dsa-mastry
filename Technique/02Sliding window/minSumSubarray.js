@@ -1,5 +1,5 @@
 // function minSumSubarray(nums, k) {
-//   let min = -Infinity;
+//   let min = Infinity;
 //   let n = nums.length;
 
 //   for (let i = 0; i <= n - k; i++) {

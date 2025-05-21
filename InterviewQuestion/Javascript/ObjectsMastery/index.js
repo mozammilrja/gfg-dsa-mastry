@@ -9,9 +9,9 @@
 // filter object
 
 
-let obj = { a: 1, b: 2, c: 3 };
-let filteredObj = Object.fromEntries(
-  Object.entries(obj).filter(([key, value]) => value > 1)
-);
-console.log(filteredObj); // { b: 2, c: 3 }
+// let obj = { a: 1, b: 2, c: 3 };
+// let filteredObj = Object.fromEntries(
+//   Object.entries(obj).filter(([key, value]) => value > 1)
+// );
+// console.log(filteredObj); // { b: 2, c: 3 }
 

@@ -1,21 +1,13 @@
-function curry(func) {
-  // Get the number of arguments the original function expects
-  const arity = func.length;
-
-  // Create a curried version of the function
-  function curried(...args) {
-    // If enough arguments have been provided, invoke the original function
-    if (args.length >= arity) {
-      return func(...args);
+function curry(fn) {
+  return function curried(...args) {
+    if (args.length >= fn.length) {
+      return fn(...args); // Enough arguments? Call the function
+    } else {
+      return function (...nextArgs) {
+        return curried(...args, ...nextArgs); // Keep collecting
+      };
     }
-
-    // Otherwise, return a new function that collects more arguments
-    return function(...nextArgs) {
-      return curried(...args, ...nextArgs);
-    };
-  }
-
-  return curried;
+  };
 }
 
 // Example usage:
