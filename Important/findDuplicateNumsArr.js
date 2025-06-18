@@ -16,7 +16,7 @@ function findDuplicate(nums) {
     if (set.has(nums[i])) {
       result.push(nums[i]);
     } else {
-      set.add(nums[i]);
+      z``
     }
   }
   return result;
