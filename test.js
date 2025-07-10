@@ -69,7 +69,7 @@
 // console.log(test2());
 // console.log(test2());
 
-// find factorials
+// find factorss
 
 // function factorial(n) {
 //   if (n === 0) {
@@ -4284,12 +4284,12 @@ function fizbuz(n) {
 
 // // Output: [["act", "cat"], ["pots", "tops", "stop"], ["hat"]]
 
-let obj = {
-  a: 20,
-  b: 30,
-  c: 50,
-  a: 60,
-};
+// let obj = {
+//   a: 20,
+//   b: 30,
+//   c: 50,
+//   a: 60,
+// };
 
 //longest words in strings
 
@@ -4489,4 +4489,814 @@ let obj = {
 //   return res;
 // }
 
-// console.log(missingNumber([1,1])); //[2]
+// console.log(missingNumber([1, 1])); //[2]
+
+// function check() {
+//   for (let i = 0; i < 3; i++) {
+//     const element = () => {
+//       console.log(i);
+//     };
+//     setTimeout(element, 200);
+//   }
+// }
+
+// check();
+
+// function reverseStr(s) {
+//   let left = 0;
+//   let right = s.length - 1;
+
+//   while (left < right) {
+//     [s[left], s[right]] = [s[right], s[left]];
+//     left++;
+//     right--;
+//   }
+
+//   return s;
+// }
+
+// console.log(reverseStr(["h", "e", "l", "l", "o"]));
+
+// function isPalindrome(s) {
+//   let res = s.toLowerCase().split("").reverse().join("");
+
+//   console.log("res", s === res);
+// }
+
+// console.log(isPalindrome("A man, a plan, a canal: Panama"));
+// console.log(isPalindrome("race a car"));
+
+// function frequencyCount(str) {
+//   let freq = {};
+//   for (let i = 0; i < str.length; i++) {
+//     let char = str[i];
+
+//     freq[char] = (freq[char] || 0) + 1;
+//   }
+
+//   return freq;
+// }
+
+// console.log(frequencyCount("hello"));
+
+// function longestCommonPrefix(str) {
+
+//   str.sort();
+//   let res = "";
+//   let first = str[0];
+//   let last = str[str.length - 1];
+
+//   for (let i = 0; i < first.length; i++) {
+//     if (first[i] === last[i]) {
+//       res += first[i];
+//     }
+//   }
+
+//   return res;
+// }
+// console.log(longestCommonPrefix(["flower", "flowingly", "flock"])); // ✅ "flo"
+// console.log(longestCommonPrefix(["interspecies", "interstellar", "interstate"])); // ✅ "inters"
+// console.log(longestCommonPrefix(["apple", "banana", "carrot"])); // ✅ ""
+
+// /4. Find the First Non-Repeating Character
+
+// function nonRepeatingChar(str) {
+//   let res = "";
+
+//   for (let i = 0; i < str.length; i++) {
+//     let count = 0;
+//     for (let j = 0; j < str.length; j++) {
+//       if (str[i] === str[j]) {
+//         count++;
+//       }
+//     }
+//     if (count === 1) {
+//       return  str[i];
+//     }
+//   }
+
+//   return null;
+// }
+
+// console.log(nonRepeatingChar("hello"));
+
+// function removeDuplicate(str) {
+//   let set = new Set();
+//   let res = [];
+//   for (let i = 0; i < str.length; i++) {
+//     if (!set.has(str[i])) {
+//       set.add(str[i]);
+//       res.push(str[i]);
+//     }
+//   }
+//   return res;
+// }
+
+// console.log(removeDuplicate([1, 1, 3, 5, 7, 8, 7])); //[ 1, 3, 5, 7, 8 ],
+
+// function removeDuplicate(str) {
+//   let res = [];
+//   for (let i = 0; i < str.length; i++) {
+//     if (res.indexOf(str[i]) === -1) {
+//       res.push(str[i]);
+//     }
+//   }
+//   return res
+// }
+
+// console.log(removeDuplicate([1, 1, 3, 5, 7, 8, 7])); //[ 1, 3, 5, 7, 8 ],
+
+// function removeDuplicateStr(str) {
+//   let res = str
+//     .split("")
+//     .filter((char, index, arr) => arr.indexOf(char) === index)
+//     .join("");
+//   return res;
+// }
+
+// console.log(removeDuplicateStr("hello")); //helo
+
+// function removeDuplicateStr(str) {
+//   let res = str.split("").reduce((acc, char) => {
+//     return acc.includes(char) ? acc : acc + char;
+//   }, "");
+
+//   return res;
+// }
+
+// console.log(removeDuplicateStr("hello")); //helo
+
+// function removeDuplicateStr(str) {
+//   let res = str.filter((char, index, arr) => arr.indexOf(char) === index);
+//   return res;
+// }
+
+// console.log(removeDuplicateStr([1, 1, 3, 5, 7, 8, 7])); //[ 1, 3, 5, 7, 8 ],
+
+// function removeDuplicate(str) {
+//   let res = [];
+//   for (let i = 0; i < str.length; i++) {
+//     if (!res.includes(str[i])) {
+//       res.push(str[i]);
+//     }
+//   }
+//   return res;
+// }
+
+// console.log(removeDuplicate([1, 1, 3, 5, 7, 8, 7])); //[ 1, 3, 5, 7, 8 ],
+// console.log(removeDuplicate([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]
+
+// function removeDuplicate(arr) {
+//   return arr.filter((num, index) => arr.indexOf(num) === index);
+
+// }
+
+// console.log(removeDuplicate([1, 1, 3, 5, 7, 8, 7])); //[1, 3, 5, 7, 8]
+// console.log(removeDuplicate([1, 2, 2, 3, 4, 4, 5])); //[1, 2, 3, 4, 5]
+
+//11. Find the Most Frequent Character
+// let a = 11;
+// let b = 22;
+
+// let c = a + b + a++ + b++ + ++a + ++b;
+
+// 11 + 22 + 11 + 22 + 13 + 24; =103
+
+// console.log(c);
+
+// let a = 10;
+// let b = 20;
+
+// let c = 2 * (a + b); //peramiter of rectangel
+// console.log(c);
+
+// otp genrate of 4 numbers
+
+// let otp = Math.floor(100 + Math.random() * 9999);
+// console.log(otp.toString().split("").join(" "));
+
+// The first ten characters consist of the phone number of passengers.
+// The next character denotes the gender of the person.
+// The following two characters are used to indicate the age of the person.
+// The last two characters determine the seat allotted to that person.
+// Return the number of passengers who are strictly more than 60 years old.
+
+// function countSeniors(arr) {
+//   let count = 0;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let age = parseInt(arr[i].slice(11, 13), 10);
+
+//     if (Number(age) > 60) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// let details = [
+//   "9751302862F0693",
+//   "3888560693F7262",
+//   "5485983835F0649",
+//   "2580974299F6042",
+//   "9976672161M6561",
+//   "0234451011F8013",
+//   "4294552179O6482",
+// ];
+
+// console.log(countSeniors(details));
+
+// 6. Reverse Words in a Sentence
+
+// function reverseWord(str) {
+//   // return str.toLowerCase().split(" ").reverse().join(" ")
+//   let words = str.split(" ");
+//   let left = 0;
+//   let right = words.length - 1;
+
+//   while (left < right) {
+//     [words[left], words[right]] = [words[right], words[left]];
+
+//     left++;
+//     right--;
+//   }
+//   return words.join(" ");
+// }
+
+// console.log(reverseWord("i love my india")); // india my love i
+
+//7. Check if Two Strings are Anagrams
+
+// function anagramTwoStr(s1, s2) {
+//   let res1 = s1.split("").sort().join("");
+//   let res2 = s2.split("").sort().join("");
+
+//   return res1 === res2;
+// }
+
+// console.log(anagramTwoStr("hello", "olleh")); // true
+// console.log(anagramTwoStr("hello", "olelh")); // true
+// console.log(anagramTwoStr("hello", "world")); // false
+
+//8. Find the Longest Substring Without Repeating Characters
+
+// Remove All White Spaces from a String
+// 🔸 Input: " Hello World "
+// 🔸 Output: "HelloWorld"
+// function removeWhiteSpace(str) {
+//   let space = str.replaceAll(/\s/g, "");
+
+//   let res = space.split("").join("");
+//   return res;
+// }
+
+// console.log(removeWhiteSpace(" Hello World "));//HelloWorld
+//16. Convert a String to Title Case
+
+// function convertUpperCase(str) {
+//   let word = str.split(" ");
+//   console.log(word);
+//   for (let i = 0; i < word.length; i++) {
+//     word[i] = word[i].charAt(0).toUpperCase() + word[i].slice(1);
+//   }
+//   return word.join(" ");
+// }
+// console.log(convertUpperCase("hello world"));//"Hello World"
+
+//17. Find the Longest Common Prefix
+
+// function lagestCommanPrefix(str) {
+//   str.sort();
+//   let first = str[0];
+//   let last = str[str.length - 1];
+//   let res = "";
+
+//   for (let i = 0; i < first.length; i++) {
+//     if (first[i] === last[i]) {
+//       res += first[i];
+//     }
+//   }
+//   return res;
+// }
+
+// let arr = ["flower", "flow", "flight"];
+// // Output: "fl"
+// console.log(lagestCommanPrefix(arr));
+
+//18. Convert a String to a Character Array
+// function strToChar(str) {
+//   // return str.split("")
+//   // return [...str]
+//   let res = [];
+//   for (let i = 0; i < str.length; i++) {
+//     res.push(str[i]);
+//   }
+//   return res;
+// }
+// console.log(strToChar("hello world"));
+
+// Check if a String Contains Only Digits
+// 🔸 Input: "123456"
+// 🔸 Output: true
+
+// function checkStr(str) {
+//   let res = Number(str);
+
+//   if (res === Number(res)) {
+//     return true;
+//   }
+//   return false;
+// }
+
+// console.log(checkStr("1111"));
+
+//22. Find the Number of Words in a String
+
+// function noOfWordsInStr(str) {
+//    return str.trim().split(/\s+/).filter(Boolean).length;
+
+// }
+
+// console.log(noOfWordsInStr("i love india"));
+
+// function removeChar(str, k) {
+//   let res = [];
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] !== k) {
+//       res+= str[i]
+//     }
+//   }
+
+//   return res;
+// }
+
+// console.log(removeChar("hello world", "l"));
+
+// function validVoter(nums) {
+//   if (nums >= 18) {
+//     console.log("you do vote you above ", nums);
+//   } else {
+//     console.log("you do not vote less than 18 ", nums);
+//   }
+// }
+
+// validVoter(18);
+
+// function discountedPrice(amount) {
+//   if (amount > 0 && amount <= 5000) {
+//     console.log(amount);
+//   } else if (amount > 5000 && amount <= 7000) {
+//     //5%
+//     console.log(amount - Math.floor((5 * amount) / 100));
+//   } else if (amount > 7000 && amount <= 9000) {
+//     //10%
+//     console.log(amount - Math.floor((10 * amount) / 100));
+//   } else if (amount > 9000) {
+//     //20%
+//     console.log(amount - Math.floor((20 * amount) / 100));
+//   } else {
+//     console.log("wrong input");
+//   }
+// }
+// discountedPrice(7000);
+
+// function electricityBillPay(unit) {
+//   let amount = 0;
+
+//   if (unit > 400) {
+//     amount += (unit - 400) * 13; // 3300
+//     unit = 400;
+//   } //400
+//   if (unit > 200 && unit <= 400) {
+//     amount += (unit - 200) * 8; // 3300
+//     unit = 200;
+//   } //200
+//   if (unit > 100 && unit <= 200) {
+//     amount += (unit - 100) * 6; // 3300
+//     unit = 100;
+//   }
+//   amount += unit * 4;
+//   return amount;
+// }
+
+// console.log(electricityBillPay(700)); //6500
+
+//how much notes in this price
+
+// function checkNotes(amount) {
+//   if (amount > 500) {
+//     console.log("500 notes:", Math.floor(amount / 500));
+//     amount = amount % 500;
+//   }
+//   if (amount > 200) {
+//     console.log("200 notes:", Math.floor(amount / 200));
+//     amount = amount % 200;
+//   }
+//   if (amount > 100) {
+//     console.log("100 notes:", Math.floor(amount / 100));
+//     amount = amount % 100;
+//   }
+//   if (amount > 50) {
+//     console.log("50 notes:", Math.floor(amount / 50));
+//     amount = amount % 50;
+//   }
+//   if (amount > 20) {
+//     console.log("20 notes:", Math.floor(amount / 20));
+//     amount = amount % 20;
+//   }
+//   if (amount > 10) {
+//     console.log("10 notes:", Math.floor(amount / 10));
+//     amount = amount % 10;
+//   }
+//   if (amount > 5) {
+//     console.log("5 notes:", Math.floor(amount / 5));
+//     amount = amount % 5;
+//   }
+//   if (amount > 2) {
+//     console.log("2 notes:", Math.floor(amount / 2));
+//     amount = amount % 2;
+//   }
+//   if (amount === 1) {
+//     console.log("1 notes:", amount);
+//   }
+
+//   return amount;
+// }
+
+// checkNotes(5234);
+
+// let num = parseFloat((0.1 + 0.2).toFixed(1));
+
+// switch (num) {
+//   case 0.3:
+//     console.log("hello");
+//     break;
+
+//   case 0.5:
+//     console.log("hey");
+//     break;
+
+//   default:
+//     console.log("namste");
+// }
+
+//sum of numbers 15
+
+// function sumOfNaturalNumbers(nums) {
+//   // let result = 0;
+
+//   // for (let i = 0; i <= nums; i++) {
+//   //   result += i;
+//   // }
+//   // return result
+
+//   return (nums * (nums + 1)) / 2;
+// }
+// console.log(sumOfNaturalNumbers(10));
+
+// function sumOfDigit(n) {
+//   let sum = 0;
+//   while (n > 0) {
+//     sum += n % 10;
+//     n = Math.floor(n / 10);
+//   }
+//   return sum
+// }
+// console.log(sumOfDigit(55))
+
+// function lengthOfLongestSubstring(s,k) {
+//   let maxLen = 0;
+
+//   for (let i = 0; i < s.length; i++) {
+//     let set = new Set();
+//     for (let j = i; j < s.length; j++) {
+//       if (set.has(s[j])) {
+//         break;
+//       }
+//       set.add(s[j]);
+//       console.log("Checking:", s.slice(i, j + 1)); // 👈 Substring from i to j
+
+//       maxLen = Math.max(maxLen, j - i + 1);
+//     }
+//   }
+//   return maxLen;
+// }
+
+// console.log(lengthOfLongestSubstring("abcabcbb"));
+
+//Find the Shortest Word in a String
+
+// function sortestWord(str) {
+//   let words = str.split(" ");
+
+//   let res = words[0];
+
+//   for (let i = 0; i < words.length; i++) {
+//     if (words[i].length < res.length) {
+//       res = words[i];
+//     }
+//   }
+//   return res;
+// }
+
+// // 🔸 Input: "The quick brown fox"
+// // 🔸 Output: "The"
+
+// console.log(sortestWord("The quick brown fox"));
+
+// 11. Find the Most Frequent Character
+// // Input: "javascript"
+// // Output: "a"  // appears twice
+
+// function mostFrequentChar(str) {
+//   let res = 0;
+//   let max = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     let count = 0;
+//     for (let j = i; j < str.length; j++) {
+//       if (str[i] === str[j]) {
+//         count++;
+//       }
+//     }
+
+//     if (count > max) {
+//       max = count;
+//       res = str[i];
+//     }
+//   }
+//   return res;
+// }
+
+// console.log(mostFrequentChar("javascript"));
+
+// function factors(num) {
+//   let res = 0;
+//   for (let i = 1; i <= num; i++) {
+//     if (num % i === 0) {
+//       console.log(i)
+//     }
+//   }
+// }
+
+// factors(36)
+
+// function primeNumbers(num) {
+//   if (num<2) {
+//     return false
+//   }
+//   for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(primeNumbers(1));
+
+// function sumOfDigit(num) {
+//   let sum = 0
+//   while (num>0) {
+//     sum+= num%10
+//     num = Math.floor(num/10)
+//   }
+//   return sum
+// }
+
+// console.log(sumOfDigit(55))
+
+// function reverseNumber(num) {
+//   let rev = 0;
+//   while (num > 0) {
+//     let lastDigit = num % 10;
+//     rev = rev * 10 + lastDigit;
+//     num = Math.floor(num / 10);
+//   }
+//   return rev;
+// }
+
+// console.log(reverseNumber(1234));
+
+// function isArmstrongNumber(num) {
+//   let sum = 0;
+//   while (num > 0) {
+//     let lastDigit = num % 10;
+//     let fact = 1;
+//     for (let i = 1; i <= lastDigit; i++) {
+//       fact = fact * i;
+//     }
+//     sum += fact;
+//     num = Math.floor(num / 10);
+//   }
+//   return sum;
+// }
+
+// // Example usage
+// console.log(isArmstrongNumber(153)); // Output: true
+
+// function countDigits(nums) {
+//   let count = 0;
+//   while (nums>0) {
+//     nums = Math.floor(nums/10)
+//     count++
+//   }
+//   return count
+// }
+
+// console.log(countDigits(12345));//5
+
+// function findMaxNumber(arr) {
+//   let max = arr[0];
+//   let res = 0;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > max) {
+//       res = arr[i];
+//     }
+//   }
+//   return res;
+// }
+
+// console.log(findMaxNumber([1, 2, 3, 4, 5, 6]));
+// console.log(findMaxNumber([-5, -2, -1])); // Output: -1
+
+// function findSecondMaxNumber(arr) {
+//   let max = arr[0];
+//   let secondMax = arr[0];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > max) {
+//       secondMax = max;
+//       max = arr[i];
+//     } else if (arr[i] > secondMax && arr[i] !== max) {
+//       secondMax = arr[i];
+//     }
+//   }
+//   return secondMax;
+// }
+
+// console.log(findSecondMaxNumber([1, 2, 3, 4, 5, 6])); //5
+// console.log(findSecondMaxNumber([-5, -2, -1])); // Output: -1
+
+// function reverseArr(arr) {
+//   let res = [];
+
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     res.push(arr[i]);
+//   }
+//   return res;
+// }
+
+// console.log(reverseArr([1, 2, 3, 4, 5, 6]));
+
+// function reverseArr(arr) {
+//   let i = 0,
+//     j = arr.length - 1;
+
+//   while (i !== j) {
+//     let temp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = temp;
+//     i++;
+//     j--;
+//   }
+
+//   return arr;
+// }
+
+// console.log(reverseArr([1, 2, 3, 4, 5, 6]));
+
+// function moveZerosLeft(arr) {
+//   let count = 0;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === 0) {
+//       [arr[i], arr[count]] = [arr[count], arr[i]];
+//       count++;
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(moveZerosLeft([0,34,8,9,7,0,6,0]))
+
+// function fibonacci(n) {
+//   if (n<2) {
+//     return n
+//   }
+//   for (let i = 0; i < n; i++) {
+//     for (let j = i + 1; j < n; j++) {
+//       if (n[i] + n[j]) {
+//         console.log(j);
+//       }
+//     }
+//   }
+// }
+
+// console.log(fibonacci(5));
+
+// function sumOfDigit(n) {
+//   let sum = 0;
+//   let copy = n;
+
+//   while (copy > 0) {
+//     let lastDigit = copy % 10;
+//     sum += lastDigit;
+//     copy = Math.floor(copy / 10);
+//   }
+//   return sum;
+// }
+
+// // console.log(sumOfDigit(144));
+
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   getDetails() {
+//     console.log(`name ${this.name} and age${this.age}`);
+//   }
+// }
+
+// const person = new Person("mozammil", 29);
+
+// person.getDetails();
+
+// console.log(person instanceof Person)
+
+// function isPalindrome(n) {
+//   let rev = 0;
+//   let copy = n;
+//   while (copy > 0) {
+//     let lastDigit = copy % 10;
+
+//     rev = rev * 10 + lastDigit;
+//     copy = Math.floor(copy / 10);
+//   }
+
+//   return n === rev;
+// }
+
+// console.log(isPalindrome(144));
+// console.log(isPalindrome(121));
+
+// function myFunction(a, n) {
+//   return a[n - 1];
+// }
+
+// console.log(myFunction([1, 2, 3, 4, 5], 3));
+// // expected: 3
+// console.log(myFunction([10, 9, 8, 7, 6], 5));
+// // expected: 6
+// console.log(myFunction([7, 2, 1, 6, 3], 1));
+// // expected: 7
+
+// function myFunction(a) {
+//  let newArr =  a.slice(-3)
+//   return newArr
+// }
+
+// console.log(myFunction([1, 2, 3, 4]));
+// // expected: [4]
+// console.log(myFunction([5,4,3,2,1,0]));
+// // expected: [2,1,0]
+// console.log(myFunction([99,1,1]));
+// // expected: []
+
+// var a = 10;
+// function gx() {
+//   if (a === 10) {
+//     var  a = 12;
+//   }
+//   console.log(a);
+// }
+// gx();
+
+// const isArrayEqual = (arr1, arr2) => {
+//   for (let i = 0; i < arr1.length; i++) {
+//     console.log("arr2[i]", arr2[i]);
+//     if (arr1[i] !== arr2[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+
+//   // One Line solution
+//   // return arr1.length === arr2.length && arr1.every((ele, i) => arr1[i] === arr2[i]);
+// };
+
+// console.log(isArrayEqual([1, 2, 3], [1, 2, 3]));
+
+var fib = function (n) {
+  let res = [0, 1];
+  for (let i = 2; i < n; i++) {
+    res[i] = res[i - 1] + res[i - 2];
+  }
+  return res;
+};
+
+
+

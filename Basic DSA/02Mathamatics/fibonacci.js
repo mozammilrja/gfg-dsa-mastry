@@ -18,16 +18,17 @@ console.log(fibonacci(0)); // ✅ []
 console.log(fibonacci(-5)); // ✅ []
 
 // nth fibonacci number
-// function fibonacci(nums) {
-//   let n1 = 0,
-//     n2 = 1,
-//     nextTerm;
+function fibonacci(n) {
+  if (n < 2) return n;
+  let prev = 0,
+    curr = 1,
+    next;
+  for (let i = 2; i <= n; i++) {
+    next = prev + curr;
+    prev = curr;
+    curr = next;
+  }
+  return next;
+}
 
-//   for (let i = 1; i <= nums; i++) {
-//     nextTerm = n1 + n2;
-//     n1 = n2;
-//     n2 = nextTerm;
-//   }
-// }
-
-// fibonacci(10)
+fibonacci(10);

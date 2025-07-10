@@ -1,30 +1,28 @@
-// Longest Substring With Repeating Characters
-function lengthOfLongestRepeatingSubstring(s) {
-  let largest = 0;
+//brutforce 
+function lengthOfLongestSubstring(s,k) {
+  let maxLen = 0;
 
-  // Outer loop to fix the starting point
   for (let i = 0; i < s.length; i++) {
-    let char = new Set();
-    
-    // Inner loop to expand the substring
+    let set = new Set();
     for (let j = i; j < s.length; j++) {
-      if (char.has(s[j])) {
-        largest = Math.max(largest, j - i + 1);
-      } else {
-        char.add(s[j]);
+      if (set.has(s[j])) {
+        break;
       }
+      set.add(s[j]);
+      console.log("Checking:", s.slice(i, j + 1)); // 👈 Substring from i to j
+
+      maxLen = Math.max(maxLen, j - i + 1);
     }
   }
-
-  return largest;
+  return maxLen;
 }
 
 // Example usage:
 
-console.log(lengthOfLongestRepeatingSubstring("xxxx")); // Output: 4
-console.log(lengthOfLongestRepeatingSubstring("abcabcbb")); // Output: 8
-console.log(lengthOfLongestRepeatingSubstring("bbbbb")); // Output: 5
-console.log(lengthOfLongestRepeatingSubstring("pwwkew")); // Output: 6
-console.log(lengthOfLongestRepeatingSubstring("")); // Output: 0
-console.log(lengthOfLongestRepeatingSubstring("abcd")); // Output: 4
-console.log(lengthOfLongestRepeatingSubstring("aabca")); // Output: 5
+console.log(lengthOfLongestSubstring("xxxx")); // Output: 4
+console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 8
+console.log(lengthOfLongestSubstring("bbbbb")); // Output: 5
+console.log(lengthOfLongestSubstring("pwwkew")); // Output: 6
+console.log(lengthOfLongestSubstring("")); // Output: 0
+console.log(lengthOfLongestSubstring("abcd")); // Output: 4
+console.log(lengthOfLongestSubstring("aabca")); // Output: 5

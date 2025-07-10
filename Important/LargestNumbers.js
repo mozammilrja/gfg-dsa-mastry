@@ -15,7 +15,7 @@ function LargestNumbers(nums) {
     if (nums[i] > largest) {
       secondLargest = largest;
       largest = nums[i];
-    } else if (nums[i] > secondLargest) {
+    } else if (nums[i] > secondLargest && num[i] !== largest) {
       secondLargest = nums[i];
     }
   }
