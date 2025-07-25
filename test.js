@@ -5290,13 +5290,137 @@ function fizbuz(n) {
 
 // console.log(isArrayEqual([1, 2, 3], [1, 2, 3]));
 
-var fib = function (n) {
-  let res = [0, 1];
-  for (let i = 2; i < n; i++) {
-    res[i] = res[i - 1] + res[i - 2];
-  }
-  return res;
+// var fib = function (n) {
+//   let res = [0, 1];
+//   for (let i = 2; i < n; i++) {
+//     res[i] = res[i - 1] + res[i - 2];
+//   }
+//   return res;
+// };
+
+// function fn(nums) {
+//   let result = [];
+
+//   for (let i = 1; i < nums; i = i * 2) {
+//     result.push(i);
+//   }
+//   return result
+// }
+
+// console.log(fn(16));
+
+// function arrToSubArr(arr, size) {
+//   let result = [];
+
+//   for (let i = 0; i < arr.length; i += size) {
+//     result.push(arr.slice(i, i + size));
+//   }
+
+//   return result;
+// }
+
+// console.log(arrToSubArr([1, 2, 3, 4], 2));
+
+// function firstOccurence(arr, target) {
+//   let count = 0;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === target) {
+//       return i; // Return the index of the first occurrence}
+//     }
+//   }
+//   return -1; // If the target is not found, return -1
+// }
+// console.log(firstOccurence([2, 4, 10, 10, 10, 18, 20], 10)); // Output: 2
+
+// function lastOccurence(arr, target) {
+//   // Iterate through the array from the end to find the last occurrence
+//   for (let i = arr.length; i >= 0; i--) {
+//     if (arr[i] === target) {
+//       return i; // Return the index of the last occurrence
+//     }
+//   }
+//   return -1; // If the target is not found, return -1
+// }
+// console.log(lastOccurence([2, 4, 10, 10, 10, 18, 20], 10)); // Output: 4
+
+const person = {
+  name: "Vishal",
+  age: 21,
+  isEducator: true,
+  skills: ["C++", "JavaScript", "ReactJS"],
+  projects: {
+    "Frontend Freaks": "Frontend Development Project",
+  },
+  code: function () {
+    return "start coding";
+  },
+  walk: () => {
+    return "start walking";
+  },
 };
 
+const person3 = Object.assign({}, person);
+person3.skills = "tool";
 
+// console.log(person3);
 
+// Object.freeze(person) // User can't add or delete or update keys
+// delete person.name; // This will not work as the object is frozen
+// person.age = 30; // This will not work as the object is frozen
+// console.log(person);
+// console.log(Object.isFrozen(person)) // true
+
+// Object.freeze(person) // User can't add or delete or update keys
+// person.name = "John"; // This will not work as the object is frozen
+// delete person.age; // This will not work as the object is frozen/
+// console.log(person);
+// console.log(Object.isFrozen(person)) // true
+
+// Object.seal(person) // User can't add or delete keys but can update the value
+// person.name = "John"; // This will work as the object is sealed
+// console.log(Object.isSealed(person)); // true
+// delete person.age; // This will not work as the object is sealed
+// person.age = 30; // This will work as the object is sealed
+
+// console.log(person)
+
+// for (let key in person) {
+//     console.log(key + ":", person[key]); // name: Vishal   age: 21, isEducator: true ...
+// }
+
+// function searchRange(nums, target) {
+//   let count = [-1, -1]; // Initialize count with [-1, -1] to handle cases where target is not found
+
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === target) {
+//       if (count[0] === -1) {
+//         count[0] = i; // Set the first occurrence index
+//       }
+//       count[1] = i; // Set the last occurrence index
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(searchRange([5, 7, 7, 8, 8, 10], 8)); // Output: [3, 4]
+// console.log(searchRange([5, 7, 7, 8, 8, 10], 6)); // Output: [-1, -1]
+
+function findLargest(arr) {
+  let largest = arr[0];
+  let secondLargest = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      largest = arr[i];
+      secondLargest = largest;
+    } else if (arr[i] > secondLargest) {
+      secondLargest = arr[i];
+    }
+  }
+
+  return secondLargest;
+}
+
+let arr = [5, 10, 20, 20, 8];
+console.log(findLargest(arr));
